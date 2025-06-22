@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://qm3avsq57uh4"]
+
+[ext_resource type="Script" uid="uid://bb5oyio4a34fh" path="res://rocket.gd" id="1_dkv7l"]
+[ext_resource type="Texture2D" uid="uid://ckmxg1cjyms6" path="res://sprites/Rocket.png" id="2_agf72"]
+
+[node name="Rocket" type="Node2D"]
+script = ExtResource("1_dkv7l")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_agf72")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+rotation = -1.5708
+target_position = Vector2(-1.48619e-06, 34)
+collision_mask = 7
+hit_from_inside = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
