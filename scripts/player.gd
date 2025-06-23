@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-var jump_power = 500
+var jump_power = 650
 var speed = 450
 var cooldowns : Dictionary = {
 	"rocket_launcher" : true
 }
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var rocket_launcher_timer: Timer = $Weapons/Cooldowns/RocketLauncher
+@onready var rocket_launcher_timer: Timer = $Cooldowns/RocketLauncher
+@onready var weapons: Node2D = $AnimatedSprite2D/Weapons
 
 func _physics_process(delta : float) -> void:
 	if !is_on_floor():
@@ -29,7 +30,7 @@ func _physics_process(delta : float) -> void:
 		if cooldowns["rocket_launcher"] == true:
 			var weapon = preload("res://scenes/rocket_launcher.tscn")
 			var new_weapon = weapon.instantiate()
-			$AnimatedSprite2D.add_child(new_weapon)
+			weapons.add_child(new_weapon)
 			new_weapon.position = Vector2.ZERO
 			new_weapon.shoot()
 			cooldowns["rocket_launcher"] = false
