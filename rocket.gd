@@ -1,7 +1,7 @@
 extends Node2D
 
 var speed = 1000
-var aoe = 3
+var aoe = 2
 var direction = null
 @onready var raycast: RayCast2D = $RayCast2D
 
