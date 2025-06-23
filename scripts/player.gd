@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 var jump_power = 500
-var speed = 300
+var speed = 450
 var cooldowns : Dictionary = {
 	"rocket_launcher" : true
 }
@@ -30,9 +30,8 @@ func _physics_process(delta : float) -> void:
 			var weapon = preload("res://scenes/rocket_launcher.tscn")
 			var new_weapon = weapon.instantiate()
 			$AnimatedSprite2D.add_child(new_weapon)
-			new_weapon.get_node("Sprite2D").flip_h = $AnimatedSprite2D.flip_h
-			new_weapon.global_position = position
-			new_weapon.get_node("AnimationPlayer").play("shoot")
+			new_weapon.position = Vector2.ZERO
+			new_weapon.shoot()
 			cooldowns["rocket_launcher"] = false
 			rocket_launcher_timer.start()
 	move_and_slide()
