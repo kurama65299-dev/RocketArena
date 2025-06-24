@@ -1,7 +1,7 @@
 extends Node2D
 
-var speed: int = 1600
-var aoe: int = 6
+var speed: int = 1400
+var aoe: int = 5
 var direction: Vector2 = Vector2.ZERO
 var damage: int = 50
 @onready var raycast: RayCast2D = $RayCast2D
@@ -14,7 +14,7 @@ func launch(new_direction):
 	impact_area.scale = Vector2(aoe,aoe)
 	direction = new_direction
 	
-func explosion(collider, coords):
+func explosion(collider, coords): #DESTRUCTION
 	var count: int= 0
 	var sum: int = 1
 	for x in range(-aoe,aoe+1): #Checks every x row
@@ -27,21 +27,22 @@ func explosion(collider, coords):
 		count += sum #Maintains the aoe counter
 	
 func _physics_process(delta: float) -> void:
-	if raycast.is_colliding():
+	if raycast.is_colliding(): #HITBOX AND DAMAGE
 		raycast.enabled = false
 		var collider = raycast.get_collider()
 		if collider is TileMapLayer:
 			var point = raycast.get_collision_point()
 			var coords = collider.local_to_map(point)
 			explosion(collider, coords)
-			direction = Vector2.ZERO
-			animated_sprite.visible = true
-			sprite.visible = false
-			for collision in impact_area.get_overlapping_bodies():
-				if collision is Player:
-					collision.health -= damage
-			animated_sprite.play("explosion")
-	if direction != Vector2.ZERO:
+		direction = Vector2.ZERO
+		animated_sprite.visible = true
+		sprite.visible = false
+		for collision in impact_area.get_overlapping_bodies():
+			if collision is Player:
+				collision.health -= damage
+		animated_sprite.play("explosion")
+		
+	if direction != Vector2.ZERO: #MOVING
 		global_position += speed * direction * delta
 		rotation = direction.angle()
 
