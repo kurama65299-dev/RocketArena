@@ -1,41 +1,41 @@
+class_name Player
 extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-var jump_power = 650
-var speed = 450
-var cooldowns : Dictionary = {
-	"rocket_launcher" : true
-}
+@onready var shoot_weapon: Node = $ShootWeapon
+@onready var health_bar: ProgressBar = $ProgressBar
+
+var jump_power = 750
+var speed = 350
+var health = 100
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-@onready var rocket_launcher_timer: Timer = $Cooldowns/RocketLauncher
-@onready var weapons: Node2D = $AnimatedSprite2D/Weapons
+var player_weapon = "rocket_launcher"
+
+func _process(delta: float) -> void:
+	health_bar.value = health
+	if health <= 0:
+		queue_free()
 
 func _physics_process(delta : float) -> void:
-	if !is_on_floor():
+	if !is_on_floor(): #GRAVITY
 		velocity.y += gravity * delta
+		
 	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
+	if direction: #RUN ANIMATION AND DIRECTION
 		velocity.x = speed * direction
 		animated_sprite.flip_h = direction < 0
 		if is_on_floor():
 			animated_sprite.play("run")
 	else:
-		velocity.x = 0
-	if Input.is_action_pressed("ui_up") and is_on_floor():
+		velocity.x = 0 #NOT MOVING
+	
+	if Input.is_action_pressed("ui_up") and is_on_floor(): #JUMP ANIM
 		velocity.y -= jump_power
 		animated_sprite.play("jump")
-	if velocity == Vector2.ZERO:
+		
+	if velocity == Vector2.ZERO: #IDLE ANIM
 		animated_sprite.play("idle")
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		if cooldowns["rocket_launcher"] == true:
-			var weapon = preload("res://scenes/rocket_launcher.tscn")
-			var new_weapon = weapon.instantiate()
-			weapons.add_child(new_weapon)
-			new_weapon.position = Vector2.ZERO
-			new_weapon.shoot()
-			cooldowns["rocket_launcher"] = false
-			rocket_launcher_timer.start()
+		
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT): #SHOOT EVENT
+		shoot_weapon.shoot(player_weapon)
 	move_and_slide()
-
-func _on_rocket_launcher_timeout() -> void:
-	cooldowns["rocket_launcher"] = true

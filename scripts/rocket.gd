@@ -1,50 +1,47 @@
 extends Node2D
 
-var speed = 1200
-var aoe = 4
-var direction = null
+var speed: int = 1600
+var aoe: int = 6
+var direction: Vector2 = Vector2.ZERO
+var damage: int = 50
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var tile_logic: Node = get_node("/root/Game/World/TileLogic")
+@onready var impact_area: Area2D = $Area2D
 
 func launch(new_direction):
+	impact_area.scale = Vector2(aoe,aoe)
 	direction = new_direction
 	
 func explosion(collider, coords):
-	for x in range(-aoe,aoe+1):
-		var next_block = Vector2i(coords.x + x, coords.y)
-		collider.set_cell(next_block, -1)
-	for y in range(-aoe,aoe+1):
-		var next_block =  Vector2i(coords.x, coords.y + y)
-		collider.set_cell(next_block, -1)
-	
-	var count = 0
-	var sum = 1
+	var count: int= 0
+	var sum: int = 1
 	for x in range(-aoe,aoe+1): #Checks every x row
 		if count == aoe:
 			sum = -1
 		for z in range(-count,count+1): #Checks every y row based on the counter, still in a determinated x row
 			var next_block
-			next_block =  Vector2i(coords.x + x, coords.y + z) 
-			collider.set_cell(next_block, -1)
-			next_block =  Vector2i(coords.x + x, coords.y - z)
-			collider.set_cell(next_block, -1)
+			next_block =  Vector2i(coords.x + x, coords.y + z)
+			tile_logic.damage_tile(next_block, 100)
 		count += sum #Maintains the aoe counter
 	
 func _physics_process(delta: float) -> void:
-	raycast.force_raycast_update()
 	if raycast.is_colliding():
+		raycast.enabled = false
 		var collider = raycast.get_collider()
 		if collider is TileMapLayer:
 			var point = raycast.get_collision_point()
 			var coords = collider.local_to_map(point)
 			explosion(collider, coords)
-			raycast.enabled = false
-			direction = null
+			direction = Vector2.ZERO
 			animated_sprite.visible = true
 			sprite.visible = false
+			for collision in impact_area.get_overlapping_bodies():
+				if collision is Player:
+					collision.health -= damage
 			animated_sprite.play("explosion")
-	if direction != null:
+	if direction != Vector2.ZERO:
 		global_position += speed * direction * delta
 		rotation = direction.angle()
 

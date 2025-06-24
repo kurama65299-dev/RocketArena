@@ -11,7 +11,7 @@ func _ready():
 			var id = tile_map.get_cell_source_id(coords)
 			if id != -1:
 				tile_data[coords] = 100
-func damage_tile(damage, coords):
+func damage_tile(coords, damage):
 	if tile_data.has(coords):
 		if tile_data[coords] - damage <= 0:
 			tile_map.set_cell(coords, -1)
