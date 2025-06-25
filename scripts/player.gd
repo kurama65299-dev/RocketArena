@@ -17,7 +17,7 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_weapon: String = "rocket_launcher"
 
 func _ready():
-	global_position = Vector2(randf_range(-2000,2000),-1200)
+	global_position = Vector2(randf_range(-1800,1800),-1100)
 func _keyboard_movement(delta):
 	var mouse_pos: Vector2 = get_global_mouse_position()
 	var mouse_direction: Vector2 = (mouse_pos - global_position).normalized()
@@ -89,6 +89,6 @@ func _physics_process(delta : float) -> void:
 		_keyboard_movement(delta)
 	else:
 		_joystick_movement(delta)
-	impulse = impulse.move_toward(Vector2.ZERO, delta * impulse_decceleration)
+	impulse = impulse.move_toward(Vector2.ZERO, delta * impulse_decceleration) #Decreasing impulse using decceleration
 	velocity += impulse
 	move_and_slide()
