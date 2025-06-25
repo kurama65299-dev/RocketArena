@@ -3,9 +3,9 @@ extends Node
 var devices_id: Array= []
 const PLAYER: PackedScene = preload("res://scenes/player.tscn")
 var player_colors: Dictionary = {
-	"Red": Color.RED,
-	"Green": Color.GREEN,
-	"Blue": Color.BLUE,
+	"Red": Color("E55F2A"),
+	"Green": Color("6FCF26"),
+	"Blue": Color("1C64D9"),
 }
 
 func add_player(device_id):
@@ -74,8 +74,11 @@ func create_custom_inputs(device_id: int):
 
 func color_player(player, device_id: int):
 	if device_id == 0:
-		player.get_node("AnimatedSprite2D").modulate = player_colors["Red"]
-	elif device_id == 1:
-		player.get_node("AnimatedSprite2D").modulate = player_colors["Green"]
-	elif device_id == 2:
 		player.get_node("AnimatedSprite2D").modulate = player_colors["Blue"]
+		player.get_node("AimArrow").modulate = player_colors["Blue"]
+	elif device_id == 1:
+		player.get_node("AnimatedSprite2D").modulate = player_colors["Red"]
+		player.get_node("AimArrow").modulate = player_colors["Red"]
+	elif device_id == 2:
+		player.get_node("AnimatedSprite2D").modulate = player_colors["Green"]
+		player.get_node("AimArrow").modulate = player_colors["Green"]

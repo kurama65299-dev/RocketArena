@@ -3,6 +3,7 @@ extends Node2D
 @onready var shoot_point: Marker2D = $ShootPoint
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var debris: Node = get_node("/root/Game/World/Debris")
+@onready var player: Player = get_parent().get_parent().get_parent()
 
 func shoot(direction):
 	global_rotation = direction.angle()
@@ -14,6 +15,7 @@ func shoot(direction):
 	
 	debris.add_child(new_rocket)
 	
+	new_rocket.owner_id = player.player_id
 	new_rocket.global_position = point
 	new_rocket.launch(direction)
 	
