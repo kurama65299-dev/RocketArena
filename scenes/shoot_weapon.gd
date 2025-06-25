@@ -7,7 +7,7 @@ var cooldowns : Dictionary = {
 @onready var rocket_launcher_timer: Timer = $"../Cooldowns/RocketLauncher"
 @onready var weapons: Node2D = $"../AnimatedSprite2D/Weapons"
 
-func shoot(player_weapon):
+func shoot(player_weapon, direction):
 	if cooldowns[player_weapon] == false:
 		return
 	if player_weapon == "rocket_launcher":
@@ -15,7 +15,7 @@ func shoot(player_weapon):
 		var new_weapon = weapon.instantiate()
 		weapons.add_child(new_weapon)
 		new_weapon.position = Vector2.ZERO
-		new_weapon.shoot()
+		new_weapon.shoot(direction)
 		cooldowns["rocket_launcher"] = false
 		rocket_launcher_timer.start()
 

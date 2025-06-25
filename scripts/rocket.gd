@@ -1,7 +1,7 @@
 extends Node2D
 
 var speed: int = 1400
-var aoe: int = 5
+var aoe: int = 8
 var direction: Vector2 = Vector2.ZERO
 var damage: int = 50
 @onready var raycast: RayCast2D = $RayCast2D
@@ -12,10 +12,11 @@ var damage: int = 50
 
 func launch(new_direction):
 	impact_area.scale = Vector2(aoe,aoe)
+	animated_sprite.scale = Vector2(aoe/4,aoe/4)
 	direction = new_direction
 	
 func explosion(collider, coords): #DESTRUCTION
-	var count: int= 0
+	var count: int = 0
 	var sum: int = 1
 	for x in range(-aoe,aoe+1): #Checks every x row
 		if count == aoe:
@@ -23,7 +24,7 @@ func explosion(collider, coords): #DESTRUCTION
 		for z in range(-count,count+1): #Checks every y row based on the counter, still in a determinated x row
 			var next_block
 			next_block =  Vector2i(coords.x + x, coords.y + z)
-			tile_logic.damage_tile(next_block, 100)
+			tile_logic.damage_tile(next_block, damage)
 		count += sum #Maintains the aoe counter
 	
 func _physics_process(delta: float) -> void:

@@ -10,11 +10,14 @@ func _ready():
 			var coords = Vector2i(x,y)
 			var id = tile_map.get_cell_source_id(coords)
 			if id != -1:
-				tile_data[coords] = 100
+				tile_data[coords] = 50
 func damage_tile(coords, damage):
 	if tile_data.has(coords):
 		if tile_data[coords] - damage <= 0:
 			tile_map.set_cell(coords, -1)
 			tile_data.erase(coords)
+		elif tile_data[coords] - damage <= 50:
+			tile_map.set_cell(coords, 0, Vector2i(1,0),0)
+			tile_data[coords] -= damage
 		else:
 			tile_data[coords] -= damage

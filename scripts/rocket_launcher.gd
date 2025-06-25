@@ -4,9 +4,8 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var debris: Node = get_node("/root/Game/World/Debris")
 
-func shoot():
-	var mouse_pos = get_global_mouse_position()
-	look_at(mouse_pos)
+func shoot(direction):
+	global_rotation = direction.angle()
 	animation_player.play("recoil")
 	
 	var point = shoot_point.global_position
@@ -15,9 +14,8 @@ func shoot():
 	
 	debris.add_child(new_rocket)
 	
-	var shoot_direction = (mouse_pos - point).normalized()
 	new_rocket.global_position = point
-	new_rocket.launch(shoot_direction)
+	new_rocket.launch(direction)
 	
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	queue_free()
