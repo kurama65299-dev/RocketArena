@@ -49,7 +49,7 @@ position = Vector2(-162, -1014)
 [node name="MapBorders" type="Node" parent="World"]
 
 [node name="BottomBorder" type="StaticBody2D" parent="World/MapBorders"]
-position = Vector2(0, 1200)
+position = Vector2(0, 1150)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/MapBorders/BottomBorder"]
 shape = SubResource("WorldBoundaryShape2D_iywne")
