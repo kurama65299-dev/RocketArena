@@ -2,7 +2,7 @@ extends Node
 
 @onready var tile_map: TileMapLayer = $TileMapLayer
 var tile_data : Dictionary = {}
-var normal_health: int = 170
+var normal_health: int = 180
 
 func _ready():
 	var map_size = tile_map.get_used_rect()
