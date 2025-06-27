@@ -7,6 +7,7 @@ var in_game = false
 var teams = 0
 var joystick_players: int = 0
 var keyboard_player: int = 0
+var map: String = "SpikyBattle"
 
 func start_game(player_names):
 	in_game = true

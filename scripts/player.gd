@@ -58,7 +58,7 @@ func _joystick_movement(delta):
 		velocity.x = speed * 1
 		animated_sprite.play("run")
 	else:
-		velocity.x = move_toward(velocity.x, 0, delta * friction)
+		velocity.x = 0
 
 	animated_sprite.flip_h = velocity.x < 0
 	

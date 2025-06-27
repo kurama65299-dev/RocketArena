@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bpsjpo6k5mkk8"]
+[gd_scene load_steps=20 format=3 uid="uid://bpsjpo6k5mkk8"]
 
 [ext_resource type="Script" uid="uid://cdrub584e2y7a" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="FontFile" uid="uid://dqiwcr5pvbrr" path="res://sprites/fonts/Roboto/static/Roboto-Black.ttf" id="1_l6cm7"]
@@ -13,28 +13,15 @@
 [ext_resource type="StyleBox" uid="uid://diaxknrj0l13w" path="res://ui_styles/player_ready_bar_full.tres" id="8_lgwnu"]
 [ext_resource type="StyleBox" uid="uid://4t0bn4xcj24v" path="res://ui_styles/start_button_blue_hover.tres" id="11_flqon"]
 [ext_resource type="StyleBox" uid="uid://d1q2htvlr3xeg" path="res://ui_styles/start_button_blue.tres" id="11_lgwnu"]
+[ext_resource type="Script" uid="uid://war45xs6g5ll" path="res://scenes/return.gd" id="14_1ajci"]
+[ext_resource type="Script" uid="uid://cd24le0ooshqs" path="res://scenes/maps.gd" id="15_7b55j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcqid"]
-bg_color = Color(0.258508, 0.2211, 0.67, 1)
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
-bg_color = Color(0.2952, 0.35184, 0.72, 1)
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
-bg_color = Color(8.08597e-06, 0.490515, 0.809159, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(0.647984, 0.620004, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color(0.103744, 0.103744, 0.103744, 1)
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -51,8 +38,7 @@ border_color = Color(1, 0.573556, 0.128922, 1)
 script = ExtResource("1_8ln24")
 
 [node name="MainPanel" type="Panel" parent="."]
-offset_top = 206.0
-offset_right = 471.0
+offset_right = 1280.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
 
@@ -60,9 +46,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
 z_index = 2
 layout_mode = 2
 offset_left = 47.0
-offset_top = 44.0
+offset_top = 186.0
 offset_right = 377.0
-offset_bottom = 113.0
+offset_bottom = 255.0
+scale = Vector2(1.28, 1.32)
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 45
@@ -76,9 +63,10 @@ script = ExtResource("2_bqqt6")
 z_index = 2
 layout_mode = 2
 offset_left = 47.0
-offset_top = 164.0
+offset_top = 306.0
 offset_right = 377.0
-offset_bottom = 233.0
+offset_bottom = 375.0
+scale = Vector2(1.28, 1.32)
 focus_mode = 0
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 45
@@ -93,22 +81,15 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 92.0
-offset_top = -6.0
-offset_right = 468.0
-offset_bottom = 30.0
+offset_left = -113.0
+offset_top = -226.0
+offset_right = 43.0
+offset_bottom = -190.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 30
-text = "no idea what to write here :("
-
-[node name="BackgroundBox" type="Panel" parent="."]
-z_index = -1
-offset_right = 1280.0
-offset_bottom = 720.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_l6cm7")
+text = "Have fun :D"
 
 [node name="GameTitle" type="Label" parent="."]
 anchors_preset = 8
@@ -117,9 +98,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -367.0
-offset_top = -283.5
+offset_top = -315.0
 offset_right = 367.0
-offset_bottom = -212.5
+offset_bottom = -244.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_l6cm7")
@@ -130,24 +111,36 @@ text = "¡Welcome to Rocket Arena!"
 script = ExtResource("3_bqqt6")
 
 [node name="PlaySettings" type="Panel" parent="."]
+visible = false
 z_index = 3
-offset_left = 227.0
-offset_top = 148.0
-offset_right = 1259.0
-offset_bottom = 686.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_bqqt6")
 
 [node name="Players" type="Panel" parent="PlaySettings"]
+visible = false
+z_index = 5
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -515.0
-offset_top = -268.0
-offset_right = 515.0
-offset_bottom = 268.0
+offset_left = -640.0
+offset_top = -360.0
+offset_right = 640.0
+offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -161,14 +154,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -447.0
-offset_top = -269.0
-offset_right = 404.0
-offset_bottom = 263.0
+offset_left = -425.0
+offset_top = -326.0
+offset_right = 428.0
+offset_bottom = 106.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_constants/h_separation = 210
+theme_override_constants/h_separation = 215
 theme_override_constants/v_separation = 250
 columns = 4
 script = ExtResource("5_rtw2f")
@@ -559,7 +552,7 @@ theme_override_styles/background = ExtResource("7_5dd4i")
 theme_override_styles/fill = ExtResource("8_lgwnu")
 
 [node name="StartCountdown" type="Timer" parent="PlaySettings/Players/PlayerManager"]
-wait_time = 1.5
+wait_time = 0.5
 one_shot = true
 
 [node name="Countdown" type="Label" parent="PlaySettings/Players"]
@@ -576,10 +569,9 @@ offset_right = 207.0
 offset_bottom = 225.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_colors/font_color = Color(0.86, 0.51428, 0.2838, 1)
-theme_override_colors/font_shadow_color = Color(0.448866, 0.704278, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_outline_size = 5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
+theme_override_constants/shadow_outline_size = 6
 theme_override_fonts/font = ExtResource("6_rtw2f")
 theme_override_font_sizes/font_size = 50
 text = "Starting in:"
@@ -587,6 +579,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Start" type="Button" parent="PlaySettings/Players"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -607,6 +600,73 @@ theme_override_styles/pressed = ExtResource("11_lgwnu")
 theme_override_styles/normal = ExtResource("11_lgwnu")
 text = "START"
 
+[node name="Return" type="Button" parent="PlaySettings"]
+z_index = 8
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1233.0
+offset_top = 34.0
+offset_right = -1135.0
+offset_bottom = 75.0
+grow_horizontal = 0
+theme_override_styles/hover = ExtResource("3_rcqid")
+theme_override_styles/normal = ExtResource("3_5dd4i")
+text = "Return"
+script = ExtResource("14_1ajci")
+
+[node name="Maps" type="Panel" parent="PlaySettings"]
+z_index = 4
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+script = ExtResource("15_7b55j")
+
+[node name="SpikyBattle" type="Button" parent="PlaySettings/Maps"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 186.0
+offset_right = 840.0
+offset_bottom = 297.0
+theme_override_font_sizes/font_size = 30
+text = "Spiky Battle(Default)"
+
+[node name="Next" type="Button" parent="PlaySettings/Maps"]
+layout_mode = 0
+offset_left = 527.0
+offset_top = 583.0
+offset_right = 815.0
+offset_bottom = 694.0
+scale = Vector2(0.662659, 0.6)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = ExtResource("11_flqon")
+theme_override_styles/normal = ExtResource("11_lgwnu")
+text = "Next"
+
+[node name="DescendingWar" type="Button" parent="PlaySettings/Maps"]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 338.0
+offset_right = 840.0
+offset_bottom = 449.0
+theme_override_font_sizes/font_size = 30
+text = "Descending War"
+
+[node name="Label" type="Label" parent="PlaySettings/Maps"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 75.0
+offset_right = 796.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 60
+text = "Select a map:"
+
 [connection signal="button_down" from="MainPanel/PlayButton" to="MainPanel/PlayButton" method="_on_button_down"]
 [connection signal="timeout" from="PlaySettings/Players/PlayerManager/StartCountdown" to="PlaySettings/Players/PlayerManager" method="_on_start_countdown_timeout"]
 [connection signal="button_down" from="PlaySettings/Players/Start" to="PlaySettings/Players/PlayerManager" method="_on_start_button_down"]
+[connection signal="button_down" from="PlaySettings/Return" to="PlaySettings/Return" method="_on_button_down"]
+[connection signal="button_down" from="PlaySettings/Maps/SpikyBattle" to="PlaySettings/Maps" method="_on_spiky_battle_button_down"]
+[connection signal="button_down" from="PlaySettings/Maps/Next" to="PlaySettings/Maps" method="_on_next_button_down"]
+[connection signal="button_down" from="PlaySettings/Maps/DescendingWar" to="PlaySettings/Maps" method="_on_descending_war_button_down"]

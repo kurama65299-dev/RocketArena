@@ -7,4 +7,4 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 shadow_color = Color(0.65809, 0.277768, 6.73831e-07, 0.6)
-shadow_size = 20
+shadow_size = 10

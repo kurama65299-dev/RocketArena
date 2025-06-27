@@ -6,6 +6,7 @@ var players_ready: Array = []
 @onready var start_countdown: Timer = $StartCountdown
 @onready var countdown: Label = $"../Countdown"
 @onready var start_button: Button = $"../Start"
+@onready var play_settings: Panel = $"../.."
 
 func _ready():
 	var id: int = 0
@@ -20,6 +21,8 @@ func _joystick_detection(delta, submit_id):
 	var ReadyBar = id_list[submit_id].get_node("ReadyBar")
 	if Input.is_action_pressed(submit):
 		ReadyBar.value += charge_per_second * delta
+		if ReadyBar.value >= 100:
+			start_button.visible = true
 	else:
 		if ReadyBar.value < 100:
 			ReadyBar.value = 0
@@ -31,6 +34,8 @@ func _keyboard_detection(delta):
 	var ReadyBar = get_node("Keyboard/ReadyBar")
 	if Input.is_action_pressed("submit"):
 		ReadyBar.value += charge_per_second * delta
+		if ReadyBar.value >= 100:
+			start_button.visible = true
 	else:
 		if ReadyBar.value < 100:
 			ReadyBar.value = 0
@@ -39,6 +44,8 @@ func _keyboard_detection(delta):
 			players_ready.append("Keyboard")
 
 func _process(delta):
+	if play_settings.visible == false:
+		return
 	for id in range(id_list.size() - 1, -1, -1):
 		_joystick_detection(delta, id)
 	_keyboard_detection(delta)
