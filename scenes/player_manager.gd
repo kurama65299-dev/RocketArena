@@ -46,7 +46,12 @@ func _process(delta):
 	countdown.text = "Starting in " + str(round(start_countdown.time_left * 10) / 10)
 
 func _on_start_countdown_timeout() -> void:
-	GlobalSettings.start_game()
+	var player_names: Array = []
+	for child in get_children():
+		if child is Panel:
+			var plr_name = child.get_node("PlayerName").text
+			player_names.append(plr_name)
+	GlobalSettings.start_game(player_names)
 
 
 func _on_start_button_down() -> void:

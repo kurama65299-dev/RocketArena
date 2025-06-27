@@ -6,13 +6,15 @@ var player_colors: Dictionary = {
 	"Red": Color("E55F2A"),
 	"Green": Color("6FCF26"),
 	"Blue": Color("1C64D9"),
+	"Violet": Color("a59eff"),
 }
 
-func add_player(device_id):
+func add_player(device_id, plr_name):
 	var new_player = PLAYER.instantiate()
 	new_player.player_id = device_id
-	new_player.name = "Player" + str(device_id)
+	new_player.name = plr_name
 	get_node("Players").add_child(new_player)
+	new_player.get_node("PlayerName").text = plr_name
 	devices_id.append(new_player)
 	color_player(new_player, device_id)
 	create_custom_inputs(device_id)
@@ -73,12 +75,17 @@ func create_custom_inputs(device_id: int):
 		InputMap.action_add_event(shoot, joy_event)
 
 func color_player(player, device_id: int):
-	if device_id == 0:
-		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Blue"]
-		player.get_node("AimArrow").modulate = player_colors["Blue"]
-	elif device_id == 1:
+	if device_id == -1:
+		pass
+	elif device_id == 0:
+		player.get_node("PlayerName").modulate = player_colors["Red"]
 		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Red"]
 		player.get_node("AimArrow").modulate = player_colors["Red"]
-	elif device_id == 2:
+	elif device_id == 1:
+		player.get_node("PlayerName").modulate = player_colors["Green"]
 		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Green"]
 		player.get_node("AimArrow").modulate = player_colors["Green"]
+	elif device_id == 2:
+		player.get_node("PlayerName").modulate = player_colors["Violet"]
+		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Violet"]
+		player.get_node("AimArrow").modulate = player_colors["Violet"]
