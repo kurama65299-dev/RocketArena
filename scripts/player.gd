@@ -47,7 +47,7 @@ func _joystick_movement(delta):
 	var axis_y = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_Y)	
 	
 	var aim_direction = Vector2(axis_x, axis_y)
-	if aim_direction.length() > 0.2: #Deadzone detection
+	if aim_direction.length() > 0.1: #Deadzone detection
 		aim_direction = aim_direction.normalized()
 	
 	var suffix = str(player_id) #Player id to string

@@ -2,7 +2,7 @@ extends Node2D
 
 var owner_id = null
 var speed: int = 2000
-var aoe: int = 5
+var aoe: int = 6
 var direction: Vector2 = Vector2.ZERO
 var damage: int = 40
 var impulse: float = 420
