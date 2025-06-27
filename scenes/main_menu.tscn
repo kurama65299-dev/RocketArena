@@ -1,6 +1,5 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpsjpo6k5mkk8"]
+[gd_scene load_steps=19 format=3 uid="uid://bpsjpo6k5mkk8"]
 
-[ext_resource type="Script" uid="uid://cdrub584e2y7a" path="res://scripts/main_menu.gd" id="1_8ln24"]
 [ext_resource type="FontFile" uid="uid://dqiwcr5pvbrr" path="res://sprites/fonts/Roboto/static/Roboto-Black.ttf" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bhxgvkvf1gp8s" path="res://scripts/play_button.gd" id="2_bqqt6"]
 [ext_resource type="StyleBox" uid="uid://cbbc1fiehmc4t" path="res://ui_styles/start_buttons.tres" id="3_5dd4i"]
@@ -35,7 +34,6 @@ border_width_bottom = 3
 border_color = Color(1, 0.573556, 0.128922, 1)
 
 [node name="MainMenu" type="CanvasLayer"]
-script = ExtResource("1_8ln24")
 
 [node name="MainPanel" type="Panel" parent="."]
 offset_right = 1280.0
