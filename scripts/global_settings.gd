@@ -29,7 +29,19 @@ func start_game():
 func end_game():
 	in_game = false
 	get_tree().change_scene_to_packed(MAIN_MENU)
-
+	
+	var player_names_path = "/root/MainMenu/PlaySettings/Players/PlayerManager"
+	
+	while not get_node_or_null(player_names_path):
+		await get_tree().process_frame
+		
+	var player_names = get_node(player_names_path)
+	
+	var index = 0
+	for player in players:
+		var player_name = player_names.get_child(index).get_node("PlayerName")
+		player_name.text = player.Name
+		index += 1
 func _ready():
 	create_inputs()
 	

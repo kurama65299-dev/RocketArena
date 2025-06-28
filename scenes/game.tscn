@@ -22,7 +22,7 @@ position_smoothing_enabled = true
 [node name="Players" type="Node" parent="World"]
 
 [node name="EndGame" type="Timer" parent="."]
-wait_time = 900.0
+wait_time = 3.0
 
 [node name="Label" type="Label" parent="EndGame"]
 anchors_preset = 5
