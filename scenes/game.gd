@@ -4,7 +4,7 @@ extends Node
 @onready var label: Label = $EndGame/Label
 
 func _ready():
-	end_game.start()
+	end_game.start(GlobalSettings.time)
 	
 func _process(delta):
 	timer_ui(delta)

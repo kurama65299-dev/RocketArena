@@ -27,9 +27,9 @@ func damage_tile(coords, damage):
 func load_map():
 	var map
 	if GlobalSettings.map == "SpikyBattle":
-		map = load("res://scenes/maps/SpikyBattle.tscn")
+		map = preload("res://scenes/maps/SpikyBattle.tscn")
 	elif GlobalSettings.map == "DescendingWar":
-		map = load("res://scenes/maps/DescendingWar.tscn")
+		map = preload("res://scenes/maps/DescendingWar.tscn")
 	var new_map = map.instantiate()
 	add_child(new_map)
 	tile_map = new_map

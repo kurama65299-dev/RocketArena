@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bpsjpo6k5mkk8"]
+[gd_scene load_steps=20 format=3 uid="uid://bpsjpo6k5mkk8"]
 
 [ext_resource type="FontFile" uid="uid://dqiwcr5pvbrr" path="res://sprites/fonts/Roboto/static/Roboto-Black.ttf" id="1_l6cm7"]
 [ext_resource type="Script" uid="uid://bhxgvkvf1gp8s" path="res://scripts/play_button.gd" id="2_bqqt6"]
@@ -32,6 +32,9 @@ border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(1, 0.573556, 0.128922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
+bg_color = Color(0.470076, 0.470076, 0.470076, 1)
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -190,7 +193,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Keyboard/Team"]
+[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Keyboard/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -198,9 +201,12 @@ offset_right = 166.0
 offset_bottom = 37.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "0"
-max_length = 1
-select_all_on_focus = true
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
 
 [node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Keyboard"]
 layout_mode = 0
@@ -239,7 +245,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player2/Team"]
+[node name="TeamNumber2" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player2/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -247,9 +253,12 @@ offset_right = 166.0
 offset_bottom = 37.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "0"
-max_length = 1
-select_all_on_focus = true
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
 
 [node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player2"]
 layout_mode = 0
@@ -287,7 +296,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player4/Team"]
+[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player4/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -295,9 +304,12 @@ offset_right = 166.0
 offset_bottom = 37.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "0"
-max_length = 1
-select_all_on_focus = true
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
 
 [node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player4"]
 layout_mode = 0
@@ -335,7 +347,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player5/Team"]
+[node name="TeamNumber2" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player5/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -343,9 +355,12 @@ offset_right = 166.0
 offset_bottom = 37.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "0"
-max_length = 1
-select_all_on_focus = true
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
 
 [node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player5"]
 layout_mode = 0
@@ -383,7 +398,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player6/Team"]
+[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player6/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -391,9 +406,12 @@ offset_right = 166.0
 offset_bottom = 37.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "0"
-max_length = 1
-select_all_on_focus = true
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
 
 [node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player6"]
 layout_mode = 0
@@ -431,7 +449,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player7/Team"]
+[node name="TeamNumber2" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player7/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -439,9 +457,12 @@ offset_right = 166.0
 offset_bottom = 37.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "0"
-max_length = 1
-select_all_on_focus = true
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
 
 [node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player7"]
 layout_mode = 0
@@ -479,7 +500,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player8/Team"]
+[node name="TeamNumber2" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player8/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -487,9 +508,12 @@ offset_right = 166.0
 offset_bottom = 37.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "0"
-max_length = 1
-select_all_on_focus = true
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
 
 [node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player8"]
 layout_mode = 0
@@ -527,7 +551,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player3/Team"]
+[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player3/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -535,9 +559,12 @@ offset_right = 166.0
 offset_bottom = 37.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "0"
-max_length = 1
-select_all_on_focus = true
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
 
 [node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player3"]
 layout_mode = 0
@@ -615,6 +642,7 @@ text = "Return"
 script = ExtResource("14_1ajci")
 
 [node name="Maps" type="Panel" parent="PlaySettings"]
+visible = false
 z_index = 4
 layout_mode = 0
 offset_right = 1280.0
@@ -624,12 +652,39 @@ script = ExtResource("15_7b55j")
 
 [node name="SpikyBattle" type="Button" parent="PlaySettings/Maps"]
 layout_mode = 0
-offset_left = 390.0
+offset_left = 312.0
 offset_top = 186.0
-offset_right = 840.0
+offset_right = 762.0
 offset_bottom = 297.0
 theme_override_font_sizes/font_size = 30
 text = "Spiky Battle(Default)"
+
+[node name="Gamemode" type="OptionButton" parent="PlaySettings/Maps"]
+layout_mode = 0
+offset_left = 860.0
+offset_top = 349.0
+offset_right = 1213.0
+offset_bottom = 435.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_8egab")
+alignment = 1
+selected = 1
+item_count = 2
+popup/item_0/text = "All vs All"
+popup/item_0/id = 0
+popup/item_1/text = "Keep the briefcase"
+popup/item_1/id = 1
+
+[node name="Time" type="SpinBox" parent="PlaySettings/Maps"]
+layout_mode = 0
+offset_left = 1099.0
+offset_top = 506.0
+offset_right = 1199.0
+offset_bottom = 567.0
+max_value = 900.0
+step = 100.0
+value = 600.0
+alignment = 1
 
 [node name="Next" type="Button" parent="PlaySettings/Maps"]
 layout_mode = 0
@@ -645,26 +700,52 @@ text = "Next"
 
 [node name="DescendingWar" type="Button" parent="PlaySettings/Maps"]
 layout_mode = 0
-offset_left = 390.0
+offset_left = 312.0
 offset_top = 338.0
-offset_right = 840.0
+offset_right = 762.0
 offset_bottom = 449.0
 theme_override_font_sizes/font_size = 30
 text = "Descending War"
 
 [node name="Label" type="Label" parent="PlaySettings/Maps"]
 layout_mode = 0
-offset_left = 430.0
-offset_top = 75.0
-offset_right = 796.0
-offset_bottom = 146.0
-theme_override_font_sizes/font_size = 60
+offset_left = 335.0
+offset_top = 88.0
+offset_right = 701.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 50
 text = "Select a map:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="PlaySettings/Maps"]
+layout_mode = 0
+offset_left = 957.0
+offset_top = 506.0
+offset_right = 1085.0
+offset_bottom = 577.0
+theme_override_font_sizes/font_size = 30
+text = "Time:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="PlaySettings/Maps"]
+layout_mode = 0
+offset_left = 811.0
+offset_top = 215.0
+offset_right = 1270.0
+offset_bottom = 286.0
+theme_override_font_sizes/font_size = 50
+text = "Select a gamemode:"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="button_down" from="MainPanel/PlayButton" to="MainPanel/PlayButton" method="_on_button_down"]
 [connection signal="timeout" from="PlaySettings/Players/PlayerManager/StartCountdown" to="PlaySettings/Players/PlayerManager" method="_on_start_countdown_timeout"]
 [connection signal="button_down" from="PlaySettings/Players/Start" to="PlaySettings/Players/PlayerManager" method="_on_start_button_down"]
 [connection signal="button_down" from="PlaySettings/Return" to="PlaySettings/Return" method="_on_button_down"]
 [connection signal="button_down" from="PlaySettings/Maps/SpikyBattle" to="PlaySettings/Maps" method="_on_spiky_battle_button_down"]
+[connection signal="button_down" from="PlaySettings/Maps/Gamemode" to="PlaySettings/Maps" method="_on_spiky_battle_button_down"]
+[connection signal="item_selected" from="PlaySettings/Maps/Gamemode" to="PlaySettings/Maps" method="_on_gamemode_item_selected"]
 [connection signal="button_down" from="PlaySettings/Maps/Next" to="PlaySettings/Maps" method="_on_next_button_down"]
 [connection signal="button_down" from="PlaySettings/Maps/DescendingWar" to="PlaySettings/Maps" method="_on_descending_war_button_down"]

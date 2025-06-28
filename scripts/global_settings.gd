@@ -8,8 +8,12 @@ var teams = 0
 var joystick_players: int = 0
 var keyboard_player: int = 0
 var map: String = "SpikyBattle"
+var time = 600
+var teams_enabled = false
+var gamemode = "all_vs_all"
+var players = []
 
-func start_game(player_names):
+func start_game():
 	in_game = true
 	get_tree().change_scene_to_packed(GAME_SCENE)
 	
@@ -18,15 +22,10 @@ func start_game(player_names):
 		await get_tree().process_frame
 	var world = get_node(world_path)
 	
-	if keyboard_player == 1:
-		var plr_name = player_names[0]
-		get_node("/root/Game/World").add_player(-1, plr_name)
-	player_names.remove_at(0)
-	for i in range(joystick_players - 1, -1, -1):
-		var plr_name = ""
-		plr_name = player_names[i]
-		player_names.remove_at(i)
-		get_node("/root/Game/World").add_player(i, plr_name)
+	var index = 0
+	
+	for player in players:
+		world.add_player(player.Device, player.Name)
 func end_game():
 	in_game = false
 	get_tree().change_scene_to_packed(MAIN_MENU)

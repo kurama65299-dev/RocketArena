@@ -82,10 +82,14 @@ func color_player(player, device_id: int):
 		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Red"]
 		player.get_node("AimArrow").modulate = player_colors["Red"]
 	elif device_id == 1:
-		player.get_node("PlayerName").modulate = player_colors["Green"]
-		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Green"]
-		player.get_node("AimArrow").modulate = player_colors["Green"]
+		player.get_node("PlayerName").modulate = player_colors["Blue"]
+		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Blue"]
+		player.get_node("AimArrow").modulate = player_colors["Blue"]
 	elif device_id == 2:
 		player.get_node("PlayerName").modulate = player_colors["Violet"]
 		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Violet"]
 		player.get_node("AimArrow").modulate = player_colors["Violet"]
+	elif device_id == 2:
+		player.get_node("PlayerName").modulate = player_colors["Green"]
+		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Green"]
+		player.get_node("AimArrow").modulate = player_colors["Green"]
