@@ -13,6 +13,7 @@
 [ext_resource type="StyleBox" uid="uid://4t0bn4xcj24v" path="res://ui_styles/start_button_blue_hover.tres" id="11_flqon"]
 [ext_resource type="StyleBox" uid="uid://d1q2htvlr3xeg" path="res://ui_styles/start_button_blue.tres" id="11_lgwnu"]
 [ext_resource type="Script" uid="uid://war45xs6g5ll" path="res://scripts/return.gd" id="14_1ajci"]
+[ext_resource type="StyleBox" uid="uid://bp6sv4h4h66c" path="res://ui_styles/start_options.tres" id="15_5pajh"]
 [ext_resource type="Script" uid="uid://cd24le0ooshqs" path="res://scripts/maps.gd" id="15_7b55j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcqid"]
@@ -32,9 +33,6 @@ border_width_top = 3
 border_width_right = 3
 border_width_bottom = 3
 border_color = Color(1, 0.573556, 0.128922, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8egab"]
-bg_color = Color(0.470076, 0.470076, 0.470076, 1)
 
 [node name="MainMenu" type="CanvasLayer"]
 
@@ -636,12 +634,13 @@ offset_top = 34.0
 offset_right = -1135.0
 offset_bottom = 75.0
 grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
 theme_override_styles/hover = ExtResource("3_rcqid")
 theme_override_styles/normal = ExtResource("3_5dd4i")
 text = "Return"
 script = ExtResource("14_1ajci")
 
-[node name="Maps" type="Panel" parent="PlaySettings"]
+[node name="GameSettings" type="Panel" parent="PlaySettings"]
 visible = false
 z_index = 4
 layout_mode = 0
@@ -650,102 +649,101 @@ offset_bottom = 720.0
 mouse_filter = 2
 script = ExtResource("15_7b55j")
 
-[node name="SpikyBattle" type="Button" parent="PlaySettings/Maps"]
-layout_mode = 0
-offset_left = 312.0
-offset_top = 186.0
-offset_right = 762.0
-offset_bottom = 297.0
-theme_override_font_sizes/font_size = 30
-text = "Spiky Battle(Default)"
-
-[node name="Gamemode" type="OptionButton" parent="PlaySettings/Maps"]
-layout_mode = 0
-offset_left = 860.0
-offset_top = 349.0
-offset_right = 1213.0
-offset_bottom = 435.0
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = SubResource("StyleBoxFlat_8egab")
-alignment = 1
-selected = 1
-item_count = 2
-popup/item_0/text = "All vs All"
-popup/item_0/id = 0
-popup/item_1/text = "Keep the briefcase"
-popup/item_1/id = 1
-
-[node name="Time" type="SpinBox" parent="PlaySettings/Maps"]
+[node name="Next" type="Button" parent="PlaySettings/GameSettings"]
 layout_mode = 0
 offset_left = 1099.0
-offset_top = 506.0
-offset_right = 1199.0
-offset_bottom = 567.0
-max_value = 900.0
-step = 100.0
-value = 600.0
-alignment = 1
-
-[node name="Next" type="Button" parent="PlaySettings/Maps"]
-layout_mode = 0
-offset_left = 527.0
-offset_top = 583.0
-offset_right = 815.0
-offset_bottom = 694.0
+offset_top = 34.0
+offset_right = 1264.0
+offset_bottom = 102.0
 scale = Vector2(0.662659, 0.6)
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 theme_override_styles/hover = ExtResource("11_flqon")
 theme_override_styles/normal = ExtResource("11_lgwnu")
 text = "Next"
 
-[node name="DescendingWar" type="Button" parent="PlaySettings/Maps"]
+[node name="Maps" type="Label" parent="PlaySettings/GameSettings"]
 layout_mode = 0
-offset_left = 312.0
-offset_top = 338.0
-offset_right = 762.0
-offset_bottom = 449.0
-theme_override_font_sizes/font_size = 30
-text = "Descending War"
-
-[node name="Label" type="Label" parent="PlaySettings/Maps"]
-layout_mode = 0
-offset_left = 335.0
-offset_top = 88.0
-offset_right = 701.0
-offset_bottom = 159.0
+offset_left = 47.0
+offset_top = 136.0
+offset_right = 413.0
+offset_bottom = 207.0
 theme_override_font_sizes/font_size = 50
 text = "Select a map:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="PlaySettings/Maps"]
+[node name="SpikyBattle" type="Button" parent="PlaySettings/GameSettings/Maps"]
 layout_mode = 0
-offset_left = 957.0
-offset_top = 506.0
-offset_right = 1085.0
-offset_bottom = 577.0
+offset_top = 141.0
+offset_right = 450.0
+offset_bottom = 252.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("15_5pajh")
+text = "Spiky Battle(Default)"
+
+[node name="DescendingWar" type="Button" parent="PlaySettings/GameSettings/Maps"]
+layout_mode = 0
+offset_top = 261.0
+offset_right = 450.0
+offset_bottom = 372.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("15_5pajh")
+text = "Descending War"
+
+[node name="Time" type="Label" parent="PlaySettings/GameSettings"]
+layout_mode = 0
+offset_left = 487.0
+offset_top = 34.0
+offset_right = 615.0
+offset_bottom = 105.0
 theme_override_font_sizes/font_size = 30
 text = "Time:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="PlaySettings/Maps"]
+[node name="SpinBox" type="SpinBox" parent="PlaySettings/GameSettings/Time"]
 layout_mode = 0
-offset_left = 811.0
-offset_top = 215.0
-offset_right = 1270.0
-offset_bottom = 286.0
+offset_left = 107.0
+offset_right = 207.0
+offset_bottom = 61.0
+max_value = 900.0
+step = 100.0
+value = 600.0
+alignment = 1
+
+[node name="Gamemode" type="Label" parent="PlaySettings/GameSettings"]
+layout_mode = 0
+offset_left = 753.0
+offset_top = 134.0
+offset_right = 1212.0
+offset_bottom = 205.0
 theme_override_font_sizes/font_size = 50
 text = "Select a gamemode:"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Gamemode" type="OptionButton" parent="PlaySettings/GameSettings/Gamemode"]
+layout_mode = 0
+offset_left = 58.0
+offset_top = 143.0
+offset_right = 411.0
+offset_bottom = 229.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("15_5pajh")
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "Free for all(Default)"
+popup/item_0/id = 0
+popup/item_1/text = "Keep the briefcase"
+popup/item_1/id = 1
+
 [connection signal="button_down" from="MainPanel/PlayButton" to="MainPanel/PlayButton" method="_on_button_down"]
 [connection signal="timeout" from="PlaySettings/Players/PlayerManager/StartCountdown" to="PlaySettings/Players/PlayerManager" method="_on_start_countdown_timeout"]
 [connection signal="button_down" from="PlaySettings/Players/Start" to="PlaySettings/Players/PlayerManager" method="_on_start_button_down"]
 [connection signal="button_down" from="PlaySettings/Return" to="PlaySettings/Return" method="_on_button_down"]
-[connection signal="button_down" from="PlaySettings/Maps/SpikyBattle" to="PlaySettings/Maps" method="_on_spiky_battle_button_down"]
-[connection signal="button_down" from="PlaySettings/Maps/Gamemode" to="PlaySettings/Maps" method="_on_spiky_battle_button_down"]
-[connection signal="item_selected" from="PlaySettings/Maps/Gamemode" to="PlaySettings/Maps" method="_on_gamemode_item_selected"]
-[connection signal="button_down" from="PlaySettings/Maps/Next" to="PlaySettings/Maps" method="_on_next_button_down"]
-[connection signal="button_down" from="PlaySettings/Maps/DescendingWar" to="PlaySettings/Maps" method="_on_descending_war_button_down"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Next" to="PlaySettings/GameSettings" method="_on_next_button_down"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Maps/SpikyBattle" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Maps/DescendingWar" to="PlaySettings/GameSettings" method="_on_descending_war_button_down"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
+[connection signal="item_selected" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_gamemode_item_selected"]
