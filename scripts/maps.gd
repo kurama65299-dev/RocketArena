@@ -14,7 +14,7 @@ func _on_next_button_down() -> void:
 
 func _on_gamemode_item_selected(index: int) -> void:
 	if index == 0:
-		GlobalSettings.gamemode = "all_vs_all"
+		GlobalSettings.gamemode = "free_for_all"
 		GlobalSettings.teams_enabled = false
 	elif index == 1:
 		GlobalSettings.gamemode = "keep_the_briefcase"

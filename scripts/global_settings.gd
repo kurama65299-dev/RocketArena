@@ -10,7 +10,7 @@ var keyboard_player: int = 0
 var map: String = "SpikyBattle"
 var time = 600
 var teams_enabled = false
-var gamemode = "all_vs_all"
+var gamemode = "free_for_all"
 var players = []
 
 func start_game():

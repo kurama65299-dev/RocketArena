@@ -5,15 +5,15 @@
 [ext_resource type="StyleBox" uid="uid://cbbc1fiehmc4t" path="res://ui_styles/start_buttons.tres" id="3_5dd4i"]
 [ext_resource type="Script" uid="uid://dw0tkw1qelko0" path="res://scripts/global_settings.gd" id="3_bqqt6"]
 [ext_resource type="StyleBox" uid="uid://spij0cq7m1e4" path="res://ui_styles/start_buttons_hover.tres" id="3_rcqid"]
-[ext_resource type="Script" uid="uid://clewb1tf5vngj" path="res://scenes/player_manager.gd" id="5_rtw2f"]
+[ext_resource type="Script" uid="uid://clewb1tf5vngj" path="res://scripts/player_manager.gd" id="5_rtw2f"]
 [ext_resource type="StyleBox" uid="uid://3vl5fchnuoua" path="res://ui_styles/player_name_input.tres" id="6_jk1qb"]
 [ext_resource type="FontFile" uid="uid://g8dynwpkhy1g" path="res://sprites/fonts/Roboto/static/Roboto-ExtraBold.ttf" id="6_rtw2f"]
 [ext_resource type="StyleBox" uid="uid://b61m7mdw452vi" path="res://ui_styles/player_ready_bar_empty.tres" id="7_5dd4i"]
 [ext_resource type="StyleBox" uid="uid://diaxknrj0l13w" path="res://ui_styles/player_ready_bar_full.tres" id="8_lgwnu"]
 [ext_resource type="StyleBox" uid="uid://4t0bn4xcj24v" path="res://ui_styles/start_button_blue_hover.tres" id="11_flqon"]
 [ext_resource type="StyleBox" uid="uid://d1q2htvlr3xeg" path="res://ui_styles/start_button_blue.tres" id="11_lgwnu"]
-[ext_resource type="Script" uid="uid://war45xs6g5ll" path="res://scenes/return.gd" id="14_1ajci"]
-[ext_resource type="Script" uid="uid://cd24le0ooshqs" path="res://scenes/maps.gd" id="15_7b55j"]
+[ext_resource type="Script" uid="uid://war45xs6g5ll" path="res://scripts/return.gd" id="14_1ajci"]
+[ext_resource type="Script" uid="uid://cd24le0ooshqs" path="res://scripts/maps.gd" id="15_7b55j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcqid"]
 bg_color = Color(0, 0, 0, 1)
@@ -180,7 +180,7 @@ offset_right = 189.0
 offset_bottom = 54.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player1"
+placeholder_text = "Name"
 max_length = 16
 select_all_on_focus = true
 
@@ -232,7 +232,7 @@ offset_right = 189.0
 offset_bottom = 54.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player2"
+placeholder_text = "Name"
 max_length = 16
 select_all_on_focus = true
 
@@ -283,7 +283,7 @@ offset_right = 189.0
 offset_bottom = 54.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player3"
+placeholder_text = "Name"
 max_length = 16
 select_all_on_focus = true
 
@@ -334,7 +334,7 @@ offset_right = 189.0
 offset_bottom = 54.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player4"
+placeholder_text = "Name"
 max_length = 16
 select_all_on_focus = true
 
@@ -385,7 +385,7 @@ offset_right = 189.0
 offset_bottom = 54.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player5"
+placeholder_text = "Name"
 max_length = 16
 select_all_on_focus = true
 
@@ -436,7 +436,7 @@ offset_right = 189.0
 offset_bottom = 54.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player6"
+placeholder_text = "Name"
 max_length = 16
 select_all_on_focus = true
 
@@ -487,7 +487,7 @@ offset_right = 189.0
 offset_bottom = 54.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player7"
+placeholder_text = "Name"
 max_length = 16
 select_all_on_focus = true
 
@@ -538,7 +538,7 @@ offset_right = 189.0
 offset_bottom = 54.0
 focus_mode = 1
 theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player8"
+placeholder_text = "Name"
 max_length = 16
 select_all_on_focus = true
 
