@@ -717,9 +717,9 @@ layout_mode = 0
 offset_left = 107.0
 offset_right = 207.0
 offset_bottom = 61.0
-max_value = 900.0
+max_value = 2000.0
 step = 100.0
-value = 600.0
+value = 900.0
 alignment = 1
 
 [node name="Gamemode" type="Label" parent="PlaySettings/GameSettings"]
@@ -756,5 +756,6 @@ popup/item_1/id = 1
 [connection signal="button_down" from="PlaySettings/GameSettings/Next" to="PlaySettings/GameSettings" method="_on_next_button_down"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Maps/SpikyBattle" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Maps/DescendingWar" to="PlaySettings/GameSettings" method="_on_descending_war_button_down"]
+[connection signal="value_changed" from="PlaySettings/GameSettings/Time/SpinBox" to="PlaySettings/GameSettings" method="_on_spin_box_value_changed"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
 [connection signal="item_selected" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_gamemode_item_selected"]

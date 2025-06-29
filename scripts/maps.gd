@@ -19,3 +19,6 @@ func _on_gamemode_item_selected(index: int) -> void:
 	elif index == 1:
 		GlobalSettings.gamemode = "keep_the_briefcase"
 		GlobalSettings.teams_enabled = true
+
+func _on_spin_box_value_changed(value: float) -> void:
+	GlobalSettings.time = value
