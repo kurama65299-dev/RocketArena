@@ -31,6 +31,8 @@ func load_map():
 		map = preload("res://scenes/maps/SpikyBattle.tscn")
 	elif GlobalSettings.map == "DescendingWar":
 		map = preload("res://scenes/maps/DescendingWar.tscn")
+	elif GlobalSettings.map == "IslamicHell":
+		map = preload("res://scenes/maps/IslamicHell.tscn")
 	var new_map = map.instantiate()
 	add_child(new_map)
 	tile_map = new_map

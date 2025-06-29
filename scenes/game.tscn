@@ -57,4 +57,13 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Scores"
 
+[node name="Menu" type="Button" parent="."]
+offset_left = 1789.0
+offset_top = -1134.0
+offset_right = 2060.0
+offset_bottom = -1042.0
+theme_override_font_sizes/font_size = 50
+text = "Menu"
+
 [connection signal="timeout" from="EndGame" to="." method="_on_end_game_timeout"]
+[connection signal="button_down" from="Menu" to="." method="_on_menu_button_down"]

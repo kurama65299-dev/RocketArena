@@ -325,4 +325,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="Heal" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="timeout" from="Cooldowns/RocketLauncher" to="ShootWeapon" method="_on_rocket_launcher_timeout"]
+[connection signal="timeout" from="Heal" to="." method="_on_heal_timeout"]

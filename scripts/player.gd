@@ -10,6 +10,7 @@ extends CharacterBody2D
 var jump_power: int = 650
 var speed: int = 600
 var health: int = 100
+var max_health: int = 100
 var friction: float = 6000
 var impulse: Vector2 = Vector2.ZERO
 var impulse_decceleration: float = 3000
@@ -17,6 +18,7 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_weapon: String = "rocket_launcher"
 
 func _ready():
+	update_health_bar()
 	global_position = Vector2(randf_range(-1800,1800),-1100)
 func _keyboard_movement(delta):
 	var mouse_pos: Vector2 = get_global_mouse_position()
@@ -75,12 +77,6 @@ func _joystick_movement(delta):
 		if aim_direction.length() == 1:
 			shoot_weapon.shoot(player_weapon, aim_direction)
 
-func _process(delta: float) -> void:
-	health_bar.value = health
-	if health <= 0:
-		world.respawn(player_id)
-		queue_free()
-
 func _physics_process(delta : float) -> void:
 	if !is_on_floor(): #GRAVITY
 		velocity.y += gravity * delta
@@ -92,3 +88,26 @@ func _physics_process(delta : float) -> void:
 	impulse = impulse.move_toward(Vector2.ZERO, delta * impulse_decceleration) #Decreasing impulse using decceleration
 	velocity += impulse
 	move_and_slide()
+
+func damage(damage):
+	var death: bool = false
+	health -= damage
+	update_health_bar()
+	
+	if health <= 0:
+		death = true
+		world.respawn(player_id)
+		queue_free()
+	return death
+
+func heal(heal):
+	health += heal
+	if health > max_health:
+		health = max_health
+	update_health_bar()
+
+func update_health_bar():
+	health_bar.value = health
+
+func _on_heal_timeout() -> void:
+	heal(5)

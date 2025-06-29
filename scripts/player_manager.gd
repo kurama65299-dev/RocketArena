@@ -35,7 +35,6 @@ func _joystick_detection(delta, submit_id):
 		if ReadyBar.value < 100:
 			ReadyBar.value = 0
 		elif ReadyBar.value >= 100 and not is_player_ready(submit_id):
-			GlobalSettings.joystick_players += 1
 			GlobalSettings.players.append({"Name": plr_name, "Device": submit_id})
 
 func _keyboard_detection(delta):
@@ -49,7 +48,6 @@ func _keyboard_detection(delta):
 		if ReadyBar.value < 100:
 			ReadyBar.value = 0
 		elif ReadyBar.value >= 100 and not is_player_ready(-1):
-			GlobalSettings.keyboard_player = 1
 			GlobalSettings.players.append({"Device": -1, "Name": plr_name})
 
 func _process(delta):

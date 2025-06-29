@@ -42,7 +42,11 @@ func _physics_process(delta: float) -> void:
 		
 		for collision in impact_area.get_overlapping_bodies():
 			if collision is Player and collision.player_id != owner_id:
-				collision.health -= damage
+				var death = collision.damage(damage)
+				if death:
+					for player in GlobalSettings.players:
+						if player.Device == owner_id:
+							player.Score += 1
 			elif collision is Player and collision.player_id == owner_id:
 				var impulse_pos = global_position
 				var target_pos = collision.global_position

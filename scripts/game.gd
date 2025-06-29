@@ -41,3 +41,6 @@ func timer_ui(delta):
 	
 func _on_end_game_timeout() -> void:
 	GlobalSettings.end_game()
+	
+func _on_menu_button_down() -> void:
+	GlobalSettings.end_game()

@@ -652,7 +652,6 @@ text = "Return"
 script = ExtResource("14_1ajci")
 
 [node name="GameSettings" type="Panel" parent="PlaySettings"]
-visible = false
 z_index = 4
 layout_mode = 0
 offset_right = 1280.0
@@ -694,12 +693,21 @@ text = "Spiky Battle(Default)"
 
 [node name="DescendingWar" type="Button" parent="PlaySettings/GameSettings/Maps"]
 layout_mode = 0
-offset_top = 261.0
+offset_top = 252.0
 offset_right = 450.0
-offset_bottom = 372.0
+offset_bottom = 363.0
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("15_5pajh")
 text = "Descending War"
+
+[node name="IslamicHell" type="Button" parent="PlaySettings/GameSettings/Maps"]
+layout_mode = 0
+offset_top = 363.0
+offset_right = 450.0
+offset_bottom = 474.0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("15_5pajh")
+text = "Islamic Hell"
 
 [node name="Time" type="Label" parent="PlaySettings/GameSettings"]
 layout_mode = 0
@@ -756,6 +764,7 @@ popup/item_1/id = 1
 [connection signal="button_down" from="PlaySettings/GameSettings/Next" to="PlaySettings/GameSettings" method="_on_next_button_down"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Maps/SpikyBattle" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Maps/DescendingWar" to="PlaySettings/GameSettings" method="_on_descending_war_button_down"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Maps/IslamicHell" to="PlaySettings/GameSettings" method="_on_islamic_hell_button_down"]
 [connection signal="value_changed" from="PlaySettings/GameSettings/Time/SpinBox" to="PlaySettings/GameSettings" method="_on_spin_box_value_changed"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
 [connection signal="item_selected" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_gamemode_item_selected"]
