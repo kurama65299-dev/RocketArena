@@ -2,7 +2,7 @@ extends Node
 
 @onready var tile_map: TileMapLayer = null
 var tile_data : Dictionary = {}
-var normal_health: int = 140
+var normal_health: int = 160 * (GlobalSettings.players.size() / 2 + 1)
 
 func _ready():
 	load_map()
@@ -12,7 +12,8 @@ func _ready():
 			var coords = Vector2i(x,y)
 			var id = tile_map.get_cell_source_id(coords)
 			if id != -1:
-				tile_data[coords] = normal_health
+				if tile_map.get_cell_atlas_coords(coords) == Vector2i(0,0):
+					tile_data[coords] = normal_health
 func damage_tile(coords, damage):
 	if tile_data.has(coords):
 		if tile_data[coords] - damage <= 0:

@@ -8,7 +8,7 @@ var teams = 0
 var joystick_players: int = 0
 var keyboard_player: int = 0
 var map: String = "SpikyBattle"
-var time = 600
+var time = 900
 var teams_enabled = false
 var gamemode = "free_for_all"
 var players = []
@@ -37,11 +37,10 @@ func end_game():
 		
 	var player_names = get_node(player_names_path)
 	
-	var index = 0
 	for player in players:
-		var player_name = player_names.get_child(index).get_node("PlayerName")
+		var player_name = player_names.get_child(player.Device + 1).get_node("PlayerName")
 		player_name.text = player.Name
-		index += 1
+	players = []
 func _ready():
 	create_inputs()
 	
