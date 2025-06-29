@@ -1,7 +1,7 @@
 extends Node
 
-var devices_id: Array= []
 const PLAYER: PackedScene = preload("res://scenes/player.tscn")
+@onready var tile_logic: Node = $TileLogic
 var player_colors: Dictionary = {
 	"Red": Color("E55F2A"),
 	"Green": Color("6FCF26"),
@@ -10,34 +10,26 @@ var player_colors: Dictionary = {
 }
 
 func add_player(device_id, plr_name):
+	respawn(device_id, plr_name)
+	create_custom_inputs(device_id)
+	print("Added ID: ", device_id)
+
+func respawn(device_id, plr_name):
 	var new_player = PLAYER.instantiate()
 	new_player.player_id = device_id
 	new_player.name = plr_name
-	get_node("Players").add_child(new_player)
 	new_player.get_node("PlayerName").text = plr_name
-	devices_id.append(new_player)
-	color_player(new_player, device_id)
-	create_custom_inputs(device_id)
-	print("Added ID: ", device_id)
-	print("Players: ", devices_id)
-	
-func remove_player(device_id):
-	for i in range(devices_id.size() - 1, -1, -1):
-		var player = devices_id[i]
-		if player.player_index == device_id:
-			player.queue_free()
-			devices_id.remove_at(i)
-			print("Removed ID: ", device_id)
-			print("Players: ", devices_id)
-
-func respawn(device_id):
-	var new_player = PLAYER.instantiate()
-	new_player.player_id = device_id
-	new_player.name = "Player" + str(device_id)
 	get_node("Players").add_child(new_player)
 	color_player(new_player, device_id)
-	print("Added ID: ", device_id)
-	print("Players: ", devices_id)
+	
+	while tile_logic.tile_map == null:
+		get_tree().process_frame
+	var tile_map = tile_logic.tile_map
+	
+	var spawn_points = tile_map.get_node("SpawnPoints")
+	var random = randi_range(0, spawn_points.get_child_count())
+	new_player.position = spawn_points.get_child(random).position
+	print("Respawned: ", device_id)
 
 func create_custom_inputs(device_id: int):
 	var suffix = str(device_id)

@@ -14,6 +14,8 @@ func _ready():
 			if id != -1:
 				if tile_map.get_cell_atlas_coords(coords) == Vector2i(0,0):
 					tile_data[coords] = normal_health
+				elif tile_map.get_cell_atlas_coords(coords) == Vector2i(1,0):
+					tile_data[coords] = normal_health
 func damage_tile(coords, damage):
 	if tile_data.has(coords):
 		if tile_data[coords] - damage <= 0:

@@ -36,3 +36,35 @@ rotation = -1.5708
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapBorders/RightBorder"]
 shape = SubResource("WorldBoundaryShape2D_ks08m")
+
+[node name="SpawnPoints" type="Node" parent="."]
+
+[node name="Spawn" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1304, -1238)
+
+[node name="Spawn2" type="Node2D" parent="SpawnPoints"]
+position = Vector2(667, -1182)
+
+[node name="Spawn3" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-60, -1223)
+
+[node name="Spawn4" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-813, -1132)
+
+[node name="Spawn5" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-1682, -1117)
+
+[node name="Spawn6" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-1460, -182)
+
+[node name="Spawn7" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-35, -101)
+
+[node name="Spawn8" type="Node2D" parent="SpawnPoints"]
+position = Vector2(1021, -212)
+
+[node name="Spawn9" type="Node2D" parent="SpawnPoints"]
+position = Vector2(596, 825)
+
+[node name="Spawn10" type="Node2D" parent="SpawnPoints"]
+position = Vector2(-1775, 613)
