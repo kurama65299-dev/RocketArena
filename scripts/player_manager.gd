@@ -1,11 +1,17 @@
 extends GridContainer
 
-var joystick_players_list: Dictionary = {}
+var joystick_panels: Array = []
 var charge_per_second: int = 340
 @onready var start_countdown: Timer = $StartCountdown
 @onready var countdown: Label = $"../Countdown"
 @onready var start_button: Button = $"../Start"
 @onready var play_settings: Panel = $"../.."
+
+func _ready():
+	for child in get_children():
+		if child.name == "Keyboard" or !child is Panel:
+			continue
+		joystick_panels.append(child)
 
 func is_player_ready(id):
 	var found = false
@@ -14,18 +20,14 @@ func is_player_ready(id):
 			found = true
 	return found
 
-func _ready():
-	var index: int = 0
-	for child in get_children():
-		if child.name != "Keyboard" and child is Panel:
-			joystick_players_list[index] = child
-			index += 1
-
 func _joystick_detection(delta, submit_id):
 	var suffix = str(submit_id)
 	var submit = "submit"+suffix
-	var ReadyBar = joystick_players_list[submit_id].get_node("ReadyBar")
-	var plr_name = joystick_players_list[submit_id].get_node("PlayerName").text
+	
+	var player_panel = joystick_panels[submit_id]
+		
+	var ReadyBar = player_panel.get_node("ReadyBar")
+	var plr_name = player_panel.get_node("PlayerName").text
 	
 	if Input.is_action_pressed(submit):
 		ReadyBar.value += charge_per_second * delta
@@ -53,7 +55,7 @@ func _keyboard_detection(delta):
 func _process(delta):
 	if play_settings.visible == false:
 		return
-	for id in range(joystick_players_list.size() - 1, -1, -1):
+	for id in range(joystick_panels.size()-1, -1, -1):
 		_joystick_detection(delta, id)
 	_keyboard_detection(delta)
 	

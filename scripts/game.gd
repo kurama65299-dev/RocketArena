@@ -10,6 +10,8 @@ func _ready():
 	end_game.start(GlobalSettings.time)
 	if GlobalSettings.gamemode == "free_for_all":
 		free_for_all()
+	if GlobalSettings.gamemode == "keep_the_briefcase":
+		keep_the_briefcase()
 	
 func _process(delta):
 	timer_ui(delta)
@@ -24,6 +26,7 @@ func free_for_all():
 		scores_box.add_child(text)
 		text.text = player.Name + ": " + str(player.Score)
 		text.name = "PlayerScore"
+		
 func update_player_score():
 	var index = 0
 	for label in scores_box.get_children():
@@ -31,10 +34,11 @@ func update_player_score():
 			var player = GlobalSettings.players[index]
 			label.text = player.Name + " " + str(player.Score)
 			index += 1
-		
+
+func keep_the_briefcase():
+	GlobalSettings.teams_enabled = true
 
 var seconds_passed = 0
-
 func timer_ui(delta):
 	seconds_passed += delta
 	if seconds_passed >= 1:

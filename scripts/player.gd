@@ -1,6 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
+@onready var damaged_timer: Timer = $Damaged
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shoot_weapon: Node = $ShootWeapon
 @onready var health_bar: ProgressBar = $ProgressBar
@@ -92,6 +93,8 @@ func _physics_process(delta : float) -> void:
 	move_and_slide()
 
 func damage(damage):
+	darken_on_damage()
+	damaged_timer.start()
 	var death: bool = false
 	health -= damage
 	update_health_bar()
@@ -112,4 +115,10 @@ func update_health_bar():
 	health_bar.value = health
 
 func _on_heal_timeout() -> void:
-	heal(5)
+	heal(10)
+
+func _on_damaged_timeout() -> void:
+	modulate = Color.from_hsv(0,0,100/100,1)
+
+func darken_on_damage():
+	modulate = Color.from_hsv(0,0,73 / 100,1)

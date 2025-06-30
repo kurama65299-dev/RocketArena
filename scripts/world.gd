@@ -29,7 +29,7 @@ func respawn(device_id):
 	var tile_map = tile_logic.tile_map
 	
 	var spawn_points = tile_map.get_node("SpawnPoints")
-	var random = randi_range(0, spawn_points.get_child_count())
+	var random = randi_range(0, spawn_points.get_child_count()-1)
 	new_player.global_position = spawn_points.get_child(random).global_position
 
 func create_custom_inputs(device_id: int):
