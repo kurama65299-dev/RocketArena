@@ -33,7 +33,7 @@ func update_player_score():
 	for label in scores_box.get_children():
 		if label.name != "ScoreText":
 			var player = GlobalSettings.players[index]
-			label.text = player.Name + " " + str(player.Score)
+			label.text = player.Name + ": " + str(player.Score)
 			index += 1
 
 func keep_the_briefcase():

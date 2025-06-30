@@ -65,6 +65,8 @@ size_flags_horizontal = 0
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "Scores"
+vertical_alignment = 1
+uppercase = true
 
 [node name="Killfeed" type="VBoxContainer" parent="."]
 anchors_preset = 8
