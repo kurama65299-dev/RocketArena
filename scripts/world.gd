@@ -10,6 +10,8 @@ var player_colors: Dictionary = {
 }
 
 func add_player(device_id, plr_name):
+	while tile_logic.tile_map == null or not tile_logic.tile_map.is_inside_tree():
+		await get_tree().process_frame
 	respawn(device_id)
 	create_custom_inputs(device_id)
 
@@ -24,7 +26,6 @@ func respawn(device_id):
 		if player.Device == device_id:
 			name_label.text = player.Name
 	
-	await tile_logic.tile_map.ready
 	var tile_map = tile_logic.tile_map
 	
 	var spawn_points = tile_map.get_node("SpawnPoints")
