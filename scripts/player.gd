@@ -13,7 +13,7 @@ var health: int = 100
 var max_health: int = 100
 var friction: float = 6000
 var impulse: Vector2 = Vector2.ZERO
-var impulse_decceleration: float = 3000
+var impulse_deceleration: float = 3000
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_weapon: String = "rocket_launcher"
 
@@ -27,12 +27,13 @@ func _keyboard_movement(delta):
 
 	aim_arrow.rotation = mouse_direction.angle()
 	
-	if direction: #RUN ANIMATION AND DIRECTION
-		velocity.x = speed * direction
-		if is_on_floor():
-			animated_sprite.play("run")
-	else:
-		velocity.x = move_toward(velocity.x, 0, delta * friction)
+	if abs(impulse.x) == 0:
+		if direction: #RUN ANIMATION AND DIRECTION
+			velocity.x = speed * direction
+			if is_on_floor():
+				animated_sprite.play("run")
+		else:
+			velocity.x = move_toward(velocity.x, 0, delta * friction)
 	animated_sprite.flip_h = velocity.x < 0
 	
 	if Input.is_action_pressed("jump") and is_on_floor(): #JUMP ANIM
@@ -53,14 +54,15 @@ func _joystick_movement(delta):
 		aim_direction = aim_direction.normalized()
 	
 	var suffix = str(player_id) #Player id to string
-	if Input.is_action_pressed("left"+suffix): #MOVEMENT
-		velocity.x = speed * -1
-		animated_sprite.play("run")
-	elif Input.is_action_pressed("right"+suffix):
-		velocity.x = speed * 1
-		animated_sprite.play("run")
-	else:
-		velocity.x = 0
+	if abs(impulse.x) == 0:
+		if Input.is_action_pressed("left"+suffix): #MOVEMENT
+			velocity.x = speed * -1
+			animated_sprite.play("run")
+		elif Input.is_action_pressed("right"+suffix):
+			velocity.x = speed * 1
+			animated_sprite.play("run")
+		else:
+			velocity.x = 0
 
 	animated_sprite.flip_h = velocity.x < 0
 	
@@ -85,7 +87,7 @@ func _physics_process(delta : float) -> void:
 		_keyboard_movement(delta)
 	else:
 		_joystick_movement(delta)
-	impulse = impulse.move_toward(Vector2.ZERO, delta * impulse_decceleration) #Decreasing impulse using decceleration
+	impulse = impulse.move_toward(Vector2.ZERO, delta * impulse_deceleration) #Decreasing impulse using decceleration
 	velocity += impulse
 	move_and_slide()
 

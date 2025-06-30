@@ -1,7 +1,7 @@
 extends GridContainer
 
 var joystick_players_list: Dictionary = {}
-var charge_per_second: int = 200
+var charge_per_second: int = 340
 @onready var start_countdown: Timer = $StartCountdown
 @onready var countdown: Label = $"../Countdown"
 @onready var start_button: Button = $"../Start"

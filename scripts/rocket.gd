@@ -41,24 +41,31 @@ func _physics_process(delta: float) -> void:
 		sprite.visible = false
 		
 		for collision in impact_area.get_overlapping_bodies():
-			if collision is Player and collision.player_id != owner_id:
+			if !collision is Player:
+				return
+				
+			if collision.player_id == owner_id:
+				rocket_jump(collision)
+			else:
+				rocket_jump(collision)
 				var death = collision.damage(damage)
 				if death:
 					for player in GlobalSettings.players:
 						if player.Device == owner_id:
 							player.Score += 1
-			elif collision is Player and collision.player_id == owner_id:
-				var impulse_pos = global_position
-				var target_pos = collision.global_position
-				var direction = (target_pos - impulse_pos).normalized()
-				var total_impulse = direction * impulse
-				collision.impulse += total_impulse
 		animated_sprite.play("explosion")
 		direction = Vector2.ZERO
 		
 	if direction != Vector2.ZERO: #MOVING
 		global_position += (speed * direction) * delta
 		rotation = direction.angle()
+
+func rocket_jump(player):
+	var impulse_pos = global_position
+	var target_pos = player.global_position
+	var direction = (target_pos - impulse_pos).normalized()
+	var total_impulse = direction * impulse
+	player.impulse += total_impulse
 
 func _on_timer_timeout() -> void:
 	queue_free()

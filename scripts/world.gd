@@ -10,26 +10,26 @@ var player_colors: Dictionary = {
 }
 
 func add_player(device_id, plr_name):
-	respawn(device_id, plr_name)
+	respawn(device_id)
 	create_custom_inputs(device_id)
-	print("Added ID: ", device_id)
 
-func respawn(device_id, plr_name):
+func respawn(device_id):
 	var new_player = PLAYER.instantiate()
 	new_player.player_id = device_id
-	new_player.name = plr_name
-	new_player.get_node("PlayerName").text = plr_name
 	get_node("Players").add_child(new_player)
 	color_player(new_player, device_id)
 	
-	while tile_logic.tile_map == null:
-		get_tree().process_frame
+	var name_label = new_player.get_node("PlayerName")
+	for player in GlobalSettings.players:
+		if player.Device == device_id:
+			name_label.text = player.Name
+	
+	await tile_logic.tile_map.ready
 	var tile_map = tile_logic.tile_map
 	
 	var spawn_points = tile_map.get_node("SpawnPoints")
 	var random = randi_range(0, spawn_points.get_child_count())
-	new_player.position = spawn_points.get_child(random).position
-	print("Respawned: ", device_id)
+	new_player.global_position = spawn_points.get_child(random).global_position
 
 func create_custom_inputs(device_id: int):
 	var suffix = str(device_id)

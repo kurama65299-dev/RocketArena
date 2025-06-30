@@ -6,7 +6,7 @@ const MAIN_MENU = preload("res://scenes/main_menu.tscn")
 var in_game = false
 var teams = 0
 var map: String = "SpikyBattle"
-var time = 900
+var time = 3
 var teams_enabled = false
 var gamemode = "free_for_all"
 var players = []
@@ -25,13 +25,6 @@ func start_game():
 	for player in players:
 		world.add_player(player.Device, player.Name)
 func end_game():
-	var winner = null
-	if gamemode == "free_for_all":
-		var highest_score = -1
-		for player in players:
-			if player.Score > highest_score:
-				winner = player
-				highest_score = player.Score
 	in_game = false
 	get_tree().change_scene_to_packed(MAIN_MENU)
 	

@@ -127,6 +127,23 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_bqqt6")
 
+[node name="Return" type="Button" parent="PlaySettings"]
+z_index = 8
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1233.0
+offset_top = 34.0
+offset_right = -1135.0
+offset_bottom = 75.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = ExtResource("3_rcqid")
+theme_override_styles/normal = ExtResource("3_5dd4i")
+text = "Return"
+script = ExtResource("14_1ajci")
+
 [node name="Players" type="Panel" parent="PlaySettings"]
 visible = false
 z_index = 5
@@ -634,24 +651,8 @@ text = "Players to play must press the X button or the Enter key"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Return" type="Button" parent="PlaySettings"]
-z_index = 8
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -1233.0
-offset_top = 34.0
-offset_right = -1135.0
-offset_bottom = 75.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/hover = ExtResource("3_rcqid")
-theme_override_styles/normal = ExtResource("3_5dd4i")
-text = "Return"
-script = ExtResource("14_1ajci")
-
 [node name="GameSettings" type="Panel" parent="PlaySettings"]
+visible = false
 z_index = 4
 layout_mode = 0
 offset_right = 1280.0
@@ -671,7 +672,7 @@ theme_override_styles/hover = ExtResource("11_flqon")
 theme_override_styles/normal = ExtResource("11_lgwnu")
 text = "Next"
 
-[node name="Maps" type="Label" parent="PlaySettings/GameSettings"]
+[node name="MapLabel" type="Label" parent="PlaySettings/GameSettings"]
 layout_mode = 0
 offset_left = 47.0
 offset_top = 136.0
@@ -681,33 +682,6 @@ theme_override_font_sizes/font_size = 50
 text = "Select a map:"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="SpikyBattle" type="Button" parent="PlaySettings/GameSettings/Maps"]
-layout_mode = 0
-offset_top = 141.0
-offset_right = 450.0
-offset_bottom = 252.0
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-text = "Spiky Battle(Default)"
-
-[node name="DescendingWar" type="Button" parent="PlaySettings/GameSettings/Maps"]
-layout_mode = 0
-offset_top = 252.0
-offset_right = 450.0
-offset_bottom = 363.0
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-text = "Descending War"
-
-[node name="IslamicHell" type="Button" parent="PlaySettings/GameSettings/Maps"]
-layout_mode = 0
-offset_top = 363.0
-offset_right = 450.0
-offset_bottom = 474.0
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-text = "Islamic Hell"
 
 [node name="Time" type="Label" parent="PlaySettings/GameSettings"]
 layout_mode = 0
@@ -757,14 +731,50 @@ popup/item_0/id = 0
 popup/item_1/text = "Keep the briefcase"
 popup/item_1/id = 1
 
+[node name="Maps" type="ScrollContainer" parent="PlaySettings/GameSettings"]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 306.0
+offset_right = 362.0
+offset_bottom = 544.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PlaySettings/GameSettings/Maps"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="SpikyBattle" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("15_5pajh")
+text = "Spiky Battle(Default)"
+
+[node name="DescendingWar" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("15_5pajh")
+text = "Descending War"
+
+[node name="IslamicHell" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("15_5pajh")
+text = "Islamic Hell"
+
+[node name="IronValley" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("15_5pajh")
+text = "Iron Valley"
+
 [connection signal="button_down" from="MainPanel/PlayButton" to="MainPanel/PlayButton" method="_on_button_down"]
+[connection signal="button_down" from="PlaySettings/Return" to="PlaySettings/Return" method="_on_button_down"]
 [connection signal="timeout" from="PlaySettings/Players/PlayerManager/StartCountdown" to="PlaySettings/Players/PlayerManager" method="_on_start_countdown_timeout"]
 [connection signal="button_down" from="PlaySettings/Players/Start" to="PlaySettings/Players/PlayerManager" method="_on_start_button_down"]
-[connection signal="button_down" from="PlaySettings/Return" to="PlaySettings/Return" method="_on_button_down"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Next" to="PlaySettings/GameSettings" method="_on_next_button_down"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Maps/SpikyBattle" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Maps/DescendingWar" to="PlaySettings/GameSettings" method="_on_descending_war_button_down"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Maps/IslamicHell" to="PlaySettings/GameSettings" method="_on_islamic_hell_button_down"]
 [connection signal="value_changed" from="PlaySettings/GameSettings/Time/SpinBox" to="PlaySettings/GameSettings" method="_on_spin_box_value_changed"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
 [connection signal="item_selected" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_gamemode_item_selected"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/SpikyBattle" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/DescendingWar" to="PlaySettings/GameSettings" method="_on_descending_war_button_down"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/IslamicHell" to="PlaySettings/GameSettings" method="_on_islamic_hell_button_down"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/IronValley" to="PlaySettings/GameSettings" method="_on_iron_valley_button_down"]

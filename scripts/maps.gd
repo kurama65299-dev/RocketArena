@@ -10,6 +10,8 @@ func _on_descending_war_button_down() -> void:
 	
 func _on_islamic_hell_button_down() -> void:
 	GlobalSettings.map = "IslamicHell"
+func _on_iron_valley_button_down() -> void:
+	GlobalSettings.map = "IronValley"
 
 func _on_next_button_down() -> void:
 	players.visible = true
