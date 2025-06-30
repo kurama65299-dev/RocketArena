@@ -30,31 +30,29 @@ func explosion(): #DESTRUCTION
 			next_block =  Vector2i(coords.x + x, coords.y + z)
 			tile_logic.damage_tile(next_block, damage)
 		count += sum #Maintains the aoe counter
+
+func impact():
+	var collider = raycast.get_collider()
+	explosion()
+	animated_sprite.visible = true
+	sprite.visible = false
+		
+	for collision in impact_area.get_overlapping_bodies():
+		if !collision is Player:
+			return
+				
+		if collision.player_id == owner_id:
+			rocket_jump(collision)
+		else:
+			rocket_jump(collision)
+			collision.damage(damage, owner_id)
+	animated_sprite.play("explosion")
+	direction = Vector2.ZERO
 	
 func _physics_process(delta: float) -> void:
 	if raycast.is_colliding(): #HITBOX AND DAMAGE
 		raycast.enabled = false
-		
-		var collider = raycast.get_collider()
-		explosion()
-		animated_sprite.visible = true
-		sprite.visible = false
-		
-		for collision in impact_area.get_overlapping_bodies():
-			if !collision is Player:
-				return
-				
-			if collision.player_id == owner_id:
-				rocket_jump(collision)
-			else:
-				rocket_jump(collision)
-				var death = collision.damage(damage)
-				if death:
-					for player in GlobalSettings.players:
-						if player.Device == owner_id:
-							player.Score += 1
-		animated_sprite.play("explosion")
-		direction = Vector2.ZERO
+		impact()
 		
 	if direction != Vector2.ZERO: #MOVING
 		global_position += (speed * direction) * delta

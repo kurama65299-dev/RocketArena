@@ -2,7 +2,7 @@ extends Node
 
 @onready var tile_map: TileMapLayer = null
 var tile_data : Dictionary = {}
-var normal_health: int = 160 + (40 * GlobalSettings.players.size())
+var normal_health: int = 120 + (20 * GlobalSettings.players.size())
 
 func _ready():
 	load_map()

@@ -23,7 +23,7 @@ func start_game():
 	var index = 0
 	
 	for player in players:
-		world.add_player(player.Device, player.Name)
+		world.add_player(player.Device)
 func end_game():
 	in_game = false
 	get_tree().change_scene_to_packed(MAIN_MENU)

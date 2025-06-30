@@ -3,28 +3,40 @@ extends Node
 const PLAYER: PackedScene = preload("res://scenes/player.tscn")
 @onready var tile_logic: Node = $TileLogic
 var player_colors: Dictionary = {
+	"White": Color("FFFFFF"),
 	"Red": Color("E55F2A"),
 	"Green": Color("6FCF26"),
 	"Blue": Color("1C64D9"),
 	"Violet": Color("a59eff"),
 }
 
-func add_player(device_id, plr_name):
+func add_player(device_id: int):
 	while tile_logic.tile_map == null or not tile_logic.tile_map.is_inside_tree():
 		await get_tree().process_frame
+	assign_player_color(device_id)
 	respawn(device_id)
 	create_custom_inputs(device_id)
 
-func respawn(device_id):
+func respawn(device_id: int):
+	await get_tree().create_timer(1.0).timeout
+	var player_data
+	for player_index in GlobalSettings.players:
+		if player_index.Device == device_id:
+			player_data = player_index
+			
 	var new_player = PLAYER.instantiate()
-	new_player.player_id = device_id
 	get_node("Players").add_child(new_player)
-	color_player(new_player, device_id)
 	
+	new_player.get_node("PlayerName").modulate = player_data.Color
+	new_player.get_node("AnimatedSprite2D").self_modulate = player_data.Color
+	new_player.get_node("AimArrow").modulate = player_data.Color
+	
+	new_player.player_id = device_id
 	var name_label = new_player.get_node("PlayerName")
 	for player in GlobalSettings.players:
 		if player.Device == device_id:
 			name_label.text = player.Name
+			new_player.name = player.Name
 	
 	var tile_map = tile_logic.tile_map
 	
@@ -67,22 +79,19 @@ func create_custom_inputs(device_id: int):
 		joy_event.button_index = JOY_BUTTON_B
 		InputMap.action_add_event(shoot, joy_event)
 
-func color_player(player, device_id: int):
+func assign_player_color(device_id: int):
+	var player_data
+	for player_index in GlobalSettings.players:
+		if player_index.Device == device_id:
+			player_data = player_index
+			
 	if device_id == -1:
-		pass
+		player_data.Color = player_colors["White"]
 	elif device_id == 0:
-		player.get_node("PlayerName").modulate = player_colors["Red"]
-		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Red"]
-		player.get_node("AimArrow").modulate = player_colors["Red"]
+		player_data.Color = player_colors["Red"]
 	elif device_id == 1:
-		player.get_node("PlayerName").modulate = player_colors["Blue"]
-		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Blue"]
-		player.get_node("AimArrow").modulate = player_colors["Blue"]
+		player_data.Color = player_colors["Blue"]
 	elif device_id == 2:
-		player.get_node("PlayerName").modulate = player_colors["Violet"]
-		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Violet"]
-		player.get_node("AimArrow").modulate = player_colors["Violet"]
+		player_data.Color = player_colors["Violet"]
 	elif device_id == 2:
-		player.get_node("PlayerName").modulate = player_colors["Green"]
-		player.get_node("AnimatedSprite2D").self_modulate = player_colors["Green"]
-		player.get_node("AimArrow").modulate = player_colors["Green"]
+		player_data.Color = player_colors["Green"]

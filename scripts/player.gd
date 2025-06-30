@@ -17,6 +17,7 @@ var impulse: Vector2 = Vector2.ZERO
 var impulse_deceleration: float = 3000
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_weapon: String = "rocket_launcher"
+@onready var game = get_node("/root/Game")
 
 func _ready():
 	update_health_bar()
@@ -92,7 +93,7 @@ func _physics_process(delta : float) -> void:
 	velocity += impulse
 	move_and_slide()
 
-func damage(damage):
+func damage(damage, enemy_id):
 	darken_on_damage()
 	damaged_timer.start()
 	var death: bool = false
@@ -103,7 +104,12 @@ func damage(damage):
 		death = true
 		world.respawn(player_id)
 		queue_free()
-	return death
+	if death:
+		for player in GlobalSettings.players:
+			if player.Device == enemy_id:
+				player.Score += 1
+				game.killfeed(player.Name, name)
+				
 
 func heal(heal):
 	health += heal
