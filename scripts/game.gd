@@ -9,13 +9,13 @@ extends Node
 
 func _ready():
 	end_game.start(GlobalSettings.time)
+	end_game_timer()
 	if GlobalSettings.gamemode == "free_for_all":
 		free_for_all()
 	if GlobalSettings.gamemode == "keep_the_briefcase":
 		keep_the_briefcase()
 	
 func _process(delta):
-	timer_ui(delta)
 	update_player_score()
 	
 func free_for_all():
@@ -39,14 +39,11 @@ func update_player_score():
 func keep_the_briefcase():
 	GlobalSettings.teams_enabled = true
 
-var seconds_passed = 0
-func timer_ui(delta):
-	seconds_passed += delta
-	if seconds_passed >= 1:
-		seconds_passed = 0
+func end_game_timer():
+	while !end_game.is_stopped():
+		await get_tree().create_timer(1.0).timeout
 		time_text.text = "Time: " + str(round(end_game.time_left))
-	
-func _on_end_game_timeout() -> void:
+		
 	var winner = null
 	if GlobalSettings.gamemode == "free_for_all":
 		var highest_score = -1
@@ -58,6 +55,7 @@ func _on_end_game_timeout() -> void:
 		end_screen.get_node("WinnerLabel").text = "¡Winner is " + winner.Name + "!"
 		end_screen.get_node("Score").text = "Total score: " + str(winner.Score)
 		return_to_menu.start()
+	
 	
 func _on_menu_button_down() -> void:
 	GlobalSettings.end_game()

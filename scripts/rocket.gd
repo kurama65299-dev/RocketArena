@@ -46,6 +46,7 @@ func impact():
 		else:
 			rocket_jump(collision)
 			collision.damage(damage, owner_id)
+	animated_sprite.rotation_degrees = randi() % 360
 	animated_sprite.play("explosion")
 	direction = Vector2.ZERO
 	

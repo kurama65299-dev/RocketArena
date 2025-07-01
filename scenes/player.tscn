@@ -226,7 +226,7 @@ cache/0/50/0/glyphs/617/texture_idx = 0
 fallbacks = Array[Font]([SubResource("FontFile_tuyoq")])
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhqgy"]
-bg_color = Color(0.464483, 0.62, 0.3534, 1)
+bg_color = Color(1, 1, 1, 1)
 border_color = Color(0.339149, 0.456936, 0.267447, 1)
 shadow_color = Color(0, 0.741341, 0.330879, 0.6)
 shadow_size = 6
@@ -276,13 +276,14 @@ z_index = -1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -69.0
-offset_top = -72.0
-offset_right = 81.0
-offset_bottom = -36.0
+offset_left = -64.0
+offset_top = -77.0
+offset_right = 63.0
+offset_bottom = -41.0
 grow_horizontal = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = SubResource("FontVariation_fjrip")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/background = SubResource("StyleBoxFlat_qhqgy")

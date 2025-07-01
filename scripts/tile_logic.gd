@@ -37,6 +37,8 @@ func load_map():
 		map = preload("res://scenes/maps/IslamicHell.tscn")
 	elif GlobalSettings.map == "IronValley":
 		map = preload("res://scenes/maps/IronValley.tscn")
+	elif GlobalSettings.map == "JumpyConfrontation":
+		map = preload("res://scenes/maps/JumpyConfrontation.tscn")
 	var new_map = map.instantiate()
 	add_child(new_map)
 	tile_map = new_map

@@ -2,16 +2,6 @@ extends Panel
 @onready var game_settings: Panel = $"."
 @onready var players: Panel = $"../Players"
 
-func _on_spiky_battle_button_down() -> void:
-	GlobalSettings.map = "SpikyBattle"
-
-func _on_descending_war_button_down() -> void:
-	GlobalSettings.map = "DescendingWar"
-	
-func _on_islamic_hell_button_down() -> void:
-	GlobalSettings.map = "IslamicHell"
-func _on_iron_valley_button_down() -> void:
-	GlobalSettings.map = "IronValley"
 
 func _on_next_button_down() -> void:
 	players.visible = true
@@ -27,3 +17,14 @@ func _on_gamemode_item_selected(index: int) -> void:
 
 func _on_spin_box_value_changed(value: float) -> void:
 	GlobalSettings.time = value
+	
+func _on_spiky_battle_button_down() -> void:
+	GlobalSettings.map = "SpikyBattle"
+func _on_descending_war_button_down() -> void:
+	GlobalSettings.map = "DescendingWar"
+func _on_islamic_hell_button_down() -> void:
+	GlobalSettings.map = "IslamicHell"
+func _on_iron_valley_button_down() -> void:
+	GlobalSettings.map = "IronValley"
+func _on_jumpy_confrontation_button_down() -> void:
+	GlobalSettings.map = "JumpyConfrontation"
