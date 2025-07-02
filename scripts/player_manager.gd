@@ -25,9 +25,7 @@ func _joystick_detection(delta, submit_id):
 	var submit = "submit"+suffix
 	
 	var player_panel = joystick_panels[submit_id]
-		
 	var ReadyBar = player_panel.get_node("ReadyBar")
-	var plr_name = player_panel.get_node("PlayerName").text
 	
 	if Input.is_action_pressed(submit):
 		ReadyBar.value += charge_per_second * delta
@@ -37,11 +35,16 @@ func _joystick_detection(delta, submit_id):
 		if ReadyBar.value < 100:
 			ReadyBar.value = 0
 		elif ReadyBar.value >= 100 and not is_player_ready(submit_id):
-			GlobalSettings.players.append({"Name": plr_name, "Device": submit_id})
+			var plr_name = player_panel.get_node("PlayerName").text
+			var team_number_input = player_panel.get_node("Team/TeamNumber")
+			var team_number = team_number_input.get_item_text(team_number_input.selected)
+			
+			GlobalSettings.players.append({"Name": plr_name, "Device": submit_id, "Team": team_number})
 
 func _keyboard_detection(delta):
-	var ReadyBar = get_node("Keyboard/ReadyBar")
-	var plr_name = get_node("Keyboard/PlayerName").text
+	var keyboard_panel = get_node("Keyboard")
+	var ReadyBar = keyboard_panel.get_node("ReadyBar")
+	
 	if Input.is_action_pressed("submit"):
 		ReadyBar.value += charge_per_second * delta
 		if ReadyBar.value >= 100:
@@ -50,7 +53,11 @@ func _keyboard_detection(delta):
 		if ReadyBar.value < 100:
 			ReadyBar.value = 0
 		elif ReadyBar.value >= 100 and not is_player_ready(-1):
-			GlobalSettings.players.append({"Device": -1, "Name": plr_name})
+			var plr_name = keyboard_panel.get_node("PlayerName").text
+			var team_number_input = keyboard_panel.get_node("Team/TeamNumber")
+			var team_number = team_number_input.get_item_text(team_number_input.selected)
+			
+			GlobalSettings.players.append({"Device": -1, "Name": plr_name, "Team": team_number})
 
 func _process(delta):
 	if play_settings.visible == false:
