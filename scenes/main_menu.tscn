@@ -699,8 +699,8 @@ offset_left = 107.0
 offset_right = 207.0
 offset_bottom = 61.0
 max_value = 2000.0
-step = 100.0
-value = 900.0
+step = 50.0
+value = 300.0
 alignment = 1
 
 [node name="Gamemode" type="Label" parent="PlaySettings/GameSettings"]

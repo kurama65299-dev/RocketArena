@@ -12,6 +12,7 @@ var impulse: float = 420
 @onready var tile_logic: Node = get_node("/root/Game/World/TileLogic")
 @onready var tile_map: TileMapLayer = get_node("/root/Game/World/TileLogic/TileMapLayer")
 @onready var impact_area: Area2D = $Area2D
+@onready var explosion_sfx: AudioStreamPlayer = $ExplosionSFX
 
 func launch(new_direction):
 	impact_area.scale = Vector2(aoe,aoe)
@@ -32,6 +33,8 @@ func explosion(): #DESTRUCTION
 		count += sum #Maintains the aoe counter
 
 func impact():
+	explosion_sfx.pitch_scale = randf_range(0.3,0.8)
+	explosion_sfx.play()
 	var collider = raycast.get_collider()
 	explosion()
 	animated_sprite.visible = true
