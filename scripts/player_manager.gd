@@ -36,11 +36,10 @@ func _joystick_detection(delta, submit_id):
 			ReadyBar.value = 0
 		elif ReadyBar.value >= 100 and not is_player_ready(submit_id):
 			var plr_name = player_panel.get_node("PlayerName").text
-			var team_number_input = player_panel.get_node("Team/TeamNumber")
-			var team_number = team_number_input.get_item_text(team_number_input.selected)
+			var team_input: OptionButton = player_panel.get_node("Team/TeamNumber")
+			var team: int = int(team_input.get_item_text(team_input.selected))
 			
-			GlobalSettings.players.append({"Name": plr_name, "Device": submit_id, "Team": team_number})
-
+			GlobalSettings.players.append({"Name": plr_name, "Device": submit_id, "Team": team})
 func _keyboard_detection(delta):
 	var keyboard_panel = get_node("Keyboard")
 	var ReadyBar = keyboard_panel.get_node("ReadyBar")
@@ -53,11 +52,11 @@ func _keyboard_detection(delta):
 		if ReadyBar.value < 100:
 			ReadyBar.value = 0
 		elif ReadyBar.value >= 100 and not is_player_ready(-1):
-			var plr_name = keyboard_panel.get_node("PlayerName").text
-			var team_number_input = keyboard_panel.get_node("Team/TeamNumber")
-			var team_number = team_number_input.get_item_text(team_number_input.selected)
+			var plr_name: String = keyboard_panel.get_node("PlayerName").text
+			var team_input: OptionButton = keyboard_panel.get_node("Team/TeamNumber")
+			var team: int = int(team_input.get_item_text(team_input.selected))
 			
-			GlobalSettings.players.append({"Device": -1, "Name": plr_name, "Team": team_number})
+			GlobalSettings.players.append({"Device": -1, "Name": plr_name, "Team": team})
 
 func _process(delta):
 	if play_settings.visible == false:

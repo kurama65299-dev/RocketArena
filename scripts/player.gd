@@ -1,6 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
+const BRIEFCASE = preload("res://scenes/briefcase.tscn")
 @onready var damaged_timer: Timer = $Damaged
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shoot_weapon: Node = $ShootWeapon
@@ -8,6 +9,7 @@ extends CharacterBody2D
 @onready var world: Node = get_node("/root/Game/World")
 @onready var aim_arrow: Panel = $AimArrow
 @export var player_id: int = -1
+@onready var game = get_node("/root/Game")
 var jump_power: int = 650
 var speed: int = 600
 var health: int = 100
@@ -17,7 +19,9 @@ var impulse: Vector2 = Vector2.ZERO
 var impulse_deceleration: float = 3000
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var player_weapon: String = "rocket_launcher"
-@onready var game = get_node("/root/Game")
+var has_briefcase: bool = false
+var is_dead: bool = false
+var team = 0
 
 func _ready():
 	update_health_bar()
@@ -81,6 +85,7 @@ func _joystick_movement(delta):
 		if aim_direction.length() == 1:
 			shoot_weapon.shoot(player_weapon, aim_direction)
 
+
 func _physics_process(delta : float) -> void:
 	if !is_on_floor(): #GRAVITY
 		velocity.y += gravity * delta
@@ -94,22 +99,28 @@ func _physics_process(delta : float) -> void:
 	move_and_slide()
 
 func damage(damage, enemy_id):
-	darken_on_damage()
-	damaged_timer.start()
-	var death: bool = false
+	if is_dead:
+		return
+	if GlobalSettings.teams_enabled:
+		for player in GlobalSettings.players:
+			if player.Device == enemy_id and player.Team == team:
+				return
+
 	health -= damage
-	update_health_bar()
 	
 	if health <= 0:
-		death = true
+		is_dead = true
 		world.respawn(player_id)
+		game.on_player_death(player_id, enemy_id)
+		if GlobalSettings.gamemode == "keep_the_briefcase" and has_briefcase:
+			var new_briefcase = BRIEFCASE.instantiate()
+			new_briefcase.global_position = global_position
+			world.add_child(new_briefcase)
 		queue_free()
-	if death:
-		for player in GlobalSettings.players:
-			if player.Device == enemy_id:
-				player.Score += 1
-				game.killfeed(player.Name, name)
-				
+		
+	update_health_bar()
+	darken_on_damage()
+	damaged_timer.start()
 
 func heal(heal):
 	health += heal
@@ -128,3 +139,9 @@ func _on_damaged_timeout() -> void:
 
 func darken_on_damage():
 	modulate = Color.from_hsv(0,0,73 / 100,1)
+
+func got_briefcase():
+	has_briefcase = true
+	while(true):
+		await get_tree().create_timer(1).timeout
+		game.kept_briefcase(team)

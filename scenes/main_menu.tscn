@@ -260,7 +260,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber2" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player2/Team"]
+[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player2/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -362,7 +362,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber2" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player5/Team"]
+[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player5/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -464,7 +464,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber2" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player7/Team"]
+[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player7/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0
@@ -515,7 +515,7 @@ offset_bottom = 100.0
 theme_override_font_sizes/font_size = 25
 text = "Team:"
 
-[node name="TeamNumber2" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player8/Team"]
+[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player8/Team"]
 layout_mode = 0
 offset_left = 97.0
 offset_top = -5.0

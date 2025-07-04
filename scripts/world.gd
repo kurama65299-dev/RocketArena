@@ -23,7 +23,7 @@ func respawn(device_id: int):
 	for player_index in GlobalSettings.players:
 		if player_index.Device == device_id:
 			player_data = player_index
-			
+			player_index = player_data
 	var new_player = PLAYER.instantiate()
 	get_node("Players").add_child(new_player)
 	
@@ -37,6 +37,7 @@ func respawn(device_id: int):
 		if player.Device == device_id:
 			name_label.text = player.Name
 			new_player.name = player.Name
+			new_player.team = player.Team
 	
 	var tile_map = tile_logic.tile_map
 	

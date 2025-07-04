@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dn8bvcqnmtd8o"]
+[gd_scene load_steps=10 format=3 uid="uid://dn8bvcqnmtd8o"]
 
 [ext_resource type="Script" uid="uid://ccgoyfdpm6k4r" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Script" uid="uid://dy60qcpkenmn1" path="res://scripts/world.gd" id="2_iywne"]
 [ext_resource type="Script" uid="uid://cqsg3bem4kmmv" path="res://scripts/tile_logic.gd" id="2_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://jdm3667vikbv" path="res://scenes/briefcase.tscn" id="4_lbhrr"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
 bg_color = Color(0.103744, 0.103744, 0.103744, 1)
@@ -12,6 +13,58 @@ corner_radius_bottom_right = 9
 corner_radius_bottom_left = 9
 shadow_color = Color(1, 0, 0.909804, 0.6)
 shadow_size = 80
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lbhrr"]
+bg_color = Color(1, 0.3521, 0.175586, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iywne"]
+bg_color = Color(0.9, 0.144, 0.144, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(1, 0, 0, 0.6)
+shadow_size = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p57ef"]
+bg_color = Color(0.2054, 0.70231, 0.79, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5sy4"]
+bg_color = Color(0.135559, 0.333052, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(0.298524, 0.494672, 1, 0.6)
+shadow_size = 10
 
 [node name="Game" type="Node"]
 script = ExtResource("1_lnu2h")
@@ -30,6 +83,9 @@ position_smoothing_enabled = true
 
 [node name="Players" type="Node" parent="World"]
 
+[node name="Briefcase" parent="World" instance=ExtResource("4_lbhrr")]
+position = Vector2(0, -992)
+
 [node name="EndGame" type="Timer" parent="."]
 wait_time = 900.0
 one_shot = true
@@ -38,16 +94,18 @@ one_shot = true
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -713.0
+offset_left = -748.0
 offset_top = -1134.0
-offset_right = -582.0
+offset_right = -545.0
 offset_bottom = -1063.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 60
+text = "Time: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Scores" type="VBoxContainer" parent="."]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -74,10 +132,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 807.0
-offset_top = -1352.0
-offset_right = 1480.0
-offset_bottom = -181.0
+offset_left = 488.0
+offset_top = -1050.0
+offset_right = 1161.0
+offset_bottom = -502.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
@@ -107,11 +165,11 @@ theme_override_font_sizes/font_size = 60
 text = "example2"
 
 [node name="Menu" type="Button" parent="."]
-offset_left = 1789.0
+offset_left = 1927.0
 offset_top = -1134.0
-offset_right = 2060.0
-offset_bottom = -1042.0
-theme_override_font_sizes/font_size = 50
+offset_right = 2062.0
+offset_bottom = -1066.0
+theme_override_font_sizes/font_size = 30
 text = "Menu"
 
 [node name="EndScreen" type="Panel" parent="."]
@@ -158,6 +216,42 @@ autowrap_mode = 3
 [node name="ReturnToMenu" type="Timer" parent="EndScreen"]
 wait_time = 10.0
 one_shot = true
+
+[node name="TeamBars" type="VBoxContainer" parent="."]
+visible = false
+z_index = -1
+offset_left = -785.0
+offset_top = -1134.0
+offset_right = 797.0
+offset_bottom = -1064.0
+size_flags_horizontal = 3
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Bars" type="HBoxContainer" parent="TeamBars"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 450
+alignment = 1
+
+[node name="Team1" type="ProgressBar" parent="TeamBars/Bars"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+theme_override_styles/background = SubResource("StyleBoxFlat_lbhrr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_iywne")
+value = 50.0
+
+[node name="Team2" type="ProgressBar" parent="TeamBars/Bars"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+theme_override_styles/background = SubResource("StyleBoxFlat_p57ef")
+theme_override_styles/fill = SubResource("StyleBoxFlat_u5sy4")
+value = 50.0
 
 [connection signal="timeout" from="EndGame" to="." method="_on_end_game_timeout"]
 [connection signal="button_down" from="Menu" to="." method="_on_menu_button_down"]
