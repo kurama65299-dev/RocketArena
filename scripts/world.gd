@@ -4,9 +4,9 @@ const PLAYER: PackedScene = preload("res://scenes/player.tscn")
 @onready var tile_logic: Node = $TileLogic
 var player_colors: Dictionary = {
 	"White": Color("FFFFFF"),
-	"Red": Color("E55F2A"),
+	"Red": Color("BD2F2F"),
 	"Green": Color("6FCF26"),
-	"Blue": Color("1C64D9"),
+	"Blue": Color("3044B3"),
 	"Violet": Color("a59eff"),
 }
 
@@ -71,7 +71,7 @@ func create_custom_inputs(device_id: int):
 		InputMap.add_action(jump, 0.5)
 		var joy_event = InputEventJoypadButton.new()
 		joy_event.device = device_id
-		joy_event.button_index = JOY_BUTTON_A
+		joy_event.button_index = JOY_BUTTON_RIGHT_SHOULDER
 		InputMap.action_add_event(jump, joy_event)
 	if not InputMap.has_action(shoot):
 		InputMap.add_action(shoot, 0.5)
@@ -86,6 +86,13 @@ func assign_player_color(device_id: int):
 		if player_index.Device == device_id:
 			player_data = player_index
 			
+	if GlobalSettings.teams_enabled:
+		if player_data.Team == 1:
+			player_data.Color = player_colors["Red"]
+		elif player_data.Team == 2:
+			player_data.Color = player_colors["Blue"]
+		return
+		
 	if device_id == -1:
 		player_data.Color = player_colors["White"]
 	elif device_id == 0:
@@ -94,5 +101,5 @@ func assign_player_color(device_id: int):
 		player_data.Color = player_colors["Blue"]
 	elif device_id == 2:
 		player_data.Color = player_colors["Violet"]
-	elif device_id == 2:
+	elif device_id == 3:
 		player_data.Color = player_colors["Green"]

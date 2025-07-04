@@ -18,7 +18,7 @@ var friction: float = 6000
 var impulse: Vector2 = Vector2.ZERO
 var impulse_deceleration: float = 3000
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
-var player_weapon: String = "rocket_launcher"
+var primary_weapon: String = "rocket_launcher"
 var has_briefcase: bool = false
 var is_dead: bool = false
 var team = 0
@@ -55,8 +55,11 @@ func _joystick_movement(delta):
 	var axis_x = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_X)
 	var axis_y = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_Y)	
 	
-	var aim_direction = Vector2(axis_x, axis_y)
-	if aim_direction.length() > 0.1: #Deadzone detection
+	var aim_axis_x = Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_X)
+	var aim_axis_y = Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_Y)
+	var aim_direction = Vector2(aim_axis_x, aim_axis_y)
+	
+	if aim_direction.length() > 0.3: #Deadzone detection
 		aim_direction = aim_direction.normalized()
 	
 	var suffix = str(player_id) #Player id to string
@@ -81,9 +84,8 @@ func _joystick_movement(delta):
 		
 	aim_arrow.rotation = aim_direction.angle()
 		
-	if Input.is_action_pressed("shoot"+suffix): #SHOOT EVENT
-		if aim_direction.length() == 1:
-			shoot_weapon.shoot(player_weapon, aim_direction)
+	if aim_direction.length() == 1:
+		shoot_weapon.shoot(primary_weapon, aim_direction)
 
 
 func _physics_process(delta : float) -> void:

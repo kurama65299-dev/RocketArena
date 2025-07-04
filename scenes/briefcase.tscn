@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://jdm3667vikbv"]
+[gd_scene load_steps=11 format=3 uid="uid://jdm3667vikbv"]
 
 [ext_resource type="Script" uid="uid://brq4pvtlirkws" path="res://briefcase.gd" id="1_bxfb1"]
 [ext_resource type="Texture2D" uid="uid://bgaaqysb2evw" path="res://sprites/CharacterSpritesheet.png" id="2_tl46d"]
@@ -22,6 +22,14 @@ region = Rect2(640, 256, 128, 128)
 atlas = ExtResource("2_tl46d")
 region = Rect2(640, 384, 128, 128)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl46d"]
+atlas = ExtResource("2_tl46d")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_luv0o"]
+atlas = ExtResource("2_tl46d")
+region = Rect2(640, 128, 128, 128)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_luv0o"]
 animations = [{
 "frames": [{
@@ -39,7 +47,18 @@ animations = [{
 }],
 "loop": false,
 "name": &"collected",
-"speed": 15.0
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl46d")
+}, {
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_luv0o")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 1.0
 }]
 
 [node name="Briefcase" type="Area2D"]
@@ -53,7 +72,9 @@ shape = SubResource("RectangleShape2D_tl46d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_luv0o")
-animation = &"collected"
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.914578
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
