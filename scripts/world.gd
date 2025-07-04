@@ -18,7 +18,7 @@ func add_player(device_id: int):
 	create_custom_inputs(device_id)
 
 func respawn(device_id: int):
-	await get_tree().create_timer(0.1).timeout
+	await get_tree().create_timer(1).timeout
 	var player_data
 	for player_index in GlobalSettings.players:
 		if player_index.Device == device_id:

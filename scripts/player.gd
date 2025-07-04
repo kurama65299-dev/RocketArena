@@ -99,8 +99,6 @@ func _physics_process(delta : float) -> void:
 	move_and_slide()
 
 func damage(damage, enemy_id):
-	if is_dead:
-		return
 	if GlobalSettings.teams_enabled:
 		for player in GlobalSettings.players:
 			if player.Device == enemy_id and player.Team == team:
@@ -109,13 +107,16 @@ func damage(damage, enemy_id):
 	health -= damage
 	
 	if health <= 0:
+		if is_dead:
+			return
 		is_dead = true
-		world.respawn(player_id)
-		game.on_player_death(player_id, enemy_id)
+
 		if GlobalSettings.gamemode == "keep_the_briefcase" and has_briefcase:
 			var new_briefcase = BRIEFCASE.instantiate()
 			new_briefcase.global_position = global_position
 			world.add_child(new_briefcase)
+		game.on_player_death(player_id, enemy_id)
+		world.respawn(player_id)
 		queue_free()
 		
 	update_health_bar()
@@ -132,7 +133,7 @@ func update_health_bar():
 	health_bar.value = health
 
 func _on_heal_timeout() -> void:
-	heal(10)
+	heal(5)
 
 func _on_damaged_timeout() -> void:
 	modulate = Color.from_hsv(0,0,100/100,1)
