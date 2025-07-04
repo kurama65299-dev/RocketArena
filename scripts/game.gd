@@ -138,10 +138,11 @@ func game_ended():
 	elif GlobalSettings.gamemode == "keep_the_briefcase":
 		if teams["Team1"] > teams["Team2"]:
 			winner = "Team1"
+			end_screen.get_node("WinnerLabel").text = "¡Winner is Red Team!"
 		else:
 			winner = "Team2"
+			end_screen.get_node("WinnerLabel").text = "¡Winner is Blue Team!"
 		end_screen.visible = true
-		end_screen.get_node("WinnerLabel").text = "¡Winner is " + winner + "!"
 		end_screen.get_node("Score").text = "Total score: " + str(teams[winner])
 		
 	return_to_menu.start()

@@ -50,7 +50,7 @@ func _keyboard_movement(delta):
 		animated_sprite.play("idle")
 		
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT): #SHOOT EVENT
-		shoot_weapon.shoot(player_weapon, mouse_direction)
+		shoot_weapon.shoot(primary_weapon, mouse_direction)
 func _joystick_movement(delta):
 	var axis_x = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_X)
 	var axis_y = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_Y)	
@@ -100,7 +100,8 @@ func _physics_process(delta : float) -> void:
 	velocity += impulse
 	move_and_slide()
 
-func damage(damage, enemy_id):
+func damage(damage: int, enemy_id):
+	
 	if GlobalSettings.teams_enabled:
 		for player in GlobalSettings.players:
 			if player.Device == enemy_id and player.Team == team:
@@ -115,11 +116,18 @@ func damage(damage, enemy_id):
 
 		if GlobalSettings.gamemode == "keep_the_briefcase" and has_briefcase:
 			var new_briefcase = BRIEFCASE.instantiate()
-			new_briefcase.global_position = global_position
+			
+			if enemy_id == null:
+				new_briefcase.global_position = Vector2(0,-900)
+			else:
+				new_briefcase.global_position = global_position
+				
 			world.add_child(new_briefcase)
-		game.on_player_death(player_id, enemy_id)
+		if enemy_id:
+			game.on_player_death(player_id, enemy_id)
 		world.respawn(player_id)
 		queue_free()
+		return
 		
 	update_health_bar()
 	darken_on_damage()

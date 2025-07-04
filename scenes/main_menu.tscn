@@ -770,6 +770,13 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = ExtResource("15_5pajh")
 text = "Jumpy Confrontation"
 
+[node name="SedimentEruption" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
+layout_mode = 2
+focus_mode = 1
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = ExtResource("15_5pajh")
+text = "Sediment Eruption"
+
 [node name="Return" type="Button" parent="PlaySettings"]
 z_index = 8
 layout_mode = 1
@@ -799,4 +806,5 @@ script = ExtResource("14_1ajci")
 [connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/IslamicHell" to="PlaySettings/GameSettings" method="_on_islamic_hell_button_down"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/IronValley" to="PlaySettings/GameSettings" method="_on_iron_valley_button_down"]
 [connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/JumpyConfrontation" to="PlaySettings/GameSettings" method="_on_jumpy_confrontation_button_down"]
+[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/SedimentEruption" to="PlaySettings/GameSettings" method="_on_sediment_eruption_button_down"]
 [connection signal="button_down" from="PlaySettings/Return" to="PlaySettings/Return" method="_on_button_down"]

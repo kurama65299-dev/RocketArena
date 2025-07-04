@@ -28,3 +28,5 @@ func _on_iron_valley_button_down() -> void:
 	GlobalSettings.map = "IronValley"
 func _on_jumpy_confrontation_button_down() -> void:
 	GlobalSettings.map = "JumpyConfrontation"
+func _on_sediment_eruption_button_down() -> void:
+	GlobalSettings.map = "SedimentEruption"
