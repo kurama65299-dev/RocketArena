@@ -38,7 +38,7 @@ func explosion(): #DESTRUCTION
 		count += sum #Maintains the aoe counter
 
 func impact():
-	explosion_sfx.pitch_scale = randf_range(0.3,0.7)
+	explosion_sfx.pitch_scale = randf_range(0.4,1.5)
 	explosion_sfx.play()
 	var collider = raycast.get_collider()
 	explosion()
@@ -75,7 +75,6 @@ func rocket_jump(player):
 
 func explosion_effects():
 	hitbox_collision.disabled = true
-	explosion_vfx.reparent(world)
-	trail.reparent(world)
 	trail.emitting = false
+	await get_tree().create_timer(trail.lifetime).timeout
 	queue_free()

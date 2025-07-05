@@ -6,12 +6,14 @@ extends Node2D
 @onready var player: Player = get_parent().get_parent().get_parent()
 @onready var strong_rocket_timer: Timer = $StrongRocket
 @onready var ultimate: ProgressBar = player.get_node("Ultimate")
+@onready var ready_vfx: CPUParticles2D = player.get_node("Ultimate/ReadyVFX")
 
 func _ready():
 	ultimate.max_value = strong_rocket_timer.wait_time
 
 func _process(delta: float) -> void:
 	ultimate.value = strong_rocket_timer.wait_time - strong_rocket_timer.time_left
+	ready_vfx.emitting = ultimate.value == ultimate.max_value
 
 func shoot(direction):
 	global_rotation = direction.angle()

@@ -130,7 +130,6 @@ func damage(damage: int, enemy_id): #Damage and death functions
 		if is_dead:
 			return
 		is_dead = true
-		death_vfx.reparent(world)
 		death_vfx.emitting = true
 
 		if GlobalSettings.gamemode == "keep_the_briefcase" and has_briefcase:
@@ -143,6 +142,7 @@ func damage(damage: int, enemy_id): #Damage and death functions
 		if enemy_id:
 			game.on_player_death(player_id, enemy_id)
 		world.respawn(player_id)
+		await get_tree().create_timer(death_vfx.lifetime).timeout
 		queue_free()
 		return
 		

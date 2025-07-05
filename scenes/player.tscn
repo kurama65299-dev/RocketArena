@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://b0en5042ksisy"]
+[gd_scene load_steps=27 format=4 uid="uid://b0en5042ksisy"]
 
 [ext_resource type="Script" uid="uid://c631t7yh2j1ou" path="res://scripts/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://bgaaqysb2evw" path="res://sprites/CharacterSpritesheet.png" id="2_g2els"]
@@ -254,6 +254,12 @@ border_color = Color(0.693333, 0, 0.8, 1)
 shadow_color = Color(1, 0, 0.866667, 0.6)
 shadow_size = 10
 
+[sub_resource type="Gradient" id="Gradient_qlg0r"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.588235)
+
+[sub_resource type="Gradient" id="Gradient_tuyoq"]
+colors = PackedColorArray(0, 0.333333, 1, 1, 0.966667, 0, 1, 1)
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
@@ -372,6 +378,29 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_fjrip")
 value = 50.0
 fill_mode = 3
 show_percentage = false
+
+[node name="ReadyVFX" type="CPUParticles2D" parent="Ultimate"]
+z_index = -1
+position = Vector2(13, 80)
+emitting = false
+amount = 20
+lifetime = 0.6
+lifetime_randomness = 0.8
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(15, 1)
+direction = Vector2(0, -1)
+spread = 0.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 300.0
+initial_velocity_max = 400.0
+angular_velocity_min = 500.0
+angular_velocity_max = 500.0
+angle_max = 180.0
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+color_ramp = SubResource("Gradient_qlg0r")
+color_initial_ramp = SubResource("Gradient_tuyoq")
 
 [node name="Death" type="CPUParticles2D" parent="."]
 emitting = false
