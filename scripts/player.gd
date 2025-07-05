@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 const BRIEFCASE = preload("res://scenes/briefcase.tscn")
+@onready var death_vfx: CPUParticles2D = $Death
 @onready var briefcase_sfx: AudioStreamPlayer =get_node("/root/Game/BriefcaseTaken")
 @onready var briefcase_sprite: Sprite2D = $Briefcase
 @onready var damaged_timer: Timer = $Damaged
@@ -10,9 +11,9 @@ const BRIEFCASE = preload("res://scenes/briefcase.tscn")
 @onready var health_bar: ProgressBar = $ProgressBar
 @onready var world: Node = get_node("/root/Game/World")
 @onready var aim_arrow: Panel = $AimArrow
-@export var player_id: int = -1
 @onready var game = get_node("/root/Game")
-var jump_power: int = 650
+@export var player_id: int = -1
+var jump_power: int = 800
 var speed: int = 600
 var health: int = 100
 var max_health: int = 100
@@ -65,9 +66,9 @@ func _joystick_movement(delta): #Joystick detection
 	var axis_x = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_X)
 	var axis_y = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_Y)	
 	
-	var aim_axis_x = Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_X)
-	var aim_axis_y = Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_Y)
-	var aim_direction = Vector2(aim_axis_x, aim_axis_y)
+	var right_axis_x = Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_X)
+	var right_axis_y = Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_Y)
+	var aim_direction = Vector2(right_axis_x, right_axis_y)
 	
 	if aim_direction.length() > 0.3: #Deadzone detection
 		aim_direction = aim_direction.normalized()
@@ -99,9 +100,10 @@ func _joystick_movement(delta): #Joystick detection
 		animated_sprite.play("idle")
 		
 	aim_arrow.rotation = aim_direction.angle()
-		
-	if aim_direction.length() == 1:
-		shoot_weapon.shoot(actual_weapon, aim_direction)
+	
+	if Input.is_action_pressed("shoot"+suffix):
+		if aim_direction.length() == 1:
+			shoot_weapon.shoot(actual_weapon, aim_direction)
 
 func _physics_process(delta : float) -> void: #Impulse and gravity
 	if !is_on_floor(): #GRAVITY
@@ -128,6 +130,8 @@ func damage(damage: int, enemy_id): #Damage and death functions
 		if is_dead:
 			return
 		is_dead = true
+		death_vfx.reparent(world)
+		death_vfx.emitting = true
 
 		if GlobalSettings.gamemode == "keep_the_briefcase" and has_briefcase:
 			var new_briefcase = BRIEFCASE.instantiate()

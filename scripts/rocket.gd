@@ -10,16 +10,19 @@ var direction: Vector2 = Vector2.ZERO
 
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var sprite: Sprite2D = $Sprite2D
-@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var explosion_vfx: CPUParticles2D = $ExplosionVFX
 @onready var tile_logic: Node = get_node("/root/Game/World/TileLogic")
 @onready var tile_map: TileMapLayer = get_node("/root/Game/World/TileLogic/TileMapLayer")
-@onready var impact_area: Area2D = $Area2D
+@onready var impact_area: Area2D = $Explosion
+@onready var hitbox_collision: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var explosion_sfx: AudioStreamPlayer = $ExplosionSFX
+@onready var trail: CPUParticles2D = $Trail
+@onready var world: Node = get_node("/root/Game/World")
 
 func launch(new_direction):
 	impact_area.scale = Vector2(aoe,aoe)
-	animated_sprite.scale = Vector2(aoe/3,aoe/3)
 	direction = new_direction
+	trail.emitting = true
 	
 func explosion(): #DESTRUCTION
 	var coords: Vector2i = tile_map.local_to_map(global_position)
@@ -39,7 +42,7 @@ func impact():
 	explosion_sfx.play()
 	var collider = raycast.get_collider()
 	explosion()
-	animated_sprite.visible = true
+	explosion_vfx.emitting = true
 	sprite.visible = false
 		
 	for collision in impact_area.get_overlapping_bodies():
@@ -51,8 +54,7 @@ func impact():
 		else:
 			rocket_jump(collision)
 			collision.damage(damage, owner_id)
-	animated_sprite.rotation_degrees = randi() % 360
-	animated_sprite.play("explosion")
+	explosion_effects()
 	direction = Vector2.ZERO
 	
 func _physics_process(delta: float) -> void:
@@ -71,8 +73,9 @@ func rocket_jump(player):
 	var total_impulse = direction * impulse
 	player.impulse += total_impulse
 
-func _on_timer_timeout() -> void:
-	queue_free()
-
-func _on_animated_sprite_2d_animation_finished() -> void:
+func explosion_effects():
+	hitbox_collision.disabled = true
+	explosion_vfx.reparent(world)
+	trail.reparent(world)
+	trail.emitting = false
 	queue_free()

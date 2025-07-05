@@ -2,7 +2,7 @@ extends Node
 
 @onready var tile_map: TileMapLayer = null
 var tile_data : Dictionary = {}
-var normal_health: int = 120
+var normal_health: int = 80 + (40 * GlobalSettings.players.size())
 var high_health: int = 600
 var low_health: int = 40
 

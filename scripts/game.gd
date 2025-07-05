@@ -1,5 +1,7 @@
 extends Node
 
+const BRIEFCASE_INSTANCE = preload("res://scenes/briefcase.tscn")
+@onready var world: Node = $World
 @onready var end_game_timer: Timer = $EndGame
 @onready var time_text: Label = $TimeText
 @onready var scores_box: VBoxContainer = $Scores
@@ -83,6 +85,10 @@ func killfeed(killer_name: String, killed_name: String):
 		new_label.queue_free()
 
 func keep_the_briefcase():
+	var new_briefcase = BRIEFCASE_INSTANCE.instantiate()
+	new_briefcase.global_position = Vector2(0,-992.0)
+	add_child(new_briefcase)
+	
 	GlobalSettings.teams_enabled = true
 	team_bars.visible = true
 	var team1 = team_bars.get_node("Bars/Team1")

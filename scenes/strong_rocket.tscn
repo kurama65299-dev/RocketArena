@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qwtyyvks2hyq"]
+[gd_scene load_steps=15 format=3 uid="uid://qwtyyvks2hyq"]
 
 [ext_resource type="Script" uid="uid://bb5oyio4a34fh" path="res://scripts/rocket.gd" id="1_7la6s"]
 [ext_resource type="Texture2D" uid="uid://djwncm7xjygdd" path="res://sprites/StrongRocket.png" id="2_7la6s"]
@@ -38,23 +38,37 @@ animations = [{
 }],
 "loop": false,
 "name": &"explosion",
-"speed": 15.0
+"speed": 12.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_agf72"]
+[sub_resource type="Gradient" id="Gradient_7la6s"]
+colors = PackedColorArray(0.195519, 0.188733, 1, 1, 0, 0.95, 1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7la6s"]
 radius = 23.0006
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rjygp"]
+radius = 99.0202
+
+[sub_resource type="Curve" id="Curve_7la6s"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.205769, -7.03384), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_rjygp"]
+colors = PackedColorArray(0, 0.183333, 1, 1, 0.1456, 0.7826, 0.91, 1)
 
 [node name="StrongRocket" type="Node2D"]
 script = ExtResource("1_7la6s")
-speed = 1250
-aoe = 13
+speed = 1500
+aoe = 20
 damage = 99
 impulse = 600.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_7la6s")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="ExplosionSprite" type="AnimatedSprite2D" parent="."]
 visible = false
 sprite_frames = SubResource("SpriteFrames_qolsk")
 animation = &"explosion"
@@ -67,22 +81,62 @@ target_position = Vector2(-1.48619e-06, 34)
 collision_mask = 7
 collide_with_areas = true
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
-autostart = true
-
-[node name="Area2D" type="Area2D" parent="."]
-scale = Vector2(6, 6)
-collision_layer = 4
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_agf72")
-
 [node name="ExplosionSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dfhuf")
 pitch_scale = 0.5
 bus = &"SFX"
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[node name="Trail" type="CPUParticles2D" parent="."]
+z_index = -1
+emitting = false
+amount = 100
+lifetime = 15.0
+speed_scale = 10.0
+lifetime_randomness = 0.3
+direction = Vector2(-1, 0)
+spread = 5.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 40.0
+initial_velocity_max = 40.0
+scale_amount_min = 20.0
+scale_amount_max = 30.0
+color_initial_ramp = SubResource("Gradient_7la6s")
+
+[node name="Explosion" type="Area2D" parent="."]
+scale = Vector2(6, 6)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosion"]
+shape = SubResource("CircleShape2D_7la6s")
+
+[node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+shape = SubResource("CircleShape2D_rjygp")
+
+[node name="ExplosionVFX" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+randomness = 0.5
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 20.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 600.0
+initial_velocity_max = 1200.0
+angular_velocity_min = 1000.0
+angular_velocity_max = 2000.0
+linear_accel_curve = SubResource("Curve_7la6s")
+angle_max = 360.0
+scale_amount_min = 50.0
+scale_amount_max = 80.0
+color_initial_ramp = SubResource("Gradient_rjygp")
+
+[connection signal="animation_finished" from="ExplosionSprite" to="." method="_on_animated_sprite_2d_animation_finished"]

@@ -18,7 +18,7 @@ func add_player(device_id: int):
 	create_custom_inputs(device_id)
 
 func respawn(device_id: int):
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(0.1).timeout
 	var player_data
 	for player_index in GlobalSettings.players:
 		if player_index.Device == device_id:
@@ -71,13 +71,13 @@ func create_custom_inputs(device_id: int):
 		InputMap.add_action(jump, 0.5)
 		var joy_event = InputEventJoypadButton.new()
 		joy_event.device = device_id
-		joy_event.button_index = JOY_BUTTON_RIGHT_SHOULDER
+		joy_event.button_index = JOY_BUTTON_LEFT_SHOULDER
 		InputMap.action_add_event(jump, joy_event)
 	if not InputMap.has_action(shoot):
 		InputMap.add_action(shoot, 0.5)
 		var joy_event = InputEventJoypadButton.new()
 		joy_event.device = device_id
-		joy_event.button_index = JOY_BUTTON_B
+		joy_event.button_index = JOY_BUTTON_RIGHT_SHOULDER
 		InputMap.action_add_event(shoot, joy_event)
 	if not InputMap.has_action(switch_weapon):
 		InputMap.add_action(switch_weapon, 0.5)
