@@ -2,6 +2,8 @@ class_name Player
 extends CharacterBody2D
 
 const BRIEFCASE = preload("res://scenes/briefcase.tscn")
+@onready var briefcase_sfx: AudioStreamPlayer =get_node("/root/Game/BriefcaseTaken")
+@onready var briefcase_sprite: Sprite2D = $Briefcase
 @onready var damaged_timer: Timer = $Damaged
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var shoot_weapon: Node = $ShootWeapon
@@ -19,14 +21,16 @@ var impulse: Vector2 = Vector2.ZERO
 var impulse_deceleration: float = 3000
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var primary_weapon: String = "rocket_launcher"
+var secondary_weapon: String = "construction"
+var actual_weapon: String = primary_weapon
 var has_briefcase: bool = false
 var is_dead: bool = false
 var team = 0
 
-func _ready():
+func _ready(): #Update health bar
 	update_health_bar()
-	global_position = Vector2(randf_range(-1800,1800),-1100)
-func _keyboard_movement(delta):
+	
+func _keyboard_movement(delta): #Keyboard detection
 	var mouse_pos: Vector2 = get_global_mouse_position()
 	var mouse_direction: Vector2 = (mouse_pos - global_position).normalized()
 	var direction: int = Input.get_axis("left", "right")
@@ -45,13 +49,19 @@ func _keyboard_movement(delta):
 	if Input.is_action_pressed("jump") and is_on_floor(): #JUMP ANIM
 		velocity.y -= jump_power
 		animated_sprite.play("jump")
+	
+	if Input.is_action_just_pressed("switch_weapon"): #SWITCH WEAPON
+		if actual_weapon == primary_weapon:
+			actual_weapon = secondary_weapon
+		else:
+			actual_weapon = primary_weapon
 		
 	if velocity == Vector2.ZERO: #IDLE ANIM
 		animated_sprite.play("idle")
 		
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT): #SHOOT EVENT
-		shoot_weapon.shoot(primary_weapon, mouse_direction)
-func _joystick_movement(delta):
+		shoot_weapon.shoot(actual_weapon, mouse_direction)
+func _joystick_movement(delta): #Joystick detection
 	var axis_x = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_X)
 	var axis_y = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_Y)	
 	
@@ -79,16 +89,21 @@ func _joystick_movement(delta):
 		velocity.y -= jump_power
 		animated_sprite.play("jump")
 		
+	if Input.is_action_just_pressed("switch_weapon"+suffix): #SWITCH WEAPON
+		if actual_weapon == primary_weapon:
+			actual_weapon = secondary_weapon
+		else:
+			actual_weapon = primary_weapon
+		
 	if velocity == Vector2.ZERO: #IDLE ANIM
 		animated_sprite.play("idle")
 		
 	aim_arrow.rotation = aim_direction.angle()
 		
 	if aim_direction.length() == 1:
-		shoot_weapon.shoot(primary_weapon, aim_direction)
+		shoot_weapon.shoot(actual_weapon, aim_direction)
 
-
-func _physics_process(delta : float) -> void:
+func _physics_process(delta : float) -> void: #Impulse and gravity
 	if !is_on_floor(): #GRAVITY
 		velocity.y += gravity * delta
 		
@@ -100,7 +115,7 @@ func _physics_process(delta : float) -> void:
 	velocity += impulse
 	move_and_slide()
 
-func damage(damage: int, enemy_id):
+func damage(damage: int, enemy_id): #Damage and death functions
 	
 	if GlobalSettings.teams_enabled:
 		for player in GlobalSettings.players:
@@ -116,12 +131,10 @@ func damage(damage: int, enemy_id):
 
 		if GlobalSettings.gamemode == "keep_the_briefcase" and has_briefcase:
 			var new_briefcase = BRIEFCASE.instantiate()
-			
 			if enemy_id == null:
 				new_briefcase.global_position = Vector2(0,-900)
 			else:
 				new_briefcase.global_position = global_position
-				
 			world.add_child(new_briefcase)
 		if enemy_id:
 			game.on_player_death(player_id, enemy_id)
@@ -152,7 +165,10 @@ func darken_on_damage():
 	modulate = Color.from_hsv(0,0,73 / 100,1)
 
 func got_briefcase():
+	briefcase_sfx.play()
 	has_briefcase = true
+	briefcase_sprite.visible = true
+	briefcase_sprite.modulate = animated_sprite.self_modulate
 	while(true):
 		await get_tree().create_timer(1).timeout
 		game.kept_briefcase(team)

@@ -2,14 +2,14 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="1024"
+   width="2048"
    height="1024"
-   viewBox="0 0 270.93332 270.93334"
+   viewBox="0 0 541.86664 270.93334"
    version="1.1"
    id="svg5"
-   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
    sodipodi:docname="CharacterSpriteSheet.svg"
-   inkscape:export-filename="..\..\GodotGames\Game\sprites\CharacterSpritesheet.png"
+   inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
@@ -28,16 +28,16 @@
      inkscape:document-units="px"
      showgrid="true"
      units="px"
-     inkscape:zoom="1"
-     inkscape:cx="662"
-     inkscape:cy="267"
-     inkscape:window-width="1920"
-     inkscape:window-height="1008"
+     inkscape:zoom="0.1767767"
+     inkscape:cx="741.04791"
+     inkscape:cy="797.61645"
+     inkscape:window-width="1366"
+     inkscape:window-height="696"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     width="512px"
+     width="1536px"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1"
      showguides="true">
@@ -69,7 +69,7 @@
        y="115.99764"
        rx="0"
        ry="1.0289876"
-       inkscape:export-filename="..\..\GodotGames\Game\sprites\RocketLauncher.png"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <rect
@@ -82,7 +82,7 @@
        ry="2.1924453"
        transform="rotate(-0.38981243)"
        rx="0.10405363"
-       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\RocketLauncher.png"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <ellipse
@@ -695,7 +695,7 @@
        y="115.3376"
        rx="0"
        ry="0"
-       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\Rocket.png"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <rect
@@ -708,7 +708,7 @@
        rx="0"
        ry="0"
        transform="matrix(-0.18654729,0.98244598,-0.96591888,-0.25884496,0,0)"
-       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\Rocket.png"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <use
@@ -720,7 +720,7 @@
        width="100%"
        height="100%"
        style="fill:#6bfc00;fill-opacity:1"
-       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\Rocket.png"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <ellipse
@@ -731,7 +731,10 @@
        rx="5.953125"
        ry="5.0270834"
        inkscape:transform-center-x="0.13229167"
-       inkscape:transform-center-y="0.13229168" />
+       inkscape:transform-center-y="0.13229168"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffff00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse1"
@@ -740,7 +743,10 @@
        rx="5.953125"
        ry="5.0270834"
        inkscape:transform-center-x="0.13229167"
-       inkscape:transform-center-y="0.13229168" />
+       inkscape:transform-center-y="0.13229168"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffff00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse2"
@@ -749,7 +755,10 @@
        rx="5.953125"
        ry="5.0270834"
        inkscape:transform-center-x="0.13229167"
-       inkscape:transform-center-y="0.13229168" />
+       inkscape:transform-center-y="0.13229168"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffff00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse3"
@@ -758,7 +767,10 @@
        rx="7.6369228"
        ry="6.3367043"
        inkscape:transform-center-x="0.16971529"
-       inkscape:transform-center-y="0.16675844" />
+       inkscape:transform-center-y="0.16675844"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffff00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse4"
@@ -767,7 +779,10 @@
        rx="9.9755316"
        ry="9.3301229"
        inkscape:transform-center-x="0.22168671"
-       inkscape:transform-center-y="0.24553689" />
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffff00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse5"
@@ -776,7 +791,10 @@
        rx="9.9755316"
        ry="9.3301229"
        inkscape:transform-center-x="0.22168671"
-       inkscape:transform-center-y="0.24553689" />
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffcc00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse6"
@@ -785,7 +803,10 @@
        rx="5.953125"
        ry="5.0270834"
        inkscape:transform-center-x="0.13229167"
-       inkscape:transform-center-y="0.13229168" />
+       inkscape:transform-center-y="0.13229168"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffd42a;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse7"
@@ -794,7 +815,10 @@
        rx="7.6729164"
        ry="7.6729169"
        inkscape:transform-center-x="0.17050522"
-       inkscape:transform-center-y="0.20192392" />
+       inkscape:transform-center-y="0.20192392"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ff6600;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse8"
@@ -803,7 +827,10 @@
        rx="9.8858814"
        ry="10.173162"
        inkscape:transform-center-x="0.21968977"
-       inkscape:transform-center-y="0.26772179" />
+       inkscape:transform-center-y="0.26772179"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffd42a;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse9"
@@ -812,7 +839,10 @@
        rx="8.2557402"
        ry="7.0811648"
        inkscape:transform-center-x="0.18346366"
-       inkscape:transform-center-y="0.1863479" />
+       inkscape:transform-center-y="0.1863479"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffcc00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse10"
@@ -821,7 +851,10 @@
        rx="9.9755316"
        ry="9.3301229"
        inkscape:transform-center-x="0.22168671"
-       inkscape:transform-center-y="0.24553689" />
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffd42a;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse11"
@@ -830,7 +863,10 @@
        rx="9.2244225"
        ry="8.9825373"
        inkscape:transform-center-x="0.20500037"
-       inkscape:transform-center-y="0.23639195" />
+       inkscape:transform-center-y="0.23639195"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#aa0000;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse12"
@@ -839,7 +875,10 @@
        rx="9.8858814"
        ry="10.437746"
        inkscape:transform-center-x="0.21968977"
-       inkscape:transform-center-y="0.27468467" />
+       inkscape:transform-center-y="0.27468467"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ff7f2a;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse13"
@@ -848,7 +887,10 @@
        rx="11.870256"
        ry="11.099204"
        inkscape:transform-center-x="0.26378849"
-       inkscape:transform-center-y="0.29208672" />
+       inkscape:transform-center-y="0.29208672"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#d45500;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse14"
@@ -857,7 +899,10 @@
        rx="9.2244225"
        ry="8.9825373"
        inkscape:transform-center-x="0.20500037"
-       inkscape:transform-center-y="0.23639195" />
+       inkscape:transform-center-y="0.23639195"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffff00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse15"
@@ -866,7 +911,10 @@
        rx="5.953125"
        ry="5.0270834"
        inkscape:transform-center-x="0.13229167"
-       inkscape:transform-center-y="0.13229168" />
+       inkscape:transform-center-y="0.13229168"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffff00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse17"
@@ -875,7 +923,10 @@
        rx="7.6369228"
        ry="6.3367043"
        inkscape:transform-center-x="0.16971529"
-       inkscape:transform-center-y="0.16675844" />
+       inkscape:transform-center-y="0.16675844"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffff00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse18"
@@ -884,7 +935,10 @@
        rx="9.9755316"
        ry="9.3301229"
        inkscape:transform-center-x="0.22168671"
-       inkscape:transform-center-y="0.24553689" />
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffff00;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
        id="ellipse19"
@@ -893,21 +947,30 @@
        rx="9.9755316"
        ry="9.3301229"
        inkscape:transform-center-x="0.22168671"
-       inkscape:transform-center-y="0.24553689" />
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="fill:#808080;stroke:#000000;stroke-width:0.79375;stroke-linejoin:bevel;stroke-miterlimit:3;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect19"
        width="2.3386075"
        height="5.5191259"
        x="7.2671499"
-       y="117.91953" />
+       y="117.91953"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="fill:#808080;stroke:#000000;stroke-width:0.79375;stroke-linejoin:bevel;stroke-miterlimit:3;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect20"
        width="4.3238392"
        height="5.2592936"
        x="18.435295"
-       y="118.04842" />
+       y="118.04842"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="fill:#808080;stroke:#000000;stroke-width:0.80652;stroke-linejoin:bevel;stroke-miterlimit:3;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect22"
@@ -918,74 +981,111 @@
        ry="0"
        transform="matrix(0.43323095,-0.90128294,0.9157932,0.40165011,0,0)"
        inkscape:transform-center-x="-0.092089785"
-       inkscape:transform-center-y="-0.029473895" />
+       inkscape:transform-center-y="-0.029473895"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <use
        x="0"
        y="0"
        xlink:href="#rect22"
        inkscape:transform-center-x="-0.093544334"
        id="use23"
-       transform="matrix(1,0,0,-1,-5.862282e-7,235.74649)" />
+       transform="matrix(1,0,0,-1,-5.862282e-7,235.74649)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
-       style="fill:#ffdd55;stroke-width:0.26458333;stroke-dasharray:none;stroke:#000000;stroke-opacity:1"
+       style="fill:#ffdd55;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
        id="rect1"
        width="28.839582"
        height="16.933332"
        x="171.97917"
        y="8.598958"
-       inkscape:export-filename="..\..\GodotGames\Game\sprites\briefcase.png"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <rect
-       style="fill:#ffdd55;stroke-width:0.26458333;stroke:#000000;stroke-opacity:1;stroke-dasharray:none"
+       style="fill:#ffdd55;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
        id="rect2"
        width="2.0112033"
        height="4.6304445"
        x="180.21317"
-       y="4.0691786" />
+       y="4.0691786"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <use
        x="0"
        y="0"
        xlink:href="#rect2"
        id="use2"
-       transform="translate(10.102788)" />
+       transform="translate(10.102788)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="fill:#ffdd55;stroke:#000000;stroke-width:0.316939;stroke-opacity:1"
        id="rect3"
        width="12.101523"
        height="1.7249858"
        x="180.23878"
-       y="4.0953569" />
+       y="4.0953569"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
        d="m 183.91849,18.355469 -0.13229,4.398697 4.2664,0.09922 0.0331,-4.795573 c 0,0 4.99402,-3.208073 0.33073,-6.647656 -4.66328,-3.4395832 -7.24296,1.752865 -7.24296,1.752865 0,0 -1.15756,4.167187 2.74505,5.192448 z"
-       id="path15" />
+       id="path15"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.43599;stroke-dasharray:none;stroke-opacity:1"
        id="path16"
        cx="183.74158"
        cy="13.917049"
        rx="0.88496166"
-       ry="1.557282" />
+       ry="1.557282"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.365333;stroke-dasharray:none;stroke-opacity:1"
        id="path17"
        cx="187.65642"
        cy="13.794931"
        rx="1.0417194"
-       ry="1.4083587" />
+       ry="1.4083587"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
        d="m 185.14219,22.820312 c 0,-0.06615 0,-0.132291 0,0 z"
-       id="path18" />
+       id="path18"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
        d="m 185.14219,20.207552 -0.0331,2.546614"
-       id="path19" />
+       id="path19"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
        d="m 186.86198,20.141406 0.0331,2.645833"
-       id="path20" />
+       id="path20"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="fill:#ffdd55;stroke:#000000;stroke-width:0.202372;stroke-dasharray:none;stroke-opacity:1"
        id="rect23"
@@ -993,7 +1093,7 @@
        height="9.8851471"
        x="171.94806"
        y="49.545029"
-       inkscape:export-filename="..\..\GodotGames\Game\sprites\briefcase.png"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96" />
     <rect
@@ -1002,105 +1102,459 @@
        width="2.0155418"
        height="2.7031078"
        x="180.19983"
-       y="46.900684" />
+       y="46.900684"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <use
        x="0"
        y="0"
        xlink:href="#rect2"
        id="use24"
-       transform="matrix(1.0021571,0,0,0.58376854,9.7224847,44.525227)" />
+       transform="matrix(1.0021571,0,0,0.58376854,9.7224847,44.525227)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="fill:#ffdd55;stroke:#000000;stroke-width:0.242417;stroke-opacity:1"
        id="rect25"
        width="12.127628"
        height="1.0069925"
        x="180.22549"
-       y="46.915966" />
+       y="46.915966"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#ffffff;stroke:#000000;stroke-width:0.202372;stroke-dasharray:none;stroke-opacity:1"
        d="m 183.91313,55.240572 -0.13258,2.567821 4.27561,0.05792 0.0332,-2.799505 c 0,0 5.00479,-1.872772 0.33144,-3.880693 -4.67334,-2.00792 -7.25858,1.023268 -7.25858,1.023268 0,0 -1.16006,2.432673 2.75097,3.031188 z"
-       id="path25" />
+       id="path25"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.333476;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse25"
        cx="183.73584"
        cy="52.649563"
        rx="0.88687068"
-       ry="0.90909225" />
+       ry="0.90909225"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.279433;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse26"
        cx="187.65913"
        cy="52.578274"
        rx="1.0439665"
-       ry="0.82215548" />
+       ry="0.82215548"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.202372;stroke-dasharray:none;stroke-opacity:1"
        d="m 185.13947,57.847007 c 0,-0.03862 0,-0.07723 0,0 z"
-       id="path26" />
+       id="path26"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.202372;stroke-dasharray:none;stroke-opacity:1"
        d="m 185.13947,56.32176 -0.0332,1.486633"
-       id="path27" />
+       id="path27"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#1a1a1a;stroke:#000000;stroke-width:0.202372;stroke-dasharray:none;stroke-opacity:1"
        d="m 186.86297,56.283146 0.0332,1.544554"
-       id="path28" />
+       id="path28"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffdd55;stroke:none;stroke-width:0.264583;stroke-dasharray:none;stroke-opacity:1"
        id="path34"
        cx="179.2552"
        cy="75.736977"
        rx="8.2020836"
-       ry="6.283854" />
+       ry="6.283854"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffeeaa;stroke:none;stroke-width:0.33096;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse34"
        cx="192.48439"
        cy="76.200005"
        rx="9.5250006"
-       ry="8.4666662" />
+       ry="8.4666662"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffd42a;stroke:none;stroke-width:0.439269;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse35"
        cx="186.59741"
        cy="85.989586"
        rx="12.633855"
-       ry="11.244791" />
+       ry="11.244791"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffe680;stroke:none;stroke-width:0.214397;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse36"
        cx="176.41096"
        cy="94.257812"
        rx="6.0192719"
-       ry="5.622395" />
+       ry="5.622395"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#c8ab37;stroke:none;stroke-width:0.285289;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse37"
        cx="195.32867"
        cy="92.736458"
        rx="7.0776052"
-       ry="8.4666662" />
+       ry="8.4666662"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffdd55;stroke:none;stroke-width:0.177889;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse38"
        cx="182.49634"
        cy="108.01614"
        rx="4.9609375"
-       ry="4.6963539" />
+       ry="4.6963539"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#ffd42a;stroke:none;stroke-width:0.2462;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse40"
        cx="185.07607"
        cy="118.79792"
        rx="6.7468758"
-       ry="6.6145825" />
+       ry="6.6145825"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#c8ab37;stroke:none;stroke-width:0.157116;stroke-dasharray:none;stroke-opacity:1"
        id="ellipse42"
        cx="192.68285"
        cy="122.2375"
        rx="4.4317718"
-       ry="4.1010413" />
+       ry="4.1010413"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#666666;fill-opacity:1;stroke:#000000;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1"
+       id="rect938"
+       width="16.866175"
+       height="6.8633299"
+       x="79.656113"
+       y="112.94552"
+       rx="0"
+       ry="0"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       style="fill:#ff0000;fill-opacity:1;stroke:#000000;stroke-width:0.247169;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1"
+       id="rect940"
+       width="2.5779624"
+       height="12.581645"
+       x="107.09541"
+       y="-133.26567"
+       rx="0"
+       ry="0"
+       transform="matrix(-0.40955932,0.91228349,-0.99363798,-0.11262129,0,0)"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#rect940"
+       id="use1186"
+       transform="matrix(1,0,0,-1,0,232.90281)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#ffe400;fill-opacity:1;stroke:#fffd52;stroke-width:0.326984px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 90.505246,114.09068 2.27961,1.23118 z"
+       id="path2939"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <use
+       x="0"
+       y="0"
+       xlink:href="#path2939"
+       id="use4307"
+       transform="matrix(1,0,0,-1,0,232.45525)"
+       width="100%"
+       height="100%"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:#ffff00;fill-opacity:1;stroke:#fffd52;stroke-width:0;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1"
+       id="path4443"
+       d="m 93.858534,118.55941 c 0.247097,0.003 0.476353,-0.081 0.694629,-0.18844 0.365879,-0.1857 0.656783,-0.47412 0.889786,-0.80696 0.226864,-0.37006 0.261353,-0.79933 0.286829,-1.22185 0.03493,-0.36922 -0.06401,-0.72753 -0.145372,-1.08377 -0.09958,-0.3984 -0.34525,-0.71687 -0.628859,-1.00251 -0.163672,-0.13866 -0.08017,-0.0755 -0.249574,-0.19057 -0.155329,-0.10428 -0.30281,0.11538 -0.147484,0.21967 v 0 c 0.140396,0.093 0.0701,0.041 0.209558,0.15758 0.249153,0.24951 0.469614,0.52571 0.558416,0.87474 0.07577,0.33175 0.171511,0.66515 0.139203,1.00905 -0.02217,0.37352 -0.04545,0.7565 -0.240115,1.08685 -0.204557,0.29806 -0.465894,0.55445 -0.790173,0.72085 -0.180964,0.091 -0.370911,0.16387 -0.576844,0.16078 -0.187087,0 -0.187087,0.26458 0,0.26458 z"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#00ffff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4652"
+       cx="304.80011"
+       cy="101.6"
+       rx="5.953125"
+       ry="5.0270834"
+       inkscape:transform-center-x="0.13229167"
+       inkscape:transform-center-y="0.13229168"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#00ffff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4654"
+       cx="304.80011"
+       cy="33.866665"
+       rx="5.953125"
+       ry="5.0270834"
+       inkscape:transform-center-x="0.13229167"
+       inkscape:transform-center-y="0.13229168"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#00ffff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4656"
+       cx="309.8515"
+       cy="92.245567"
+       rx="5.953125"
+       ry="5.0270834"
+       inkscape:transform-center-x="0.13229167"
+       inkscape:transform-center-y="0.13229168"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#4400aa;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4658"
+       cx="292.45224"
+       cy="100.47747"
+       rx="7.6369228"
+       ry="6.3367043"
+       inkscape:transform-center-x="0.16971529"
+       inkscape:transform-center-y="0.16675844"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#00ffff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4660"
+       cx="314.24808"
+       cy="109.27064"
+       rx="9.9755316"
+       ry="9.3301229"
+       inkscape:transform-center-x="0.22168671"
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#00ffff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4662"
+       cx="295.91339"
+       cy="111.5157"
+       rx="9.9755316"
+       ry="9.3301229"
+       inkscape:transform-center-x="0.22168671"
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#0000ff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4664"
+       cx="309.53601"
+       cy="168.052"
+       rx="5.4505506"
+       ry="9.8310843"
+       inkscape:transform-center-x="0.12113111"
+       inkscape:transform-center-y="0.25871358"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#00ffff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4666"
+       cx="307.86713"
+       cy="153.09982"
+       rx="7.6729164"
+       ry="7.6729169"
+       inkscape:transform-center-x="0.17050522"
+       inkscape:transform-center-y="0.20192392"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#00ffff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4668"
+       cx="284.22424"
+       cy="166.99368"
+       rx="9.8858814"
+       ry="10.173162"
+       inkscape:transform-center-x="0.21968977"
+       inkscape:transform-center-y="0.26772179"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#0066ff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4670"
+       cx="327.42017"
+       cy="173.92374"
+       rx="8.2557402"
+       ry="7.0811648"
+       inkscape:transform-center-x="0.18346366"
+       inkscape:transform-center-y="0.1863479"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#0044aa;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4672"
+       cx="302.76596"
+       cy="187.90839"
+       rx="9.9755316"
+       ry="9.3301229"
+       inkscape:transform-center-x="0.22168671"
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#0000ff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4674"
+       cx="291.92081"
+       cy="152.49638"
+       rx="9.2244225"
+       ry="8.9825373"
+       inkscape:transform-center-x="0.20500037"
+       inkscape:transform-center-y="0.23639195"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#0000ff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4676"
+       cx="323.56738"
+       cy="155.02322"
+       rx="9.8858814"
+       ry="10.437746"
+       inkscape:transform-center-x="0.21968977"
+       inkscape:transform-center-y="0.27468467"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#008080;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4678"
+       cx="319.66122"
+       cy="185.81734"
+       rx="11.870256"
+       ry="11.099204"
+       inkscape:transform-center-x="0.26378849"
+       inkscape:transform-center-y="0.29208672"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#008080;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4680"
+       cx="290.45618"
+       cy="185.46201"
+       rx="9.2244225"
+       ry="8.9825373"
+       inkscape:transform-center-x="0.20500037"
+       inkscape:transform-center-y="0.23639195"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#330080;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4682"
+       cx="304.80008"
+       cy="237.06676"
+       rx="5.953125"
+       ry="5.0270834"
+       inkscape:transform-center-x="0.13229167"
+       inkscape:transform-center-y="0.13229168"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#3771c8;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4684"
+       cx="292.82642"
+       cy="231.82828"
+       rx="7.6369228"
+       ry="6.3367043"
+       inkscape:transform-center-x="0.16971529"
+       inkscape:transform-center-y="0.16675844"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#7f2aff;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4686"
+       cx="315.37057"
+       cy="225.65436"
+       rx="9.9755316"
+       ry="9.3301229"
+       inkscape:transform-center-x="0.22168671"
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#0000d4;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4688"
+       cx="308.26123"
+       cy="251.0984"
+       rx="9.9755316"
+       ry="9.3301229"
+       inkscape:transform-center-x="0.22168671"
+       inkscape:transform-center-y="0.24553689"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <ellipse
+       style="fill:#5f8dd3;stroke:#ff8004;stroke-width:0;stroke-linejoin:bevel;stroke-miterlimit:3;paint-order:stroke fill markers"
+       id="ellipse4996"
+       cx="294.9259"
+       cy="170.53279"
+       rx="6.7053742"
+       ry="11.482783"
+       inkscape:transform-center-x="0.14901484"
+       inkscape:transform-center-y="0.30218181"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\Game\sprites\CharacterSpritesheet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>

@@ -1,11 +1,13 @@
 extends Node2D
 
 var owner_id = null
-var speed: int = 2000
-var aoe: int = 6
 var direction: Vector2 = Vector2.ZERO
-var damage: int = 40
-var impulse: float = 420
+
+@export var speed: int = 2000
+@export var aoe: int = 6
+@export var damage: int = 40
+@export var impulse: float = 340
+
 @onready var raycast: RayCast2D = $RayCast2D
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -33,7 +35,7 @@ func explosion(): #DESTRUCTION
 		count += sum #Maintains the aoe counter
 
 func impact():
-	explosion_sfx.pitch_scale = randf_range(0.3,0.8)
+	explosion_sfx.pitch_scale = randf_range(0.3,0.7)
 	explosion_sfx.play()
 	var collider = raycast.get_collider()
 	explosion()

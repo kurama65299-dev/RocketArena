@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dn8bvcqnmtd8o"]
+[gd_scene load_steps=11 format=3 uid="uid://dn8bvcqnmtd8o"]
 
 [ext_resource type="Script" uid="uid://ccgoyfdpm6k4r" path="res://scripts/game.gd" id="1_lnu2h"]
 [ext_resource type="Script" uid="uid://dy60qcpkenmn1" path="res://scripts/world.gd" id="2_iywne"]
 [ext_resource type="Script" uid="uid://cqsg3bem4kmmv" path="res://scripts/tile_logic.gd" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://jdm3667vikbv" path="res://scenes/briefcase.tscn" id="4_lbhrr"]
+[ext_resource type="AudioStream" uid="uid://brcxenk64m8nc" path="res://music/sfx/briefcase_taked.wav" id="5_iywne"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
 bg_color = Color(0.103744, 0.103744, 0.103744, 1)
@@ -252,6 +253,10 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/background = SubResource("StyleBoxFlat_p57ef")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u5sy4")
 value = 50.0
+
+[node name="BriefcaseTaken" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iywne")
+bus = &"SFX"
 
 [connection signal="timeout" from="EndGame" to="." method="_on_end_game_timeout"]
 [connection signal="button_down" from="Menu" to="." method="_on_menu_button_down"]

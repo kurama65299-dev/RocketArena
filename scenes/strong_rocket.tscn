@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=3 uid="uid://qwtyyvks2hyq"]
+
+[ext_resource type="Script" uid="uid://bb5oyio4a34fh" path="res://scripts/rocket.gd" id="1_7la6s"]
+[ext_resource type="Texture2D" uid="uid://djwncm7xjygdd" path="res://sprites/StrongRocket.png" id="2_7la6s"]
+[ext_resource type="Texture2D" uid="uid://bgaaqysb2evw" path="res://sprites/CharacterSpritesheet.png" id="3_snnlc"]
+[ext_resource type="AudioStream" uid="uid://dsim2pg60a3mw" path="res://music/sfx/explosion.wav" id="4_dfhuf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rjygp"]
+atlas = ExtResource("3_snnlc")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snnlc"]
+atlas = ExtResource("3_snnlc")
+region = Rect2(1024, 256, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dfhuf"]
+atlas = ExtResource("3_snnlc")
+region = Rect2(1024, 512, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4ljo"]
+atlas = ExtResource("3_snnlc")
+region = Rect2(1024, 768, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qolsk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rjygp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snnlc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dfhuf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4ljo")
+}],
+"loop": false,
+"name": &"explosion",
+"speed": 15.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agf72"]
+radius = 23.0006
+
+[node name="StrongRocket" type="Node2D"]
+script = ExtResource("1_7la6s")
+speed = 1250
+aoe = 13
+damage = 99
+impulse = 600.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_7la6s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_qolsk")
+animation = &"explosion"
+frame = 3
+frame_progress = 1.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+rotation = -1.5708
+target_position = Vector2(-1.48619e-06, 34)
+collision_mask = 7
+collide_with_areas = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(6, 6)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_agf72")
+
+[node name="ExplosionSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_dfhuf")
+pitch_scale = 0.5
+bus = &"SFX"
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

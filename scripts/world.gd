@@ -4,9 +4,9 @@ const PLAYER: PackedScene = preload("res://scenes/player.tscn")
 @onready var tile_logic: Node = $TileLogic
 var player_colors: Dictionary = {
 	"White": Color("FFFFFF"),
-	"Red": Color("BD2F2F"),
+	"Red": Color("ff0000"),
 	"Green": Color("6FCF26"),
-	"Blue": Color("3044B3"),
+	"Blue": Color("0800ff"),
 	"Violet": Color("a59eff"),
 }
 
@@ -51,7 +51,7 @@ func create_custom_inputs(device_id: int):
 	var left = "left" + suffix
 	var jump = "jump" + suffix
 	var shoot = "shoot" + suffix
-	var aim = "aim" + suffix
+	var switch_weapon = "switch_weapon" + suffix
 	
 	if not InputMap.has_action(right):
 		InputMap.add_action(right, 0.5)
@@ -79,6 +79,12 @@ func create_custom_inputs(device_id: int):
 		joy_event.device = device_id
 		joy_event.button_index = JOY_BUTTON_B
 		InputMap.action_add_event(shoot, joy_event)
+	if not InputMap.has_action(switch_weapon):
+		InputMap.add_action(switch_weapon, 0.5)
+		var joy_event = InputEventJoypadButton.new()
+		joy_event.device = device_id
+		joy_event.button_index = JOY_BUTTON_X
+		InputMap.action_add_event(switch_weapon, joy_event)
 
 func assign_player_color(device_id: int):
 	var player_data

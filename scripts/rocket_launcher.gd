@@ -4,14 +4,28 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var debris: Node = get_node("/root/Game/World/Debris")
 @onready var player: Player = get_parent().get_parent().get_parent()
+@onready var strong_rocket_timer: Timer = $StrongRocket
+@onready var ultimate: ProgressBar = player.get_node("Ultimate")
+
+func _ready():
+	ultimate.max_value = strong_rocket_timer.wait_time
+
+func _process(delta: float) -> void:
+	ultimate.value = strong_rocket_timer.wait_time - strong_rocket_timer.time_left
 
 func shoot(direction):
 	global_rotation = direction.angle()
 	animation_player.play("recoil")
 	
 	var point = shoot_point.global_position
-	var rocket = preload("res://scenes/rocket.tscn")
+	
+	var rocket
+	if strong_rocket_timer.is_stopped():
+		rocket = preload("res://scenes/strong_rocket.tscn")
+	else:
+		rocket = preload("res://scenes/rocket.tscn")
 	var new_rocket = rocket.instantiate()
+	strong_rocket_timer.start()
 	
 	debris.add_child(new_rocket)
 	
@@ -20,4 +34,4 @@ func shoot(direction):
 	new_rocket.launch(direction)
 	
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	queue_free()
+	visible = false
