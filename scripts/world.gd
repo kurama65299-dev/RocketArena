@@ -69,16 +69,27 @@ func create_custom_inputs(device_id: int):
 		InputMap.action_add_event(left, joy_event)
 	if not InputMap.has_action(jump):
 		InputMap.add_action(jump, 0.5)
-		var joy_event = InputEventJoypadButton.new()
-		joy_event.device = device_id
-		joy_event.button_index = JOY_BUTTON_LEFT_SHOULDER
-		InputMap.action_add_event(jump, joy_event)
+		var joy_event_a = InputEventJoypadButton.new()
+		joy_event_a.device = device_id
+		joy_event_a.button_index = JOY_BUTTON_A
+		InputMap.action_add_event(jump, joy_event_a)
+		
+		var joy_event_b = InputEventJoypadButton.new()
+		joy_event_b.device = device_id
+		joy_event_b.button_index = JOY_BUTTON_LEFT_SHOULDER
+		InputMap.action_add_event(jump, joy_event_b)
 	if not InputMap.has_action(shoot):
 		InputMap.add_action(shoot, 0.5)
-		var joy_event = InputEventJoypadButton.new()
-		joy_event.device = device_id
-		joy_event.button_index = JOY_BUTTON_RIGHT_SHOULDER
-		InputMap.action_add_event(shoot, joy_event)
+		
+		var joy_event_a = InputEventJoypadButton.new()
+		joy_event_a.device = device_id
+		joy_event_a.button_index = JOY_BUTTON_B
+		InputMap.action_add_event(shoot, joy_event_a)
+		
+		var joy_event_b = InputEventJoypadButton.new()
+		joy_event_b.device = device_id
+		joy_event_b.button_index = JOY_BUTTON_RIGHT_SHOULDER
+		InputMap.action_add_event(shoot, joy_event_b)
 	if not InputMap.has_action(switch_weapon):
 		InputMap.add_action(switch_weapon, 0.5)
 		var joy_event = InputEventJoypadButton.new()

@@ -1,3 +1,4 @@
+class_name Rocket
 extends Node2D
 
 var owner_id = null
@@ -18,13 +19,17 @@ var direction: Vector2 = Vector2.ZERO
 @onready var explosion_sfx: AudioStreamPlayer = $ExplosionSFX
 @onready var trail: CPUParticles2D = $Trail
 @onready var world: Node = get_node("/root/Game/World")
+var is_detonated: bool = false
+
 
 func launch(new_direction):
-	impact_area.scale = Vector2(aoe,aoe)
 	direction = new_direction
+	rotation = direction.angle()
 	trail.emitting = true
+	impact_area.scale = Vector2(aoe,aoe)
+	raycast.add_exception(hitbox_collision.get_parent())
 	
-func explosion(): #DESTRUCTION
+func environment_damage(): #DESTRUCTION
 	var coords: Vector2i = tile_map.local_to_map(global_position)
 	var count: int = 0
 	var sum: int = 1
@@ -38,7 +43,8 @@ func explosion(): #DESTRUCTION
 		count += sum #Maintains the aoe counter
 
 func impact():
-	explosion()
+	is_detonated = true
+	environment_damage()
 	var min_pitch = explosion_sfx.pitch_scale / 1.2
 	var max_pitch = explosion_sfx.pitch_scale * 1.2
 	explosion_sfx.pitch_scale = randf_range(min_pitch, max_pitch)
@@ -49,9 +55,6 @@ func impact():
 	
 	var collider = raycast.get_collider()
 	for collision in impact_area.get_overlapping_bodies():
-		if !collision is Player:
-			return
-				
 		if collision.player_id == owner_id:
 			rocket_jump(collision)
 		else:
@@ -61,13 +64,19 @@ func impact():
 	direction = Vector2.ZERO
 	
 func _physics_process(delta: float) -> void:
-	if raycast.is_colliding(): #HITBOX AND DAMAGE
-		raycast.enabled = false
-		impact()
+	if is_detonated:
+		return
 		
 	if direction != Vector2.ZERO: #MOVING
 		global_position += (speed * direction) * delta
-		rotation = direction.angle()
+		
+	if raycast.is_colliding(): #HITBOX AND DAMAGE
+		var collider = raycast.get_collider()
+		if collider is Player and collider.player_id == owner_id:
+			return
+			
+		raycast.enabled = false
+		impact()
 
 func rocket_jump(player):
 	var impulse_pos = global_position

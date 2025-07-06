@@ -26,6 +26,7 @@ func shoot(direction):
 		rocket = preload("res://scenes/strong_rocket.tscn")
 	else:
 		rocket = preload("res://scenes/rocket.tscn")
+		
 	var new_rocket = rocket.instantiate()
 	strong_rocket_timer.start()
 	

@@ -245,7 +245,7 @@ shadow_color = Color(1, 1, 1, 0.6)
 shadow_size = 4
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tuyoq"]
-bg_color = Color(1, 0.3, 0.3, 1)
+bg_color = Color(1, 0.615, 0.3, 1)
 border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjrip"]
@@ -323,10 +323,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 140.0
-offset_top = -8.0
-offset_right = 172.0
-offset_bottom = 8.0
+offset_left = 136.0
+offset_top = -13.0
+offset_right = 182.0
+offset_bottom = 13.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(-140, 8)
@@ -380,7 +380,6 @@ fill_mode = 3
 show_percentage = false
 
 [node name="ReadyVFX" type="CPUParticles2D" parent="Ultimate"]
-z_index = -1
 position = Vector2(13, 80)
 emitting = false
 amount = 20

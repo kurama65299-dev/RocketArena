@@ -27,6 +27,7 @@ var actual_weapon: String = primary_weapon
 var has_briefcase: bool = false
 var is_dead: bool = false
 var team = 0
+var last_damaged_id = null
 
 func _ready(): #Update health bar
 	update_health_bar()
@@ -68,10 +69,14 @@ func _joystick_movement(delta): #Joystick detection
 	
 	var right_axis_x = Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_X)
 	var right_axis_y = Input.get_joy_axis(player_id, JOY_AXIS_RIGHT_Y)
+	
+	var movement_direction = Vector2(axis_x, axis_y)
 	var aim_direction = Vector2(right_axis_x, right_axis_y)
 	
-	if aim_direction.length() > 0.3: #Deadzone detection
+	if aim_direction.length() > 0.1: #Deadzone detection
 		aim_direction = aim_direction.normalized()
+	elif movement_direction.length() > 0.1:
+		aim_direction = movement_direction.normalized()
 	
 	var suffix = str(player_id) #Player id to string
 	if abs(impulse.x) == 0:
@@ -120,6 +125,8 @@ func _physics_process(delta : float) -> void: #Impulse and gravity
 	move_and_slide()
 
 func damage(damage: int, enemy_id): #Damage and death functions
+	if enemy_id != null:
+		last_damaged_id = enemy_id
 	
 	if GlobalSettings.teams_enabled:
 		for player in GlobalSettings.players:
@@ -141,8 +148,8 @@ func damage(damage: int, enemy_id): #Damage and death functions
 			else:
 				new_briefcase.global_position = global_position
 			world.add_child(new_briefcase)
-		if enemy_id:
-			game.on_player_death(player_id, enemy_id)
+		if last_damaged_id != null:
+			game.on_player_death(player_id, last_damaged_id)
 			
 		world.respawn(player_id)
 		world.add_debris(death_vfx, death_vfx.lifetime)
