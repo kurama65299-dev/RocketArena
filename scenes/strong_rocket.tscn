@@ -61,7 +61,7 @@ colors = PackedColorArray(0, 0.183333, 1, 1, 0.1456, 0.7826, 0.91, 1)
 [node name="StrongRocket" type="Node2D"]
 script = ExtResource("1_7la6s")
 speed = 1500
-aoe = 20
+aoe = 25
 damage = 99
 impulse = 600.0
 
@@ -84,7 +84,7 @@ collide_with_areas = true
 [node name="ExplosionSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dfhuf")
 volume_db = 6.0
-pitch_scale = 0.5
+pitch_scale = 0.4
 bus = &"SFX"
 
 [node name="Trail" type="CPUParticles2D" parent="."]

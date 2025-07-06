@@ -106,6 +106,8 @@ func _joystick_movement(delta): #Joystick detection
 			shoot_weapon.shoot(actual_weapon, aim_direction)
 
 func _physics_process(delta : float) -> void: #Impulse and gravity
+	if is_dead:
+		return
 	if !is_on_floor(): #GRAVITY
 		velocity.y += gravity * delta
 		
@@ -141,8 +143,10 @@ func damage(damage: int, enemy_id): #Damage and death functions
 			world.add_child(new_briefcase)
 		if enemy_id:
 			game.on_player_death(player_id, enemy_id)
+			
 		world.respawn(player_id)
-		await get_tree().create_timer(death_vfx.lifetime).timeout
+		world.add_debris(death_vfx, death_vfx.lifetime)
+		
 		queue_free()
 		return
 		

@@ -38,13 +38,16 @@ func explosion(): #DESTRUCTION
 		count += sum #Maintains the aoe counter
 
 func impact():
-	explosion_sfx.pitch_scale = randf_range(0.4,1.5)
-	explosion_sfx.play()
-	var collider = raycast.get_collider()
 	explosion()
+	var min_pitch = explosion_sfx.pitch_scale / 1.2
+	var max_pitch = explosion_sfx.pitch_scale * 1.2
+	explosion_sfx.pitch_scale = randf_range(min_pitch, max_pitch)
+	explosion_sfx.play()
+	
 	explosion_vfx.emitting = true
 	sprite.visible = false
-		
+	
+	var collider = raycast.get_collider()
 	for collision in impact_area.get_overlapping_bodies():
 		if !collision is Player:
 			return

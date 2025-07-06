@@ -109,3 +109,9 @@ func assign_player_color(device_id: int):
 		player_data.Color = player_colors["Violet"]
 	elif device_id == 3:
 		player_data.Color = player_colors["Green"]
+
+func add_debris(instance, time):
+	instance.reparent($".")
+	await get_tree().create_timer(time).timeout
+	if is_instance_valid(instance):
+		instance.queue_free()
