@@ -1,809 +1,585 @@
-[gd_scene load_steps=20 format=3 uid="uid://bpsjpo6k5mkk8"]
+[gd_scene load_steps=9 format=3 uid="uid://bpsjpo6k5mkk8"]
 
-[ext_resource type="FontFile" uid="uid://dqiwcr5pvbrr" path="res://sprites/fonts/Roboto/static/Roboto-Black.ttf" id="1_l6cm7"]
-[ext_resource type="Script" uid="uid://bhxgvkvf1gp8s" path="res://scripts/play_button.gd" id="2_bqqt6"]
-[ext_resource type="StyleBox" uid="uid://cbbc1fiehmc4t" path="res://ui_styles/start_buttons.tres" id="3_5dd4i"]
+[ext_resource type="Script" uid="uid://dk3dafjpt6r4y" path="res://scenes/main_menu.gd" id="1_rtw2f"]
+[ext_resource type="Script" uid="uid://cl4jrr3ska8mo" path="res://scenes/language.gd" id="2_ekxnf"]
 [ext_resource type="Script" uid="uid://dw0tkw1qelko0" path="res://scripts/global_settings.gd" id="3_bqqt6"]
-[ext_resource type="StyleBox" uid="uid://spij0cq7m1e4" path="res://ui_styles/start_buttons_hover.tres" id="3_rcqid"]
-[ext_resource type="Script" uid="uid://clewb1tf5vngj" path="res://scripts/player_manager.gd" id="5_rtw2f"]
-[ext_resource type="StyleBox" uid="uid://3vl5fchnuoua" path="res://ui_styles/player_name_input.tres" id="6_jk1qb"]
-[ext_resource type="FontFile" uid="uid://g8dynwpkhy1g" path="res://sprites/fonts/Roboto/static/Roboto-ExtraBold.ttf" id="6_rtw2f"]
-[ext_resource type="StyleBox" uid="uid://b61m7mdw452vi" path="res://ui_styles/player_ready_bar_empty.tres" id="7_5dd4i"]
-[ext_resource type="StyleBox" uid="uid://diaxknrj0l13w" path="res://ui_styles/player_ready_bar_full.tres" id="8_lgwnu"]
-[ext_resource type="StyleBox" uid="uid://4t0bn4xcj24v" path="res://ui_styles/start_button_blue_hover.tres" id="11_flqon"]
-[ext_resource type="StyleBox" uid="uid://d1q2htvlr3xeg" path="res://ui_styles/start_button_blue.tres" id="11_lgwnu"]
-[ext_resource type="Script" uid="uid://war45xs6g5ll" path="res://scripts/return.gd" id="14_1ajci"]
-[ext_resource type="StyleBox" uid="uid://bp6sv4h4h66c" path="res://ui_styles/start_options.tres" id="15_5pajh"]
-[ext_resource type="Script" uid="uid://cd24le0ooshqs" path="res://scripts/maps.gd" id="15_7b55j"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rcqid"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
-bg_color = Color(0.103744, 0.103744, 0.103744, 1)
-corner_detail = 1
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ln24"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wu84c"]
-bg_color = Color(0.911261, 0.456996, 0, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color(1, 0.573556, 0.128922, 1)
+[ext_resource type="Script" uid="uid://cdmxpcmpa6lkw" path="res://scenes/play_button.gd" id="3_oa1go"]
+[ext_resource type="Script" uid="uid://dfqpxjd3ega1l" path="res://scenes/fullscreen.gd" id="3_wu84c"]
+[ext_resource type="Script" uid="uid://55adnbokn6tr" path="res://scenes/settings_button.gd" id="4_tbmy8"]
+[ext_resource type="Script" uid="uid://b8ye3ebpsuopp" path="res://scenes/v_sync.gd" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://c4hga7nn1ir5y" path="res://scenes/return.gd" id="6_oa1go"]
 
 [node name="MainMenu" type="CanvasLayer"]
-
-[node name="PlayButton" type="Button" parent="."]
-z_index = 2
-offset_left = 47.0
-offset_top = 186.0
-offset_right = 377.0
-offset_bottom = 255.0
-scale = Vector2(1.28, 1.32)
-focus_mode = 0
-theme_override_fonts/font = ExtResource("1_l6cm7")
-theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = ExtResource("3_rcqid")
-theme_override_styles/pressed = ExtResource("3_5dd4i")
-theme_override_styles/normal = ExtResource("3_5dd4i")
-text = "PLAY"
-script = ExtResource("2_bqqt6")
-
-[node name="SettingsButton" type="Button" parent="."]
-z_index = 2
-offset_left = 47.0
-offset_top = 306.0
-offset_right = 377.0
-offset_bottom = 375.0
-scale = Vector2(1.28, 1.32)
-focus_mode = 0
-theme_override_fonts/font = ExtResource("1_l6cm7")
-theme_override_font_sizes/font_size = 45
-theme_override_styles/hover = ExtResource("3_rcqid")
-theme_override_styles/pressed = ExtResource("3_5dd4i")
-theme_override_styles/normal = ExtResource("3_5dd4i")
-text = "SETTINGS"
-
-[node name="Background" type="Panel" parent="."]
-offset_right = 1280.0
-offset_bottom = 720.0
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_rcqid")
-
-[node name="Random" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -113.0
-offset_top = -226.0
-offset_right = 43.0
-offset_bottom = -190.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_l6cm7")
-theme_override_font_sizes/font_size = 30
-text = "Have fun :D"
-
-[node name="GameTitle" type="Label" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -367.0
-offset_top = -315.0
-offset_right = 367.0
-offset_bottom = -244.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_l6cm7")
-theme_override_font_sizes/font_size = 60
-text = "¡Welcome to Boom Brawl!"
+script = ExtResource("1_rtw2f")
 
 [node name="GlobalSettings" type="Node" parent="."]
 script = ExtResource("3_bqqt6")
 
-[node name="PlaySettings" type="Panel" parent="."]
-visible = false
-z_index = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
+[node name="MainPanel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_styles/panel = SubResource("StyleBoxFlat_bqqt6")
 
-[node name="Players" type="Panel" parent="PlaySettings"]
-visible = false
-z_index = 5
+[node name="PlayButton" type="Button" parent="MainPanel"]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -640.0
-offset_top = -360.0
-offset_right = 640.0
-offset_bottom = 360.0
-grow_horizontal = 2
+offset_left = 62.0
+offset_top = -177.0
+offset_right = 378.0
+offset_bottom = -100.0
 grow_vertical = 2
-mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_8ln24")
-
-[node name="PlayerManager" type="GridContainer" parent="PlaySettings/Players"]
-z_index = 2
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -425.0
-offset_top = -326.0
-offset_right = 428.0
-offset_bottom = 106.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-theme_override_constants/h_separation = 215
-theme_override_constants/v_separation = 250
-columns = 4
-script = ExtResource("5_rtw2f")
-
-[node name="Keyboard" type="Panel" parent="PlaySettings/Players/PlayerManager"]
-z_index = 3
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
-
-[node name="PlayerName" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Keyboard"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 189.0
-offset_bottom = 54.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player1"
-placeholder_text = "Name"
-max_length = 16
-select_all_on_focus = true
-
-[node name="Team" type="Label" parent="PlaySettings/Players/PlayerManager/Keyboard"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 65.0
-offset_right = 97.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 25
-text = "Team:"
-
-[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Keyboard/Team"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = -5.0
-offset_right = 166.0
-offset_bottom = 37.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-selected = 0
-item_count = 2
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-
-[node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Keyboard"]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 115.0
-offset_right = 188.0
-offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_styles/background = ExtResource("7_5dd4i")
-theme_override_styles/fill = ExtResource("8_lgwnu")
-value = 50.0
-
-[node name="Player2" type="Panel" parent="PlaySettings/Players/PlayerManager"]
-z_index = 3
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
-
-[node name="PlayerName" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player2"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 189.0
-offset_bottom = 54.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player2"
-placeholder_text = "Name"
-max_length = 16
-select_all_on_focus = true
-
-[node name="Team" type="Label" parent="PlaySettings/Players/PlayerManager/Player2"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 65.0
-offset_right = 97.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 25
-text = "Team:"
-
-[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player2/Team"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = -5.0
-offset_right = 166.0
-offset_bottom = 37.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-selected = 1
-item_count = 2
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-
-[node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player2"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 115.0
-offset_right = 190.0
-offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_styles/background = ExtResource("7_5dd4i")
-theme_override_styles/fill = ExtResource("8_lgwnu")
-
-[node name="Player3" type="Panel" parent="PlaySettings/Players/PlayerManager"]
-z_index = 3
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
-
-[node name="PlayerName" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player3"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 189.0
-offset_bottom = 54.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player3"
-placeholder_text = "Name"
-max_length = 16
-select_all_on_focus = true
-
-[node name="Team" type="Label" parent="PlaySettings/Players/PlayerManager/Player3"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 65.0
-offset_right = 97.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 25
-text = "Team:"
-
-[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player3/Team"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = -5.0
-offset_right = 166.0
-offset_bottom = 37.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-selected = 0
-item_count = 2
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-
-[node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player3"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 115.0
-offset_right = 190.0
-offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_styles/background = ExtResource("7_5dd4i")
-theme_override_styles/fill = ExtResource("8_lgwnu")
-
-[node name="Player4" type="Panel" parent="PlaySettings/Players/PlayerManager"]
-z_index = 3
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
-
-[node name="PlayerName" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player4"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 189.0
-offset_bottom = 54.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player4"
-placeholder_text = "Name"
-max_length = 16
-select_all_on_focus = true
-
-[node name="Team" type="Label" parent="PlaySettings/Players/PlayerManager/Player4"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 65.0
-offset_right = 97.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 25
-text = "Team:"
-
-[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player4/Team"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = -5.0
-offset_right = 166.0
-offset_bottom = 37.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-selected = 1
-item_count = 2
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-
-[node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player4"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 115.0
-offset_right = 190.0
-offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_styles/background = ExtResource("7_5dd4i")
-theme_override_styles/fill = ExtResource("8_lgwnu")
-
-[node name="Player5" type="Panel" parent="PlaySettings/Players/PlayerManager"]
-z_index = 3
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
-
-[node name="PlayerName" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player5"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 189.0
-offset_bottom = 54.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player5"
-placeholder_text = "Name"
-max_length = 16
-select_all_on_focus = true
-
-[node name="Team" type="Label" parent="PlaySettings/Players/PlayerManager/Player5"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 65.0
-offset_right = 97.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 25
-text = "Team:"
-
-[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player5/Team"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = -5.0
-offset_right = 166.0
-offset_bottom = 37.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-selected = 0
-item_count = 2
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-
-[node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player5"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 115.0
-offset_right = 190.0
-offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_styles/background = ExtResource("7_5dd4i")
-theme_override_styles/fill = ExtResource("8_lgwnu")
-
-[node name="Player6" type="Panel" parent="PlaySettings/Players/PlayerManager"]
-z_index = 3
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
-
-[node name="PlayerName" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player6"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 189.0
-offset_bottom = 54.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player6"
-placeholder_text = "Name"
-max_length = 16
-select_all_on_focus = true
-
-[node name="Team" type="Label" parent="PlaySettings/Players/PlayerManager/Player6"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 65.0
-offset_right = 97.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 25
-text = "Team:"
-
-[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player6/Team"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = -5.0
-offset_right = 166.0
-offset_bottom = 37.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-selected = 1
-item_count = 2
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-
-[node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player6"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 115.0
-offset_right = 190.0
-offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_styles/background = ExtResource("7_5dd4i")
-theme_override_styles/fill = ExtResource("8_lgwnu")
-
-[node name="Player7" type="Panel" parent="PlaySettings/Players/PlayerManager"]
-z_index = 3
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
-
-[node name="PlayerName" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player7"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 189.0
-offset_bottom = 54.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player7"
-placeholder_text = "Name"
-max_length = 16
-select_all_on_focus = true
-
-[node name="Team" type="Label" parent="PlaySettings/Players/PlayerManager/Player7"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 65.0
-offset_right = 97.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 25
-text = "Team:"
-
-[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player7/Team"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = -5.0
-offset_right = 166.0
-offset_bottom = 37.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-selected = 0
-item_count = 2
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-
-[node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player7"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 115.0
-offset_right = 190.0
-offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_styles/background = ExtResource("7_5dd4i")
-theme_override_styles/fill = ExtResource("8_lgwnu")
-
-[node name="Player8" type="Panel" parent="PlaySettings/Players/PlayerManager"]
-z_index = 3
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_wu84c")
-
-[node name="PlayerName" type="LineEdit" parent="PlaySettings/Players/PlayerManager/Player8"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 12.0
-offset_right = 189.0
-offset_bottom = 54.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-text = "Player8"
-placeholder_text = "Name"
-max_length = 16
-select_all_on_focus = true
-
-[node name="Team" type="Label" parent="PlaySettings/Players/PlayerManager/Player8"]
-layout_mode = 0
-offset_left = 23.0
-offset_top = 65.0
-offset_right = 97.0
-offset_bottom = 100.0
-theme_override_font_sizes/font_size = 25
-text = "Team:"
-
-[node name="TeamNumber" type="OptionButton" parent="PlaySettings/Players/PlayerManager/Player8/Team"]
-layout_mode = 0
-offset_left = 97.0
-offset_top = -5.0
-offset_right = 166.0
-offset_bottom = 37.0
-focus_mode = 1
-theme_override_styles/normal = ExtResource("6_jk1qb")
-selected = 1
-item_count = 2
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
-
-[node name="ReadyBar" type="ProgressBar" parent="PlaySettings/Players/PlayerManager/Player8"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 115.0
-offset_right = 183.0
-offset_bottom = 142.0
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_styles/background = ExtResource("7_5dd4i")
-theme_override_styles/fill = ExtResource("8_lgwnu")
-
-[node name="StartCountdown" type="Timer" parent="PlaySettings/Players/PlayerManager"]
-wait_time = 0.5
-one_shot = true
-
-[node name="Countdown" type="Label" parent="PlaySettings/Players"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -250.0
-offset_top = 137.0
-offset_right = 207.0
-offset_bottom = 225.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_constants/shadow_outline_size = 6
-theme_override_fonts/font = ExtResource("6_rtw2f")
-theme_override_font_sizes/font_size = 50
-text = "Starting in:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Start" type="Button" parent="PlaySettings/Players"]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -153.0
-offset_top = 151.0
-offset_right = 113.0
-offset_bottom = 218.0
-grow_horizontal = 2
-grow_vertical = 2
-focus_mode = 1
-theme_override_fonts/font = ExtResource("1_l6cm7")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = ExtResource("11_flqon")
-theme_override_styles/pressed = ExtResource("11_lgwnu")
-theme_override_styles/normal = ExtResource("11_lgwnu")
-text = "START"
-
-[node name="Instructions" type="Label" parent="PlaySettings/Players"]
-layout_mode = 0
-offset_left = 145.0
-offset_top = 186.0
-offset_right = 1138.0
-offset_bottom = 271.0
-theme_override_font_sizes/font_size = 40
-text = "Players to play must press the X button or the Enter key"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="GameSettings" type="Panel" parent="PlaySettings"]
-visible = false
-z_index = 4
-layout_mode = 0
-offset_right = 1280.0
-offset_bottom = 720.0
-mouse_filter = 2
-script = ExtResource("15_7b55j")
-
-[node name="Next" type="Button" parent="PlaySettings/GameSettings"]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 585.0
-offset_right = 212.0
-offset_bottom = 653.0
-scale = Vector2(0.662659, 0.6)
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = ExtResource("11_flqon")
-theme_override_styles/normal = ExtResource("11_lgwnu")
-text = "Next"
-
-[node name="MapLabel" type="Label" parent="PlaySettings/GameSettings"]
-layout_mode = 0
-offset_left = 47.0
-offset_top = 136.0
-offset_right = 413.0
-offset_bottom = 207.0
-theme_override_font_sizes/font_size = 50
-text = "Select a map:"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Time" type="Label" parent="PlaySettings/GameSettings"]
-layout_mode = 0
-offset_left = 796.0
-offset_top = 409.0
-offset_right = 924.0
-offset_bottom = 480.0
 theme_override_font_sizes/font_size = 30
-text = "Time:"
+text = "play"
+script = ExtResource("3_oa1go")
+
+[node name="SettingsButton" type="Button" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -578.0
+offset_top = -55.0
+offset_right = -262.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "settings"
+script = ExtResource("4_tbmy8")
+
+[node name="GameTitle" type="Label" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -332.0
+offset_right = 108.0
+offset_bottom = -284.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "welcome_text"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KeyboardControls" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 245.0
+offset_top = -233.0
+offset_right = 565.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
 metadata/_edit_group_ = true
 
-[node name="SpinBox" type="SpinBox" parent="PlaySettings/GameSettings/Time"]
-layout_mode = 0
-offset_left = 107.0
-offset_right = 236.0
-offset_bottom = 67.0
-max_value = 2000.0
-step = 50.0
-value = 300.0
-alignment = 1
+[node name="Label" type="Label" parent="MainPanel/KeyboardControls"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "keyboard_controls"
 
-[node name="Gamemode" type="Label" parent="PlaySettings/GameSettings"]
-layout_mode = 0
-offset_left = 753.0
-offset_top = 134.0
-offset_right = 1212.0
-offset_bottom = 205.0
-theme_override_font_sizes/font_size = 50
-text = "Select a gamemode:"
+[node name="Movement" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/KeyboardControls/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "movement"
+
+[node name="Space" type="Label" parent="MainPanel/KeyboardControls/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "WASD"
+
+[node name="Shoot" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "shoot"
+
+[node name="Space2" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "left_click"
+
+[node name="Jump" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/KeyboardControls/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "jump"
+
+[node name="Space3" type="Label" parent="MainPanel/KeyboardControls/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "spacebar"
+
+[node name="SwitchWeapon" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/KeyboardControls/SwitchWeapon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "switch_weapon"
+
+[node name="Space4" type="Label" parent="MainPanel/KeyboardControls/SwitchWeapon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/SwitchWeapon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "e_key"
+
+[node name="Aim" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/KeyboardControls/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "aim"
+
+[node name="Space4" type="Label" parent="MainPanel/KeyboardControls/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "mouse"
+
+[node name="JoystickControls2" type="VBoxContainer" parent="MainPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 81.0
+offset_top = -7.0
+offset_right = 429.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "joystick_controls"
+
+[node name="Movement" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "movement"
+
+[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "left_stick"
+
+[node name="Shoot" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "shoot"
+
+[node name="Space2" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "R2"
+
+[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "/"
+
+[node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "circle_button"
+
+[node name="Jump" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "jump"
+
+[node name="Space3" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "L2"
+
+[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "/"
+
+[node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "cross_button"
+
+[node name="SwitchWeapon" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "switch_weapon"
+
+[node name="Space4" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "square_button"
+
+[node name="Aim" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "aim"
+
+[node name="Space4" type="Label" parent="MainPanel/JoystickControls2/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "left_stick"
+
+[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "/"
+
+[node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "right_stick"
+
+[node name="SettingsPanel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SettingsPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -124.0
+offset_top = -235.0
+offset_right = 341.0
+offset_bottom = 210.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Language" type="HBoxContainer" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("2_ekxnf")
+
+[node name="Label" type="Label" parent="SettingsPanel/VBoxContainer/Language"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 1
+text = "language"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Gamemode" type="OptionButton" parent="PlaySettings/GameSettings/Gamemode"]
-layout_mode = 0
-offset_left = 43.0
-offset_top = 73.0
-offset_right = 396.0
-offset_bottom = 159.0
+[node name="OptionButton" type="OptionButton" parent="SettingsPanel/VBoxContainer/Language"]
+layout_mode = 2
+size_flags_horizontal = 4
 focus_mode = 0
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-alignment = 1
-selected = 0
 item_count = 2
-popup/item_0/text = "Free for all(Default)"
+popup/item_0/text = "English"
 popup/item_0/id = 0
-popup/item_1/text = "Keep the briefcase"
+popup/item_1/text = "Español"
 popup/item_1/id = 1
 
-[node name="Maps" type="ScrollContainer" parent="PlaySettings/GameSettings"]
+[node name="Fullscreen" type="HBoxContainer" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("3_wu84c")
+
+[node name="Label" type="Label" parent="SettingsPanel/VBoxContainer/Fullscreen"]
+layout_mode = 2
+text = "fullscreen"
+
+[node name="Checkbox" type="CheckBox" parent="SettingsPanel/VBoxContainer/Fullscreen"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+
+[node name="V-Sync" type="HBoxContainer" parent="SettingsPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("4_wu84c")
+
+[node name="Label" type="Label" parent="SettingsPanel/VBoxContainer/V-Sync"]
+layout_mode = 2
+text = "v_sync"
+
+[node name="Checkbox" type="CheckBox" parent="SettingsPanel/VBoxContainer/V-Sync"]
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 0
+
+[node name="Return" type="Button" parent="SettingsPanel"]
 layout_mode = 0
-offset_left = 79.0
-offset_top = 306.0
-offset_right = 365.0
-offset_bottom = 544.0
+offset_left = 316.0
+offset_top = 125.0
+offset_right = 458.0
+offset_bottom = 173.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 25
+text = "return"
+script = ExtResource("6_oa1go")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PlaySettings/GameSettings/Maps"]
-layout_mode = 2
-size_flags_vertical = 2
-
-[node name="SpikyBattle" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
-layout_mode = 2
-focus_mode = 1
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-text = "Spiky Battle(Default)"
-
-[node name="DescendingWar" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
-layout_mode = 2
-focus_mode = 1
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-text = "Descending War"
-
-[node name="IslamicHell" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
-layout_mode = 2
-focus_mode = 1
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-text = "Islamic Hell"
-
-[node name="IronValley" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
-layout_mode = 2
-focus_mode = 1
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-text = "Iron Valley"
-
-[node name="JumpyConfrontation" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
-layout_mode = 2
-focus_mode = 1
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-text = "Jumpy Confrontation"
-
-[node name="SedimentEruption" type="Button" parent="PlaySettings/GameSettings/Maps/VBoxContainer"]
-layout_mode = 2
-focus_mode = 1
-theme_override_font_sizes/font_size = 30
-theme_override_styles/normal = ExtResource("15_5pajh")
-text = "Sediment Eruption"
-
-[node name="Return" type="Button" parent="PlaySettings"]
-z_index = 8
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
+[node name="LobbyPanel" type="Panel" parent="."]
+visible = false
+anchors_preset = 15
 anchor_right = 1.0
-offset_left = -1233.0
-offset_top = 34.0
-offset_right = -1135.0
-offset_bottom = 75.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 20
-theme_override_styles/hover = ExtResource("3_rcqid")
-theme_override_styles/normal = ExtResource("3_5dd4i")
-text = "Return"
-script = ExtResource("14_1ajci")
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[connection signal="button_down" from="PlayButton" to="PlayButton" method="_on_button_down"]
-[connection signal="timeout" from="PlaySettings/Players/PlayerManager/StartCountdown" to="PlaySettings/Players/PlayerManager" method="_on_start_countdown_timeout"]
-[connection signal="button_down" from="PlaySettings/Players/Start" to="PlaySettings/Players/PlayerManager" method="_on_start_button_down"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Next" to="PlaySettings/GameSettings" method="_on_next_button_down"]
-[connection signal="value_changed" from="PlaySettings/GameSettings/Time/SpinBox" to="PlaySettings/GameSettings" method="_on_spin_box_value_changed"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
-[connection signal="item_selected" from="PlaySettings/GameSettings/Gamemode/Gamemode" to="PlaySettings/GameSettings" method="_on_gamemode_item_selected"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/SpikyBattle" to="PlaySettings/GameSettings" method="_on_spiky_battle_button_down"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/DescendingWar" to="PlaySettings/GameSettings" method="_on_descending_war_button_down"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/IslamicHell" to="PlaySettings/GameSettings" method="_on_islamic_hell_button_down"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/IronValley" to="PlaySettings/GameSettings" method="_on_iron_valley_button_down"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/JumpyConfrontation" to="PlaySettings/GameSettings" method="_on_jumpy_confrontation_button_down"]
-[connection signal="button_down" from="PlaySettings/GameSettings/Maps/VBoxContainer/SedimentEruption" to="PlaySettings/GameSettings" method="_on_sediment_eruption_button_down"]
-[connection signal="button_down" from="PlaySettings/Return" to="PlaySettings/Return" method="_on_button_down"]
+[node name="Players" type="VBoxContainer" parent="LobbyPanel"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -630.0
+offset_top = -356.0
+offset_right = -9.0
+offset_bottom = 354.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Container1" type="HBoxContainer" parent="LobbyPanel/Players"]
+layout_mode = 2
+
+[node name="PlayerInfo" type="Panel" parent="LobbyPanel/Players/Container1"]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+
+[node name="Name" type="LineEdit" parent="LobbyPanel/Players/Container1/PlayerInfo"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_top = 0.5
+offset_right = 28.0
+offset_bottom = 31.5
+grow_horizontal = 2
+placeholder_text = "name"
+max_length = 16
+
+[node name="PrimaryWeapon" type="OptionButton" parent="LobbyPanel/Players/Container1/PlayerInfo"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 61.5
+offset_right = 157.0
+offset_bottom = 88.5
+selected = 0
+item_count = 2
+popup/item_0/text = "rocket_launcher"
+popup/item_0/id = 0
+popup/item_1/text = "elipser"
+popup/item_1/id = 1
+
+[node name="SecondaryWeapon" type="OptionButton" parent="LobbyPanel/Players/Container1/PlayerInfo"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 97.5
+offset_right = 157.0
+offset_bottom = 124.5
+selected = 0
+item_count = 1
+popup/item_0/text = "construction"
+popup/item_0/id = 0
+
+[node name="Label" type="Label" parent="LobbyPanel/Players/Container1/PlayerInfo"]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 34.0
+offset_right = 58.0
+offset_bottom = 59.0
+text = "team"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Team" type="OptionButton" parent="LobbyPanel/Players/Container1/PlayerInfo/Label"]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 116.0
+offset_bottom = 27.0
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1
+
+[node name="Options" type="VBoxContainer" parent="LobbyPanel"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -292.5
+offset_right = 404.0
+offset_bottom = 292.5
+grow_vertical = 2
+
+[node name="Gamemode" type="HBoxContainer" parent="LobbyPanel/Options"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LobbyPanel/Options/Gamemode"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "gamemode"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="LobbyPanel/Options/Gamemode"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 4
+selected = 0
+item_count = 2
+popup/item_0/text = "free_for_all"
+popup/item_0/id = 0
+popup/item_1/text = "keep_the_briefcase"
+popup/item_1/id = 1
+
+[node name="Map" type="HBoxContainer" parent="LobbyPanel/Options"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LobbyPanel/Options/Map"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "map"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="LobbyPanel/Options/Map"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 4
+selected = 0
+item_count = 2
+popup/item_0/text = "Spiky Battle"
+popup/item_0/id = 0
+popup/item_1/text = "Descending War"
+popup/item_1/id = 1
+
+[node name="Time" type="HBoxContainer" parent="LobbyPanel/Options"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LobbyPanel/Options/Time"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+text = "time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SpinBox" type="SpinBox" parent="LobbyPanel/Options/Time"]
+custom_minimum_size = Vector2(130, 50)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 20000.0
+step = 50.0
+value = 350.0
+alignment = 1
+
+[node name="Return" type="Button" parent="LobbyPanel"]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 5.0
+offset_right = 604.0
+offset_bottom = 53.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 25
+text = "return"
+script = ExtResource("6_oa1go")
+
+[connection signal="button_down" from="MainPanel/PlayButton" to="MainPanel/PlayButton" method="_on_button_down"]
+[connection signal="button_down" from="MainPanel/SettingsButton" to="MainPanel/SettingsButton" method="_on_button_down"]
+[connection signal="item_selected" from="SettingsPanel/VBoxContainer/Language/OptionButton" to="SettingsPanel/VBoxContainer/Language" method="_on_option_button_item_selected"]
+[connection signal="toggled" from="SettingsPanel/VBoxContainer/Fullscreen/Checkbox" to="SettingsPanel/VBoxContainer/Fullscreen" method="_on_checkbox_toggled"]
+[connection signal="toggled" from="SettingsPanel/VBoxContainer/V-Sync/Checkbox" to="SettingsPanel/VBoxContainer/V-Sync" method="_on_checkbox_toggled"]
+[connection signal="button_down" from="SettingsPanel/Return" to="SettingsPanel/Return" method="_on_button_down"]
+[connection signal="button_down" from="LobbyPanel/Return" to="LobbyPanel/Return" method="_on_button_down"]

@@ -24,6 +24,7 @@ func start_game():
 	
 	for player in players:
 		world.add_player(player.Device)
+		
 func end_game():
 	in_game = false
 	get_tree().change_scene_to_packed(MAIN_MENU)
@@ -39,16 +40,10 @@ func end_game():
 		var player_name = player_names.get_child(player.Device + 1).get_node("PlayerName")
 		player_name.text = player.Name
 	players = []
+
 func _ready():
-	create_inputs()
+	Input.joy_connection_changed.connect(_joy_connection_changed)
 	
-func create_inputs():
-	for i in range(0,8):
-		var suffix = str(i)
-		var submit = "submit"+suffix
-		if not InputMap.has_action(submit):
-			InputMap.add_action(submit, 0.5)
-			var joystick_event = InputEventJoypadButton.new()
-			joystick_event.device = i
-			joystick_event.button_index = JOY_BUTTON_A
-			InputMap.action_add_event(submit, joystick_event)
+func _joy_connection_changed(device: int, connected: bool):
+	if connected:
+		print("Connected")

@@ -1,0 +1,38 @@
+key,es,en
+welcome_text,¡Bienvenido a Boom Brawl!,¡Welcome to Boom Brawl!
+play,Jugar,Play
+settings,Ajustes,Settings
+language,Idioma,Language
+fullscreen,Pantalla completa,Fullscreen
+
+controls,Controles,Controls
+joystick_controls,Controles de joystick,Joystick Controls
+keyboard_controls,Controles de teclado,Keyboard controls
+movement,Movimiento,Movement
+shoot,Disparar,Shoot
+jump,Saltar,Jump
+switch_weapon,Cambiar arma,Switch weapon
+aim,Apuntar,Aim
+
+mouse,Mouse,Mouse
+left_click,Click izquierdo,Left click
+spacebar,Barra espaciadora,Spacebar
+e_key,Tecla E,E Key
+left_stick,Stick izquierdo,Left Stick
+right_stick,Stick derecho,Right Stick
+circle_button,Círculo,Circle
+cross_button,Cruz,Cross
+square_button,Cuadrado,Square
+v_sync,Sincronización vertical,V-Sync
+
+return,Volver,Return
+time,Tiempo,Time
+name,Nombre,Player name
+team,Equipo,Team
+gamemode,Modo de juego,Gamemode
+map,Mapa,Map
+free_for_all,Todos contra Todos,Free For All
+keep_the_briefcase,Protege el maletín,Keep the Briefcase
+rocket_launcher,Lanzacohetes,Rocket Launcher
+elipser,Elipser,Elipser
+construction,Construcción,Construction

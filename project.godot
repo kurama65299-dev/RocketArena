@@ -86,6 +86,10 @@ switch_weapon={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations/Translations.en.translation", "res://translations/Translations.es.translation")
+
 [layer_names]
 
 2d_physics/layer_1="Block"
