@@ -69,7 +69,7 @@ func _keyboard_movement(delta: float): #Keyboard detection
 		
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT): #SHOOT EVENT
 		shoot_weapon.shoot(actual_weapon, mouse_direction, "NORMAL")
-	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT): #ULTIMATE EVENT
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT): #ULTIMATE EVENT
 		shoot_weapon.shoot(actual_weapon, mouse_direction, "ULTIMATE")
 func _joystick_movement(delta: float): #Joystick detection
 	var axis_x = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_X)
