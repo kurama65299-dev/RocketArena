@@ -5,33 +5,36 @@ extends Node2D
 @onready var debris: Node = get_node("/root/Game/World/Debris")
 @onready var player: Player = get_parent().get_parent().get_parent()
 @onready var strong_rocket_timer: Timer = $StrongRocket
-@onready var ultimate: ProgressBar = player.get_node("Ultimate")
+@onready var normal_timer: Timer = $NormalRocket
+@onready var ultimate_bar: ProgressBar = player.get_node("Ultimate")
 @onready var ready_vfx: CPUParticles2D = player.get_node("Ultimate/ReadyVFX")
 
 func _ready():
-	ultimate.max_value = strong_rocket_timer.wait_time
-
+	ultimate_bar.max_value = strong_rocket_timer.wait_time
+	normal_timer.start()
 func _process(delta: float) -> void:
-	ultimate.value = strong_rocket_timer.wait_time - strong_rocket_timer.time_left
-	ready_vfx.emitting = ultimate.value == ultimate.max_value
+	ultimate_bar.value = strong_rocket_timer.wait_time - strong_rocket_timer.time_left
+	ready_vfx.emitting = ultimate_bar.value == ultimate_bar.max_value
 
-func shoot(direction):
+func shoot(direction, type):
+	var rocket
+	if strong_rocket_timer.is_stopped() and type == "ULTIMATE":
+		rocket = preload("res://scenes/weapons/strong_rocket.tscn")
+		strong_rocket_timer.start()
+	elif normal_timer.is_stopped() and type == "NORMAL":
+		rocket = preload("res://scenes/weapons/rocket.tscn")
+		normal_timer.start()
+	else:
+		return
+	
+	visible = true
 	global_rotation = direction.angle()
 	animation_player.play("recoil")
 	
 	var point = shoot_point.global_position
 	
-	var rocket
-	if strong_rocket_timer.is_stopped():
-		rocket = preload("res://scenes/strong_rocket.tscn")
-	else:
-		rocket = preload("res://scenes/rocket.tscn")
-		
 	var new_rocket = rocket.instantiate()
-	strong_rocket_timer.start()
-	
 	debris.add_child(new_rocket)
-	
 	new_rocket.owner_id = player.player_id
 	new_rocket.global_position = point
 	new_rocket.launch(direction)

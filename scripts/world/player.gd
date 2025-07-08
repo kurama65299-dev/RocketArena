@@ -1,7 +1,7 @@
 class_name Player
 extends CharacterBody2D
 
-const BRIEFCASE = preload("res://scenes/briefcase.tscn")
+const BRIEFCASE: PackedScene = preload("res://scenes/briefcase.tscn")
 @onready var death_vfx: CPUParticles2D = $Death
 @onready var briefcase_sfx: AudioStreamPlayer =get_node("/root/Game/BriefcaseTaken")
 @onready var briefcase_sprite: Sprite2D = $Briefcase
@@ -11,8 +11,8 @@ const BRIEFCASE = preload("res://scenes/briefcase.tscn")
 @onready var health_bar: ProgressBar = $ProgressBar
 @onready var world: Node = get_node("/root/Game/World")
 @onready var aim_arrow: Panel = $AimArrow
-@onready var game = get_node("/root/Game")
-@onready var tile_logic = get_node("/root/Game/World/TileLogic")
+@onready var game: Node = get_node("/root/Game")
+@onready var tile_logic: Node = get_node("/root/Game/World/TileLogic")
 @export var player_id: int = -1
 
 var jump_power: int = 800
@@ -38,7 +38,7 @@ var gamemodes: Dictionary = GlobalSettings.gamemodes
 func _ready(): #Update health bar
 	update_health_bar()
 	
-func _keyboard_movement(delta): #Keyboard detection
+func _keyboard_movement(delta: float): #Keyboard detection
 	var mouse_pos: Vector2 = get_global_mouse_position()
 	var mouse_direction: Vector2 = (mouse_pos - global_position).normalized()
 	var direction: int = Input.get_axis("left", "right")
@@ -68,8 +68,10 @@ func _keyboard_movement(delta): #Keyboard detection
 		animated_sprite.play("idle")
 		
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT): #SHOOT EVENT
-		shoot_weapon.shoot(actual_weapon, mouse_direction)
-func _joystick_movement(delta): #Joystick detection
+		shoot_weapon.shoot(actual_weapon, mouse_direction, "NORMAL")
+	elif Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT): #ULTIMATE EVENT
+		shoot_weapon.shoot(actual_weapon, mouse_direction, "ULTIMATE")
+func _joystick_movement(delta: float): #Joystick detection
 	var axis_x = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_X)
 	var axis_y = Input.get_joy_axis(player_id, JOY_AXIS_LEFT_Y)	
 	
@@ -114,9 +116,12 @@ func _joystick_movement(delta): #Joystick detection
 	
 	if Input.is_action_pressed("shoot"+suffix):
 		if aim_direction.length() == 1:
-			shoot_weapon.shoot(actual_weapon, aim_direction)
+			shoot_weapon.shoot(actual_weapon, aim_direction, "NORMAL")
+	if Input.is_action_pressed("ultimate"+suffix):
+		if aim_direction.length() == 1:
+			shoot_weapon.shoot(actual_weapon, aim_direction, "ULTIMATE")
 
-func _physics_process(delta : float) -> void: #Impulse and gravity
+func _physics_process(delta: float) -> void: #Impulse and gravity
 	if is_dead:
 		return
 	if !is_on_floor(): #GRAVITY
@@ -143,27 +148,11 @@ func damage(damage: int, enemy_id): #Damage and death functions
 	health -= damage
 	
 	if health <= 0:
-		if is_dead:
-			return
-		is_dead = true
-		death_vfx.emitting = true
-
-		if GlobalSettings.gamemode == gamemodes.KEEP_THE_BRIEFCASE and has_briefcase:
-			var new_briefcase = BRIEFCASE.instantiate()
-			if enemy_id == null:
-				new_briefcase.global_position = Vector2(0,-900)
-			else:
-				new_briefcase.global_position = global_position
-			world.add_child(new_briefcase)
-		if last_damaged_id != null:
-			game.on_player_death(player_id, last_damaged_id)
-			
+		death(enemy_id)
 		world.respawn(player_id)
 		world.add_debris(death_vfx, death_vfx.lifetime)
-		
 		queue_free()
 		return
-		
 	update_health_bar()
 	darken_on_damage()
 	damaged_timer.start()
@@ -216,3 +205,19 @@ func player_setup():
 	var spawn_points = tile_map.get_node("SpawnPoints")
 	var random = randi_range(0, spawn_points.get_child_count()-1)
 	global_position = spawn_points.get_child(random).global_position
+
+func death(enemy_id):
+	if is_dead:
+		return
+	is_dead = true
+	death_vfx.emitting = true
+
+	if GlobalSettings.gamemode == gamemodes.KEEP_THE_BRIEFCASE and has_briefcase:
+		var new_briefcase = BRIEFCASE.instantiate()
+		if enemy_id == null:
+			new_briefcase.global_position = Vector2(0,-900)
+		else:
+			new_briefcase.global_position = global_position
+			world.add_child(new_briefcase)
+		if last_damaged_id != null:
+			game.on_player_death(player_id, last_damaged_id)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dl18woi1k8sfm"]
 
-[ext_resource type="Script" uid="uid://bbmk47yxmc4pp" path="res://scripts/rocket_launcher.gd" id="1_vlcf2"]
+[ext_resource type="Script" uid="uid://bbmk47yxmc4pp" path="res://scripts/weapons/splitter.gd" id="1_vlcf2"]
 [ext_resource type="Texture2D" uid="uid://b50bnft6hbipl" path="res://sprites/RocketLauncher.png" id="2_w7upe"]
 
 [sub_resource type="Animation" id="Animation_k8ufg"]
@@ -40,7 +40,7 @@ _data = {
 &"recoil": SubResource("Animation_snwwu")
 }
 
-[node name="RocketLauncher" type="Node2D"]
+[node name="Splitter" type="Node2D"]
 script = ExtResource("1_vlcf2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -56,8 +56,12 @@ texture = ExtResource("2_w7upe")
 position = Vector2(-16, 0)
 
 [node name="StrongRocket" type="Timer" parent="."]
-wait_time = 6.0
+wait_time = 14.0
 one_shot = true
 autostart = true
+
+[node name="NormalRocket" type="Timer" parent="."]
+wait_time = 0.87
+one_shot = true
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

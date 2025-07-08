@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://xsv18mkiv27k" path="res://scenes/maps/MapTiles.tres" id="1_4bhph"]
 [ext_resource type="Texture2D" uid="uid://b2accmb6axkfo" path="res://sprites/lava.png" id="2_rj23y"]
-[ext_resource type="Script" uid="uid://bdn5bmctd5mf4" path="res://scripts/lava.gd" id="2_wg2wm"]
+[ext_resource type="Script" uid="uid://bdn5bmctd5mf4" path="res://scripts/world/lava.gd" id="2_wg2wm"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ds7n1"]
 

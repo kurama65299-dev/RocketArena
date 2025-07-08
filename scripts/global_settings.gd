@@ -4,7 +4,7 @@ const GAME_SCENE: PackedScene = preload("res://scenes/game.tscn")
 const MAIN_MENU: PackedScene = preload("res://scenes/main_menu.tscn")
 var time: int = 300
 
-enum weapons {ROCKET_LAUNCHER, ELIPSER, CONSTRUCTION}
+enum weapons {SPLITTER, DIVIDER, CONSTRUCTION}
 
 enum maps {SPIKY_BATTLE,DESCENDING_WAR,ISLAMIC_HELL,IRON_VALLEY,JUMPY_CONFRONTATION,SEDIMENT_ERUPTION}
 var map: int = maps.SPIKY_BATTLE

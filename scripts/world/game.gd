@@ -142,7 +142,8 @@ func game_ended():
 	
 	if GlobalSettings.gamemode == gamemodes.FREE_FOR_ALL:
 		var highest_score = -1
-		for player in GlobalSettings.players:
+		for id in GlobalSettings.players.keys():
+			var player = GlobalSettings.players[id]
 			if player.Score > highest_score:
 				winner = player
 				highest_score = player.Score

@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dn8bvcqnmtd8o"]
 
-[ext_resource type="Script" uid="uid://ccgoyfdpm6k4r" path="res://scripts/game.gd" id="1_lnu2h"]
-[ext_resource type="Script" uid="uid://dy60qcpkenmn1" path="res://scripts/world.gd" id="2_iywne"]
-[ext_resource type="Script" uid="uid://cqsg3bem4kmmv" path="res://scripts/tile_logic.gd" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://ccgoyfdpm6k4r" path="res://scripts/world/game.gd" id="1_lnu2h"]
+[ext_resource type="Script" uid="uid://dy60qcpkenmn1" path="res://scripts/world/world.gd" id="2_iywne"]
+[ext_resource type="Script" uid="uid://cqsg3bem4kmmv" path="res://scripts/world/tile_logic.gd" id="2_lnu2h"]
 [ext_resource type="AudioStream" uid="uid://brcxenk64m8nc" path="res://music/sfx/briefcase_taked.wav" id="5_iywne"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]

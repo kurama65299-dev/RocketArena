@@ -36,11 +36,11 @@ func get_weapons_options() -> Array:
 	var primary_weapon
 	match primary_weapon_option.selected:
 		0:
-			primary_weapon = weapons.ROCKET_LAUNCHER
+			primary_weapon = weapons.SPLITTER
 		1:
-			primary_weapon = weapons.ELIPSER
+			primary_weapon = weapons.DIVIDER
 		_:
-			primary_weapon = weapons.ROCKET_LAUNCHER
+			primary_weapon = weapons.SPLITTER
 			
 	var secondary_weapon
 	match secondary_weapon_option.selected:
@@ -54,9 +54,9 @@ func get_weapons_options() -> Array:
 func set_weapons_options(player_info: Dictionary):
 	var primary_weapon: int
 	match player_info.PrimaryWeapon:
-		weapons.ROCKET_LAUNCHER:
+		weapons.SPLITTER:
 			primary_weapon = 0
-		weapons.ELIPSER:
+		weapons.DIVIDER:
 			primary_weapon = 1
 		_:
 			primary_weapon = 0

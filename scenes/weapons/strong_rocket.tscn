@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://qwtyyvks2hyq"]
 
-[ext_resource type="Script" uid="uid://bb5oyio4a34fh" path="res://scripts/rocket.gd" id="1_7la6s"]
+[ext_resource type="Script" uid="uid://bb5oyio4a34fh" path="res://scripts/weapons/rocket.gd" id="1_7la6s"]
 [ext_resource type="Texture2D" uid="uid://djwncm7xjygdd" path="res://sprites/StrongRocket.png" id="2_7la6s"]
 [ext_resource type="Texture2D" uid="uid://bgaaqysb2evw" path="res://sprites/CharacterSpritesheet.png" id="3_snnlc"]
 [ext_resource type="AudioStream" uid="uid://dsim2pg60a3mw" path="res://music/sfx/explosion.wav" id="4_dfhuf"]

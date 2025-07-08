@@ -14,8 +14,10 @@ jump,Saltar,Jump
 switch_weapon,Cambiar arma,Switch weapon
 aim,Apuntar,Aim
 
+ultimate,Ultimate,Ultimate
 mouse,Mouse,Mouse
 left_click,Click izquierdo,Left click
+right_click,Click derecho,Right click
 spacebar,Barra espaciadora,Spacebar
 e_key,Tecla E,E Key
 left_stick,Stick izquierdo,Left Stick
@@ -23,6 +25,7 @@ right_stick,Stick derecho,Right Stick
 circle_button,Círculo,Circle
 cross_button,Cruz,Cross
 square_button,Cuadrado,Square
+triangle_button,Triángulo,Triangle
 v_sync,Sincronización vertical,V-Sync
 
 return,Volver,Return
@@ -33,8 +36,8 @@ gamemode,Modo de juego,Gamemode
 map,Mapa,Map
 free_for_all,Todos contra Todos,Free For All
 keep_the_briefcase,Protege el maletín,Keep the Briefcase
-rocket_launcher,Lanzacohetes,Rocket Launcher
-elipser,Elipser,Elipser
+splitter,Partidor,Splitter
+divider,Divisor,Divider
 construction,Construcción,Construction
 scores,Puntuación,Score
 menu,Menú,Menu

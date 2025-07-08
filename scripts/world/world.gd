@@ -32,6 +32,7 @@ func create_custom_inputs(device_id: int):
 	var left = "left" + suffix
 	var jump = "jump" + suffix
 	var shoot = "shoot" + suffix
+	var ultimate = "ultimate" + suffix
 	var switch_weapon = "switch_weapon" + suffix
 	
 	if not InputMap.has_action(right):
@@ -81,6 +82,18 @@ func create_custom_inputs(device_id: int):
 		joy_event.device = device_id
 		joy_event.button_index = JOY_BUTTON_X
 		InputMap.action_add_event(switch_weapon, joy_event)
+	if not InputMap.has_action(ultimate):
+		InputMap.add_action(ultimate, 0.5)
+		
+		var joy_event_a = InputEventJoypadButton.new()
+		joy_event_a.device = device_id
+		joy_event_a.button_index = JOY_BUTTON_Y
+		InputMap.action_add_event(ultimate, joy_event_a)
+		
+		var joy_event_b = InputEventJoypadMotion.new()
+		joy_event_b.device = device_id
+		joy_event_b.axis = JOY_AXIS_TRIGGER_RIGHT
+		InputMap.action_add_event(ultimate, joy_event_b)
 
 func assign_player_color(device_id: int):
 	var player_data

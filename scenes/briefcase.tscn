@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://jdm3667vikbv"]
 
-[ext_resource type="Script" uid="uid://brq4pvtlirkws" path="res://scripts/briefcase.gd" id="1_bxfb1"]
+[ext_resource type="Script" uid="uid://brq4pvtlirkws" path="res://scripts/world/briefcase.gd" id="1_bxfb1"]
 [ext_resource type="Texture2D" uid="uid://bgaaqysb2evw" path="res://sprites/CharacterSpritesheet.png" id="2_tl46d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tl46d"]

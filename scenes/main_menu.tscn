@@ -1,15 +1,15 @@
 [gd_scene load_steps=11 format=3 uid="uid://bpsjpo6k5mkk8"]
 
-[ext_resource type="Script" uid="uid://dk3dafjpt6r4y" path="res://scenes/main_menu.gd" id="1_rtw2f"]
-[ext_resource type="Script" uid="uid://cl4jrr3ska8mo" path="res://scenes/language.gd" id="2_ekxnf"]
+[ext_resource type="Script" uid="uid://dk3dafjpt6r4y" path="res://scripts/main_menu/main_menu.gd" id="1_rtw2f"]
+[ext_resource type="Script" uid="uid://cl4jrr3ska8mo" path="res://scripts/main_menu/language.gd" id="2_ekxnf"]
 [ext_resource type="Script" uid="uid://dw0tkw1qelko0" path="res://scripts/global_settings.gd" id="3_bqqt6"]
-[ext_resource type="Script" uid="uid://cdmxpcmpa6lkw" path="res://scenes/play_button.gd" id="3_oa1go"]
-[ext_resource type="Script" uid="uid://dfqpxjd3ega1l" path="res://scenes/fullscreen.gd" id="3_wu84c"]
-[ext_resource type="Script" uid="uid://55adnbokn6tr" path="res://scenes/settings_button.gd" id="4_tbmy8"]
-[ext_resource type="Script" uid="uid://b8ye3ebpsuopp" path="res://scenes/v_sync.gd" id="4_wu84c"]
-[ext_resource type="Script" uid="uid://c4hga7nn1ir5y" path="res://scenes/return.gd" id="6_oa1go"]
-[ext_resource type="Script" uid="uid://b7j7kax2nbn8m" path="res://scenes/options.gd" id="9_5dd4i"]
-[ext_resource type="Script" uid="uid://ck0lgjx4s67j1" path="res://scenes/players.gd" id="9_jk1qb"]
+[ext_resource type="Script" uid="uid://cdmxpcmpa6lkw" path="res://scripts/main_menu/play_button.gd" id="3_oa1go"]
+[ext_resource type="Script" uid="uid://dfqpxjd3ega1l" path="res://scripts/main_menu/fullscreen.gd" id="3_wu84c"]
+[ext_resource type="Script" uid="uid://55adnbokn6tr" path="res://scripts/main_menu/settings_button.gd" id="4_tbmy8"]
+[ext_resource type="Script" uid="uid://b8ye3ebpsuopp" path="res://scripts/main_menu/v_sync.gd" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://c4hga7nn1ir5y" path="res://scripts/main_menu/return.gd" id="6_oa1go"]
+[ext_resource type="Script" uid="uid://b7j7kax2nbn8m" path="res://scripts/main_menu/options.gd" id="9_5dd4i"]
+[ext_resource type="Script" uid="uid://ck0lgjx4s67j1" path="res://scripts/main_menu/players.gd" id="9_jk1qb"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_rtw2f")
@@ -93,6 +93,24 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "keyboard_controls"
 
+[node name="Aim" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/KeyboardControls/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "aim"
+
+[node name="Space4" type="Label" parent="MainPanel/KeyboardControls/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Aim"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "mouse"
+
 [node name="Movement" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
 layout_mode = 2
 
@@ -110,24 +128,6 @@ text = ":"
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "WASD"
-
-[node name="Shoot" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "shoot"
-
-[node name="Space2" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = ":"
-
-[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "left_click"
 
 [node name="Jump" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
 layout_mode = 2
@@ -147,6 +147,42 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "spacebar"
 
+[node name="Shoot" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "shoot"
+
+[node name="Space2" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "left_click"
+
+[node name="Ultimate" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/KeyboardControls/Ultimate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "ultimate"
+
+[node name="Space4" type="Label" parent="MainPanel/KeyboardControls/Ultimate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Ultimate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "right_click"
+
 [node name="SwitchWeapon" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
 layout_mode = 2
 
@@ -165,24 +201,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "e_key"
 
-[node name="Aim" type="HBoxContainer" parent="MainPanel/KeyboardControls"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MainPanel/KeyboardControls/Aim"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "aim"
-
-[node name="Space4" type="Label" parent="MainPanel/KeyboardControls/Aim"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = ":"
-
-[node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Aim"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "mouse"
-
 [node name="JoystickControls2" type="VBoxContainer" parent="MainPanel"]
 layout_mode = 1
 anchors_preset = 8
@@ -190,10 +208,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 81.0
-offset_top = -7.0
-offset_right = 429.0
-offset_bottom = 164.0
+offset_left = 37.0
+offset_top = 22.0
+offset_right = 385.0
+offset_bottom = 263.0
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_group_ = true
@@ -202,98 +220,6 @@ metadata/_edit_group_ = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "joystick_controls"
-
-[node name="Movement" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Movement"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "movement"
-
-[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Movement"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = ":"
-
-[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Movement"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "left_stick"
-
-[node name="Shoot" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "shoot"
-
-[node name="Space2" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = ":"
-
-[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "R2"
-
-[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "/"
-
-[node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "circle_button"
-
-[node name="Jump" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Jump"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "jump"
-
-[node name="Space3" type="Label" parent="MainPanel/JoystickControls2/Jump"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = ":"
-
-[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Jump"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "L2"
-
-[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Jump"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "/"
-
-[node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Jump"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "cross_button"
-
-[node name="SwitchWeapon" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "switch_weapon"
-
-[node name="Space4" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = ":"
-
-[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "square_button"
 
 [node name="Aim" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
 layout_mode = 2
@@ -322,6 +248,126 @@ text = "/"
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "right_stick"
+
+[node name="Movement" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "movement"
+
+[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Movement"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "left_stick"
+
+[node name="Jump" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "jump"
+
+[node name="Space3" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "L1"
+
+[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "/"
+
+[node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Jump"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "cross_button"
+
+[node name="Shoot" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "shoot"
+
+[node name="Space2" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "R1"
+
+[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "/"
+
+[node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "circle_button"
+
+[node name="Ultimate" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/Ultimate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "ultimate"
+
+[node name="Space2" type="Label" parent="MainPanel/JoystickControls2/Ultimate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Ultimate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "R2"
+
+[node name="Space" type="Label" parent="MainPanel/JoystickControls2/Ultimate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "/"
+
+[node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Ultimate"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "triangle_button"
+
+[node name="SwitchWeapon" type="HBoxContainer" parent="MainPanel/JoystickControls2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "switch_weapon"
+
+[node name="Space4" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = ":"
+
+[node name="Label2" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "square_button"
 
 [node name="SettingsPanel" type="Panel" parent="."]
 visible = false
@@ -408,6 +454,7 @@ text = "return"
 script = ExtResource("6_oa1go")
 
 [node name="LobbyPanel" type="Panel" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

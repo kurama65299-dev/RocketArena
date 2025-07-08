@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bntmo03o34att"]
 
-[ext_resource type="Script" uid="uid://dpbb5awh3b281" path="res://scenes/player_info.gd" id="1_oojiu"]
+[ext_resource type="Script" uid="uid://dpbb5awh3b281" path="res://scripts/main_menu/player_info.gd" id="1_oojiu"]
 
 [node name="PlayerInfo" type="Panel"]
 custom_minimum_size = Vector2(300, 150)
@@ -28,9 +28,9 @@ offset_right = 157.0
 offset_bottom = 88.5
 selected = 0
 item_count = 2
-popup/item_0/text = "rocket_launcher"
+popup/item_0/text = "splitter"
 popup/item_0/id = 0
-popup/item_1/text = "elipser"
+popup/item_1/text = "divider"
 popup/item_1/id = 1
 
 [node name="SecondaryWeapon" type="OptionButton" parent="."]
