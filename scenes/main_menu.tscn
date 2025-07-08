@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bpsjpo6k5mkk8"]
+[gd_scene load_steps=11 format=3 uid="uid://bpsjpo6k5mkk8"]
 
 [ext_resource type="Script" uid="uid://dk3dafjpt6r4y" path="res://scenes/main_menu.gd" id="1_rtw2f"]
 [ext_resource type="Script" uid="uid://cl4jrr3ska8mo" path="res://scenes/language.gd" id="2_ekxnf"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://55adnbokn6tr" path="res://scenes/settings_button.gd" id="4_tbmy8"]
 [ext_resource type="Script" uid="uid://b8ye3ebpsuopp" path="res://scenes/v_sync.gd" id="4_wu84c"]
 [ext_resource type="Script" uid="uid://c4hga7nn1ir5y" path="res://scenes/return.gd" id="6_oa1go"]
+[ext_resource type="Script" uid="uid://b7j7kax2nbn8m" path="res://scenes/options.gd" id="9_5dd4i"]
+[ext_resource type="Script" uid="uid://ck0lgjx4s67j1" path="res://scenes/players.gd" id="9_jk1qb"]
 
 [node name="MainMenu" type="CanvasLayer"]
 script = ExtResource("1_rtw2f")
@@ -322,6 +324,7 @@ theme_override_font_sizes/font_size = 25
 text = "right_stick"
 
 [node name="SettingsPanel" type="Panel" parent="."]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -405,92 +408,11 @@ text = "return"
 script = ExtResource("6_oa1go")
 
 [node name="LobbyPanel" type="Panel" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Players" type="VBoxContainer" parent="LobbyPanel"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -630.0
-offset_top = -356.0
-offset_right = -9.0
-offset_bottom = 354.0
-grow_horizontal = 0
-grow_vertical = 2
-
-[node name="Container1" type="HBoxContainer" parent="LobbyPanel/Players"]
-layout_mode = 2
-
-[node name="PlayerInfo" type="Panel" parent="LobbyPanel/Players/Container1"]
-custom_minimum_size = Vector2(300, 150)
-layout_mode = 2
-
-[node name="Name" type="LineEdit" parent="LobbyPanel/Players/Container1/PlayerInfo"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -98.0
-offset_top = 0.5
-offset_right = 28.0
-offset_bottom = 31.5
-grow_horizontal = 2
-placeholder_text = "name"
-max_length = 16
-
-[node name="PrimaryWeapon" type="OptionButton" parent="LobbyPanel/Players/Container1/PlayerInfo"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 61.5
-offset_right = 157.0
-offset_bottom = 88.5
-selected = 0
-item_count = 2
-popup/item_0/text = "rocket_launcher"
-popup/item_0/id = 0
-popup/item_1/text = "elipser"
-popup/item_1/id = 1
-
-[node name="SecondaryWeapon" type="OptionButton" parent="LobbyPanel/Players/Container1/PlayerInfo"]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 97.5
-offset_right = 157.0
-offset_bottom = 124.5
-selected = 0
-item_count = 1
-popup/item_0/text = "construction"
-popup/item_0/id = 0
-
-[node name="Label" type="Label" parent="LobbyPanel/Players/Container1/PlayerInfo"]
-layout_mode = 0
-offset_left = 6.0
-offset_top = 34.0
-offset_right = 58.0
-offset_bottom = 59.0
-text = "team"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Team" type="OptionButton" parent="LobbyPanel/Players/Container1/PlayerInfo/Label"]
-layout_mode = 0
-offset_left = 65.0
-offset_right = 116.0
-offset_bottom = 27.0
-selected = 0
-item_count = 2
-popup/item_0/text = "1"
-popup/item_0/id = 0
-popup/item_1/text = "2"
-popup/item_1/id = 1
 
 [node name="Options" type="VBoxContainer" parent="LobbyPanel"]
 layout_mode = 1
@@ -501,6 +423,7 @@ offset_top = -292.5
 offset_right = 404.0
 offset_bottom = 292.5
 grow_vertical = 2
+script = ExtResource("9_5dd4i")
 
 [node name="Gamemode" type="HBoxContainer" parent="LobbyPanel/Options"]
 layout_mode = 2
@@ -539,11 +462,19 @@ custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_vertical = 4
 selected = 0
-item_count = 2
-popup/item_0/text = "Spiky Battle"
+item_count = 6
+popup/item_0/text = "spiky_battle"
 popup/item_0/id = 0
-popup/item_1/text = "Descending War"
+popup/item_1/text = "descending_war"
 popup/item_1/id = 1
+popup/item_2/text = "islamic_hell"
+popup/item_2/id = 2
+popup/item_3/text = "iron_valley"
+popup/item_3/id = 3
+popup/item_4/text = "jumpy_confrontation"
+popup/item_4/id = 4
+popup/item_5/text = "sediment_eruption"
+popup/item_5/id = 5
 
 [node name="Time" type="HBoxContainer" parent="LobbyPanel/Options"]
 custom_minimum_size = Vector2(0, 100)
@@ -565,6 +496,16 @@ step = 50.0
 value = 350.0
 alignment = 1
 
+[node name="Players" type="GridContainer" parent="LobbyPanel"]
+layout_mode = 2
+offset_left = 644.0
+offset_top = 28.0
+offset_right = 1248.0
+offset_bottom = 640.0
+columns = 2
+script = ExtResource("9_jk1qb")
+metadata/_edit_group_ = true
+
 [node name="Return" type="Button" parent="LobbyPanel"]
 layout_mode = 0
 offset_left = 462.0
@@ -576,6 +517,16 @@ theme_override_font_sizes/font_size = 25
 text = "return"
 script = ExtResource("6_oa1go")
 
+[node name="Start" type="Button" parent="LobbyPanel"]
+layout_mode = 0
+offset_left = 462.0
+offset_top = 76.0
+offset_right = 604.0
+offset_bottom = 165.0
+focus_mode = 0
+theme_override_font_sizes/font_size = 25
+text = "play"
+
 [connection signal="button_down" from="MainPanel/PlayButton" to="MainPanel/PlayButton" method="_on_button_down"]
 [connection signal="button_down" from="MainPanel/SettingsButton" to="MainPanel/SettingsButton" method="_on_button_down"]
 [connection signal="item_selected" from="SettingsPanel/VBoxContainer/Language/OptionButton" to="SettingsPanel/VBoxContainer/Language" method="_on_option_button_item_selected"]
@@ -583,3 +534,4 @@ script = ExtResource("6_oa1go")
 [connection signal="toggled" from="SettingsPanel/VBoxContainer/V-Sync/Checkbox" to="SettingsPanel/VBoxContainer/V-Sync" method="_on_checkbox_toggled"]
 [connection signal="button_down" from="SettingsPanel/Return" to="SettingsPanel/Return" method="_on_button_down"]
 [connection signal="button_down" from="LobbyPanel/Return" to="LobbyPanel/Return" method="_on_button_down"]
+[connection signal="button_down" from="LobbyPanel/Start" to="LobbyPanel/Players" method="_on_start_button_down"]

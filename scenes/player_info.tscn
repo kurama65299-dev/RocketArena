@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://bntmo03o34att"]
+
+[ext_resource type="Script" uid="uid://dpbb5awh3b281" path="res://scenes/player_info.gd" id="1_oojiu"]
+
+[node name="PlayerInfo" type="Panel"]
+custom_minimum_size = Vector2(300, 150)
+script = ExtResource("1_oojiu")
+
+[node name="Name" type="LineEdit" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -98.0
+offset_top = 0.5
+offset_right = 28.0
+offset_bottom = 31.5
+grow_horizontal = 2
+text = "Player"
+placeholder_text = "name"
+max_length = 16
+
+[node name="PrimaryWeapon" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 61.5
+offset_right = 157.0
+offset_bottom = 88.5
+selected = 0
+item_count = 2
+popup/item_0/text = "rocket_launcher"
+popup/item_0/id = 0
+popup/item_1/text = "elipser"
+popup/item_1/id = 1
+
+[node name="SecondaryWeapon" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 97.5
+offset_right = 157.0
+offset_bottom = 124.5
+selected = 0
+item_count = 1
+popup/item_0/text = "construction"
+popup/item_0/id = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 6.0
+offset_top = 34.0
+offset_right = 58.0
+offset_bottom = 59.0
+text = "team"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Team" type="OptionButton" parent="Label"]
+layout_mode = 0
+offset_left = 65.0
+offset_right = 116.0
+offset_bottom = 27.0
+selected = 0
+item_count = 2
+popup/item_0/text = "1"
+popup/item_0/id = 0
+popup/item_1/text = "2"
+popup/item_1/id = 1

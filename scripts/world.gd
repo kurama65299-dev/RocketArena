@@ -18,32 +18,13 @@ func add_player(device_id: int):
 	create_custom_inputs(device_id)
 
 func respawn(device_id: int):
-	await get_tree().create_timer(0.1).timeout
-	var player_data
-	for player_index in GlobalSettings.players:
-		if player_index.Device == device_id:
-			player_data = player_index
-			player_index = player_data
+	await get_tree().create_timer(1).timeout
+	
 	var new_player = PLAYER.instantiate()
+	new_player.player_id = device_id
 	get_node("Players").add_child(new_player)
 	
-	new_player.get_node("PlayerName").modulate = player_data.Color
-	new_player.get_node("AnimatedSprite2D").self_modulate = player_data.Color
-	new_player.get_node("AimArrow").modulate = player_data.Color
-	
-	new_player.player_id = device_id
-	var name_label = new_player.get_node("PlayerName")
-	for player in GlobalSettings.players:
-		if player.Device == device_id:
-			name_label.text = player.Name
-			new_player.name = player.Name
-			new_player.team = player.Team
-	
-	var tile_map = tile_logic.tile_map
-	
-	var spawn_points = tile_map.get_node("SpawnPoints")
-	var random = randi_range(0, spawn_points.get_child_count()-1)
-	new_player.global_position = spawn_points.get_child(random).global_position
+	new_player.player_setup()
 
 func create_custom_inputs(device_id: int):
 	var suffix = str(device_id)
@@ -55,6 +36,7 @@ func create_custom_inputs(device_id: int):
 	
 	if not InputMap.has_action(right):
 		InputMap.add_action(right, 0.5)
+		
 		var joy_event = InputEventJoypadMotion.new()
 		joy_event.device = device_id
 		joy_event.axis = JOY_AXIS_LEFT_X
@@ -62,6 +44,7 @@ func create_custom_inputs(device_id: int):
 		InputMap.action_add_event(right, joy_event)
 	if not InputMap.has_action(left):
 		InputMap.add_action(left, 0.5)
+		
 		var joy_event = InputEventJoypadMotion.new()
 		joy_event.device = device_id
 		joy_event.axis = JOY_AXIS_LEFT_X
@@ -69,6 +52,7 @@ func create_custom_inputs(device_id: int):
 		InputMap.action_add_event(left, joy_event)
 	if not InputMap.has_action(jump):
 		InputMap.add_action(jump, 0.5)
+		
 		var joy_event_a = InputEventJoypadButton.new()
 		joy_event_a.device = device_id
 		joy_event_a.button_index = JOY_BUTTON_A
@@ -92,6 +76,7 @@ func create_custom_inputs(device_id: int):
 		InputMap.action_add_event(shoot, joy_event_b)
 	if not InputMap.has_action(switch_weapon):
 		InputMap.add_action(switch_weapon, 0.5)
+		
 		var joy_event = InputEventJoypadButton.new()
 		joy_event.device = device_id
 		joy_event.button_index = JOY_BUTTON_X
@@ -99,9 +84,9 @@ func create_custom_inputs(device_id: int):
 
 func assign_player_color(device_id: int):
 	var player_data
-	for player_index in GlobalSettings.players:
-		if player_index.Device == device_id:
-			player_data = player_index
+	for id in GlobalSettings.players.keys():
+		if id == device_id:
+			player_data = GlobalSettings.players[id]
 			
 	if GlobalSettings.teams_enabled:
 		if player_data.Team == 1:
@@ -109,20 +94,23 @@ func assign_player_color(device_id: int):
 		elif player_data.Team == 2:
 			player_data.Color = player_colors["Blue"]
 		return
-		
-	if device_id == -1:
-		player_data.Color = player_colors["White"]
-	elif device_id == 0:
-		player_data.Color = player_colors["Red"]
-	elif device_id == 1:
-		player_data.Color = player_colors["Blue"]
-	elif device_id == 2:
-		player_data.Color = player_colors["Violet"]
-	elif device_id == 3:
-		player_data.Color = player_colors["Green"]
+	
+	match device_id:
+		-1:
+			player_data.Color = player_colors["White"]
+		0:
+			player_data.Color = player_colors["Red"]
+		1:
+			player_data.Color = player_colors["Blue"]
+		2:
+			player_data.Color = player_colors["Violet"]
+		3:
+			player_data.Color = player_colors["Green"]
+		_:
+			player_data.Color = player_colors["White"]
 
 func add_debris(instance, time):
-	instance.reparent($".")
+	instance.reparent(self)
 	await get_tree().create_timer(time).timeout
 	if is_instance_valid(instance):
 		instance.queue_free()

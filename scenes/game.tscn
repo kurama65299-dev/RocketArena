@@ -87,21 +87,14 @@ position_smoothing_enabled = true
 wait_time = 900.0
 one_shot = true
 
-[node name="TimeText" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -748.0
-offset_top = -1134.0
-offset_right = -545.0
-offset_bottom = -1063.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 60
-text = "Time: 0"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="BriefcaseTaken" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_iywne")
+bus = &"SFX"
 
-[node name="Scores" type="VBoxContainer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Scores" type="VBoxContainer" parent="UI"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -115,14 +108,14 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 0
 
-[node name="ScoreText" type="Label" parent="Scores"]
+[node name="ScoreText" type="Label" parent="UI/Scores"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
-text = "Scores"
+text = "scores"
 vertical_alignment = 1
 uppercase = true
 
-[node name="Killfeed" type="VBoxContainer" parent="."]
+[node name="Killfeed" type="VBoxContainer" parent="UI"]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -137,38 +130,39 @@ grow_vertical = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 30
 
-[node name="Placeholder" type="HBoxContainer" parent="Killfeed"]
+[node name="Placeholder" type="HBoxContainer" parent="UI/Killfeed"]
 visible = false
 layout_mode = 2
 theme_override_constants/separation = 30
 alignment = 1
 
-[node name="killer" type="Label" parent="Killfeed/Placeholder"]
+[node name="killer" type="Label" parent="UI/Killfeed/Placeholder"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.15, 1, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "example"
 
-[node name="mid_text" type="Label" parent="Killfeed/Placeholder"]
+[node name="mid_text" type="Label" parent="UI/Killfeed/Placeholder"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 60
 text = "killed"
+uppercase = true
 
-[node name="killed" type="Label" parent="Killfeed/Placeholder"]
+[node name="killed" type="Label" parent="UI/Killfeed/Placeholder"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "example2"
 
-[node name="Menu" type="Button" parent="."]
+[node name="Menu" type="Button" parent="UI"]
 offset_left = 1927.0
 offset_top = -1134.0
 offset_right = 2062.0
 offset_bottom = -1066.0
 theme_override_font_sizes/font_size = 30
-text = "Menu"
+text = "menu"
 
-[node name="EndScreen" type="Panel" parent="."]
+[node name="EndScreen" type="Panel" parent="UI"]
 visible = false
 anchors_preset = 8
 anchor_left = 0.5
@@ -183,7 +177,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lnu2h")
 
-[node name="WinnerLabel" type="Label" parent="EndScreen"]
+[node name="WinnerLabel" type="Label" parent="UI/EndScreen"]
 layout_mode = 0
 offset_left = 337.0
 offset_right = 621.0
@@ -196,7 +190,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 uppercase = true
 
-[node name="Score" type="Label" parent="EndScreen"]
+[node name="Score" type="Label" parent="UI/EndScreen"]
 layout_mode = 0
 offset_left = 289.0
 offset_top = 629.0
@@ -209,11 +203,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="ReturnToMenu" type="Timer" parent="EndScreen"]
+[node name="ReturnToMenu" type="Timer" parent="UI/EndScreen"]
 wait_time = 10.0
 one_shot = true
 
-[node name="TeamBars" type="VBoxContainer" parent="."]
+[node name="TeamBars" type="VBoxContainer" parent="UI"]
 visible = false
 z_index = -1
 offset_left = -785.0
@@ -224,14 +218,14 @@ size_flags_horizontal = 3
 alignment = 1
 metadata/_edit_group_ = true
 
-[node name="Bars" type="HBoxContainer" parent="TeamBars"]
+[node name="Bars" type="HBoxContainer" parent="UI/TeamBars"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 450
 alignment = 1
 
-[node name="Team1" type="ProgressBar" parent="TeamBars/Bars"]
+[node name="Team1" type="ProgressBar" parent="UI/TeamBars/Bars"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -240,7 +234,7 @@ theme_override_styles/background = SubResource("StyleBoxFlat_lbhrr")
 theme_override_styles/fill = SubResource("StyleBoxFlat_iywne")
 value = 50.0
 
-[node name="Team2" type="ProgressBar" parent="TeamBars/Bars"]
+[node name="Team2" type="ProgressBar" parent="UI/TeamBars/Bars"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -249,10 +243,29 @@ theme_override_styles/background = SubResource("StyleBoxFlat_p57ef")
 theme_override_styles/fill = SubResource("StyleBoxFlat_u5sy4")
 value = 50.0
 
-[node name="BriefcaseTaken" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_iywne")
-bus = &"SFX"
+[node name="Time" type="HBoxContainer" parent="UI"]
+offset_left = -151.0
+offset_top = -1201.0
+offset_right = 167.0
+offset_bottom = -1130.0
+theme_override_constants/separation = 30
+alignment = 1
+metadata/_edit_group_ = true
+
+[node name="Label" type="Label" parent="UI/Time"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "time"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Value" type="Label" parent="UI/Time"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "blank"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="EndGame" to="." method="_on_end_game_timeout"]
-[connection signal="button_down" from="Menu" to="." method="_on_menu_button_down"]
-[connection signal="timeout" from="EndScreen/ReturnToMenu" to="." method="_on_return_to_menu_timeout"]
+[connection signal="button_down" from="UI/Menu" to="." method="_on_menu_button_down"]
+[connection signal="timeout" from="UI/EndScreen/ReturnToMenu" to="." method="_on_return_to_menu_timeout"]

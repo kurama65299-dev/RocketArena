@@ -5,6 +5,7 @@ var tile_data : Dictionary = {}
 var normal_health: int = 80 + (40 * GlobalSettings.players.size())
 var high_health: int = 600 + (200 * GlobalSettings.players.size())
 var low_health: int = 40
+var maps: Dictionary = GlobalSettings.maps
 
 func _ready():
 	load_map()
@@ -20,6 +21,7 @@ func _ready():
 					tile_data[coords] = low_health
 				elif tile_map.get_cell_atlas_coords(coords) == Vector2i(2,0):
 					tile_data[coords] = high_health
+					
 func damage_tile(coords, damage):
 	if tile_data.has(coords):
 		if tile_data[coords] - damage <= 0:
@@ -37,17 +39,17 @@ func damage_tile(coords, damage):
 
 func load_map():
 	var map
-	if GlobalSettings.map == "SpikyBattle":
+	if GlobalSettings.map == maps.SPIKY_BATTLE:
 		map = preload("res://scenes/maps/SpikyBattle.tscn")
-	elif GlobalSettings.map == "DescendingWar":
+	elif GlobalSettings.map == maps.DESCENDING_WAR:
 		map = preload("res://scenes/maps/DescendingWar.tscn")
-	elif GlobalSettings.map == "IslamicHell":
+	elif GlobalSettings.map == maps.ISLAMIC_HELL:
 		map = preload("res://scenes/maps/IslamicHell.tscn")
-	elif GlobalSettings.map == "IronValley":
+	elif GlobalSettings.map == maps.IRON_VALLEY:
 		map = preload("res://scenes/maps/IronValley.tscn")
-	elif GlobalSettings.map == "JumpyConfrontation":
+	elif GlobalSettings.map == maps.JUMPY_CONFRONTATION:
 		map = preload("res://scenes/maps/JumpyConfrontation.tscn")
-	elif GlobalSettings.map == "SedimentEruption":
+	elif GlobalSettings.map == maps.SEDIMENT_ERUPTION:
 		map = preload("res://scenes/maps/SedimentEruption.tscn")
 	var new_map = map.instantiate()
 	add_child(new_map)

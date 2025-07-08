@@ -12,22 +12,28 @@ const BRIEFCASE = preload("res://scenes/briefcase.tscn")
 @onready var world: Node = get_node("/root/Game/World")
 @onready var aim_arrow: Panel = $AimArrow
 @onready var game = get_node("/root/Game")
+@onready var tile_logic = get_node("/root/Game/World/TileLogic")
 @export var player_id: int = -1
+
 var jump_power: int = 800
 var speed: int = 600
 var health: int = 100
 var max_health: int = 100
+var is_dead: bool = false
+
 var friction: float = 6000
 var impulse: Vector2 = Vector2.ZERO
 var impulse_deceleration: float = 3000
 var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
-var primary_weapon: String = "rocket_launcher"
-var secondary_weapon: String = "construction"
-var actual_weapon: String = primary_weapon
-var has_briefcase: bool = false
-var is_dead: bool = false
-var team = 0
+
+var primary_weapon: int
+var secondary_weapon: int
+var actual_weapon: int
+
+var team: int
 var last_damaged_id = null
+var has_briefcase: bool = false
+var gamemodes: Dictionary = GlobalSettings.gamemodes
 
 func _ready(): #Update health bar
 	update_health_bar()
@@ -129,8 +135,9 @@ func damage(damage: int, enemy_id): #Damage and death functions
 		last_damaged_id = enemy_id
 	
 	if GlobalSettings.teams_enabled:
-		for player in GlobalSettings.players:
-			if player.Device == enemy_id and player.Team == team:
+		for id in GlobalSettings.players.keys():
+			var player = GlobalSettings.players[id]
+			if id == enemy_id and player.Team == team:
 				return
 
 	health -= damage
@@ -141,7 +148,7 @@ func damage(damage: int, enemy_id): #Damage and death functions
 		is_dead = true
 		death_vfx.emitting = true
 
-		if GlobalSettings.gamemode == "keep_the_briefcase" and has_briefcase:
+		if GlobalSettings.gamemode == gamemodes.KEEP_THE_BRIEFCASE and has_briefcase:
 			var new_briefcase = BRIEFCASE.instantiate()
 			if enemy_id == null:
 				new_briefcase.global_position = Vector2(0,-900)
@@ -187,3 +194,25 @@ func got_briefcase():
 	while(true):
 		await get_tree().create_timer(1).timeout
 		game.kept_briefcase(team)
+
+func player_setup():
+	var name_label = get_node("PlayerName")
+	
+	var player_info
+	for id in GlobalSettings.players.keys():
+		if id == player_id:
+			player_info = GlobalSettings.players[id]
+			name_label.text = player_info.Name
+			team = player_info.Team
+	
+	get_node("PlayerName").modulate = player_info.Color
+	get_node("AnimatedSprite2D").self_modulate = player_info.Color
+	get_node("AimArrow").modulate = player_info.Color
+	primary_weapon = player_info.PrimaryWeapon
+	secondary_weapon = player_info.SecondaryWeapon
+	actual_weapon = primary_weapon
+	
+	var tile_map = tile_logic.tile_map
+	var spawn_points = tile_map.get_node("SpawnPoints")
+	var random = randi_range(0, spawn_points.get_child_count()-1)
+	global_position = spawn_points.get_child(random).global_position
