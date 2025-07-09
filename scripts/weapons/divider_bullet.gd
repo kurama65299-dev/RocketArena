@@ -2,7 +2,7 @@ extends Area2D
 
 var owner_id = null
 var direction: Vector2 = Vector2.ZERO
-@export var damage: int = 10
+@export var damage: int = 12
 @export var speed: int = 3000
 @onready var tile_logic: Node = get_node("/root/Game/World/TileLogic")
 @onready var tile_map: TileMapLayer = get_node("/root/Game/World/TileLogic/TileMapLayer")

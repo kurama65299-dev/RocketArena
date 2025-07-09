@@ -10,7 +10,7 @@ const GRENADE = preload("res://scenes/weapons/grenade.tscn")
 @onready var normal_timer: Timer = $Bullet
 @onready var ultimate_bar: ProgressBar = player.get_node("Ultimate")
 @onready var ready_vfx: CPUParticles2D = player.get_node("Ultimate/ReadyVFX")
-@onready var shooting_sfx: AudioStreamPlayer = $ShootingSFX
+@onready var camera_2d: Camera2D = get_node("/root/Game/World/Camera2D")
 
 func _ready():
 	visible = false
@@ -30,12 +30,11 @@ func shoot(direction: Vector2, type: String):
 		return
 	
 func normal_shoot(direction: Vector2):
-	shooting_sfx.play()
-	shooting_sfx.pitch_scale = randf_range(1.2,2)
+	camera_2d.trigger_camera_shake(0.2)
 	visible = true
 	global_rotation = direction.angle()
+	animation_player.stop()
 	animation_player.play("recoil")
-	
 	var point = shoot_point.global_position
 	
 	var new_bullet = BULLET.instantiate()
@@ -44,6 +43,7 @@ func normal_shoot(direction: Vector2):
 	new_bullet.global_position = point
 	new_bullet.global_rotation = direction.angle()
 	new_bullet.shot(direction)
+	await animation_player.animation_finished
 	
 func grenade(direction: Vector2):
 	var new_grenade = GRENADE.instantiate()

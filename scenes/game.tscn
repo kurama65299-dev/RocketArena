@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dn8bvcqnmtd8o"]
+[gd_scene load_steps=12 format=3 uid="uid://dn8bvcqnmtd8o"]
 
 [ext_resource type="Script" uid="uid://ccgoyfdpm6k4r" path="res://scripts/world/game.gd" id="1_lnu2h"]
 [ext_resource type="Script" uid="uid://dy60qcpkenmn1" path="res://scripts/world/world.gd" id="2_iywne"]
 [ext_resource type="Script" uid="uid://cqsg3bem4kmmv" path="res://scripts/world/tile_logic.gd" id="2_lnu2h"]
+[ext_resource type="Script" uid="uid://dc51xcrqmxguq" path="res://scenes/camera_2d.gd" id="4_iywne"]
 [ext_resource type="AudioStream" uid="uid://brcxenk64m8nc" path="res://music/sfx/briefcase_taked.wav" id="5_iywne"]
 
 [sub_resource type="Environment" id="Environment_lbhrr"]
@@ -87,7 +88,7 @@ script = ExtResource("2_lnu2h")
 
 [node name="Camera2D" type="Camera2D" parent="World"]
 zoom = Vector2(0.3, 0.3)
-position_smoothing_enabled = true
+script = ExtResource("4_iywne")
 
 [node name="Players" type="Node" parent="World"]
 

@@ -78,7 +78,7 @@ glow_hdr_scale = 4.0
 z_index = 1
 script = ExtResource("1_dkv7l")
 speed = 1900
-impulse = 400.0
+impulse = 300.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_agf72")

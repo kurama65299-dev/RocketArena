@@ -38,6 +38,7 @@ func shoot(direction, type):
 	new_rocket.owner_id = player.player_id
 	new_rocket.global_position = point
 	new_rocket.global_rotation = direction.angle()
+	new_rocket.type = type
 	new_rocket.launch(direction)
 	
 func _on_animation_player_animation_finished() -> void:

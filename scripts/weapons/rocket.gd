@@ -13,13 +13,14 @@ var direction: Vector2 = Vector2.ZERO
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var explosion_vfx: CPUParticles2D = $ExplosionVFX
 @onready var tile_logic: Node = get_node("/root/Game/World/TileLogic")
-@onready var tile_map: TileMapLayer = get_node("/root/Game/World/TileLogic/TileMapLayer")
 @onready var impact_area: Area2D = $Explosion
 @onready var hitbox_collision: CollisionShape2D = $Hitbox/CollisionShape2D
 @onready var explosion_sfx: AudioStreamPlayer = $ExplosionSFX
 @onready var trail: CPUParticles2D = $Trail
 @onready var world: Node = get_node("/root/Game/World")
+@onready var camera_2d: Camera2D = get_node("/root/Game/World/Camera2D")
 var is_detonated: bool = false
+var type: String = "NORMAL"
 
 
 func launch(new_direction):
@@ -28,22 +29,13 @@ func launch(new_direction):
 	impact_area.scale = Vector2(aoe,aoe)
 	raycast.add_exception(hitbox_collision.get_parent())
 	
-func environment_damage(): #DESTRUCTION
-	var coords: Vector2i = tile_map.local_to_map(global_position)
-	var count: int = 0
-	var sum: int = 1
-	for x in range(-aoe,aoe+1): #Checks every x row
-		if count == aoe:
-			sum = -1
-		for z in range(-count,count+1): #Checks every y row based on the counter, still in a determinated x row
-			var next_block
-			next_block =  Vector2i(coords.x + x, coords.y + z)
-			tile_logic.damage_tile(next_block, damage)
-		count += sum #Maintains the aoe counter
-
 func impact():
 	is_detonated = true
-	environment_damage()
+	if type == "NORMAL":
+		camera_2d.trigger_camera_shake(3.0)
+	elif type == "ULTIMATE":
+		camera_2d.trigger_camera_shake(30.0)
+	tile_logic.aoe_damage(global_position, damage, aoe)
 	var min_pitch = explosion_sfx.pitch_scale / 1.2
 	var max_pitch = explosion_sfx.pitch_scale * 1.2
 	explosion_sfx.pitch_scale = randf_range(min_pitch, max_pitch)

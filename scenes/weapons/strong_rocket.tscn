@@ -82,7 +82,7 @@ glow_hdr_scale = 4.0
 [node name="StrongRocket" type="Node2D"]
 z_index = 1
 script = ExtResource("1_7la6s")
-speed = 1000
+speed = 800
 aoe = 30
 damage = 99
 impulse = 900.0
@@ -106,7 +106,7 @@ collide_with_areas = true
 
 [node name="ExplosionSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dfhuf")
-volume_db = 8.0
+volume_db = 15.0
 pitch_scale = 0.3
 bus = &"SFX"
 

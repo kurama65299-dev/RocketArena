@@ -11,22 +11,8 @@ var impulse: int = 600
 @onready var explosion_vfx: CPUParticles2D = $ExplosionVFX
 @onready var explosion_sfx: AudioStreamPlayer = $ExplosionSFX
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
-@onready var tile_map: TileMapLayer = get_node("/root/Game/World/TileLogic/TileMapLayer")
+@onready var camera_2d: Camera2D = get_node("/root/Game/World/Camera2D")
 @onready var tile_logic: Node = get_node("/root/Game/World/TileLogic")
-
-func environment_damage(): #DESTRUCTION
-	var coords: Vector2i = tile_map.local_to_map(global_position)
-	var count: int = 0
-	var sum: int = 1
-	for x in range(-aoe,aoe+1): #Checks every x row
-		if count == aoe:
-			sum = -1
-		for z in range(-count,count+1): #Checks every y row based on the counter, still in a determinated x row
-			var next_block
-			next_block =  Vector2i(coords.x + x, coords.y + z)
-			tile_logic.damage_tile(next_block, damage)
-		count += sum #Maintains the aoe counter
 
 func throw(new_direction: Vector2):
 	impact_area.scale = Vector2(aoe,aoe)
@@ -35,7 +21,8 @@ func throw(new_direction: Vector2):
 	linear_velocity = throw_strength * direction
 
 func _on_explosion_timeout() -> void:
-	environment_damage()
+	camera_2d.trigger_camera_shake(8.0)
+	tile_logic.aoe_damage(global_position, damage, aoe)
 	sprite_2d.visible = false
 	explosion_vfx.emitting = true
 	explosion_sfx.pitch_scale = randf_range(1,1.5)

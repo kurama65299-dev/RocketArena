@@ -54,3 +54,16 @@ func load_map():
 	var new_map = map.instantiate()
 	add_child(new_map)
 	tile_map = new_map
+
+func aoe_damage(position: Vector2, damage: int, aoe: int):
+	var coords: Vector2i = tile_map.local_to_map(position)
+	var count: int = 0
+	var sum: int = 1
+	for x in range(-aoe,aoe+1): #Checks every x row
+		if count == aoe:
+			sum = -1
+		for z in range(-count,count+1): #Checks every y row based on the counter, still in a determinated x row
+			var next_block
+			next_block =  Vector2i(coords.x + x, coords.y + z)
+			damage_tile(next_block, damage)
+		count += sum #Maintains the aoe counter
