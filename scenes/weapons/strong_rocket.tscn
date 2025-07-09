@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://qwtyyvks2hyq"]
+[gd_scene load_steps=18 format=3 uid="uid://qwtyyvks2hyq"]
 
 [ext_resource type="Script" uid="uid://bb5oyio4a34fh" path="res://scripts/weapons/rocket.gd" id="1_7la6s"]
 [ext_resource type="Texture2D" uid="uid://djwncm7xjygdd" path="res://sprites/StrongRocket.png" id="2_7la6s"]
@@ -71,19 +71,11 @@ colors = PackedColorArray(0, 1, 1, 1, 1, 1, 1, 0)
 [sub_resource type="Gradient" id="Gradient_rjygp"]
 colors = PackedColorArray(0, 0.183333, 1, 1, 0.1456, 0.7826, 0.91, 1)
 
-[sub_resource type="Environment" id="Environment_rs7o8"]
-background_mode = 3
-glow_enabled = true
-glow_intensity = 0.9
-glow_strength = 1.83
-glow_blend_mode = 0
-glow_hdr_scale = 4.0
-
 [node name="StrongRocket" type="Node2D"]
 z_index = 1
 script = ExtResource("1_7la6s")
 speed = 800
-aoe = 30
+aoe = 25
 damage = 99
 impulse = 900.0
 
@@ -167,8 +159,5 @@ scale_amount_max = 80.0
 color = Color(2, 2, 2, 1)
 color_ramp = SubResource("Gradient_snnlc")
 color_initial_ramp = SubResource("Gradient_rjygp")
-
-[node name="Lightning" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_rs7o8")
 
 [connection signal="animation_finished" from="ExplosionSprite" to="." method="_on_animated_sprite_2d_animation_finished"]

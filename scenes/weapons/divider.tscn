@@ -49,7 +49,6 @@ position = Vector2(-3, 0)
 [node name="Bullet" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
-autostart = true
 
 [node name="Grenade" type="Timer" parent="."]
 wait_time = 3.0

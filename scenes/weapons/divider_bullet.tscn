@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgaifb36oirvs"]
+[gd_scene load_steps=6 format=3 uid="uid://cgaifb36oirvs"]
 
 [ext_resource type="Script" uid="uid://befdduutd6jyb" path="res://scripts/weapons/divider_bullet.gd" id="1_4h4yl"]
 [ext_resource type="Texture2D" uid="uid://d7r628aniilu" path="res://sprites/DividerBullet.png" id="2_hlg5t"]
@@ -7,17 +7,42 @@
 radius = 20.0
 height = 62.0
 
+[sub_resource type="Gradient" id="Gradient_4h4yl"]
+offsets = PackedFloat32Array(0.329231, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_hlg5t"]
+colors = PackedColorArray(0.125911, 0.125911, 0.125911, 1, 1, 1, 1, 1)
+
 [node name="Bullet" type="Area2D"]
 collision_layer = 4
 collision_mask = 7
 script = ExtResource("1_4h4yl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(3, 3, 3, 1)
+modulate = Color(2.5, 2.5, 2.5, 1)
 texture = ExtResource("2_hlg5t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_wwo0g")
+
+[node name="SmokeVFX" type="CPUParticles2D" parent="."]
+position = Vector2(31, 0)
+emitting = false
+amount = 5
+one_shot = true
+preprocess = 0.2
+explosiveness = 1.0
+lifetime_randomness = 0.5
+direction = Vector2(-1, 0)
+spread = 40.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 90.0
+initial_velocity_max = 170.0
+scale_amount_min = 5.0
+scale_amount_max = 15.0
+color_ramp = SubResource("Gradient_4h4yl")
+color_initial_ramp = SubResource("Gradient_hlg5t")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
