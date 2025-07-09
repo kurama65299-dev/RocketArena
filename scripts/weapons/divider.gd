@@ -1,44 +1,48 @@
 extends Node2D
 
+const BULLET = preload("res://scenes/weapons/divider_bullet.tscn")
 @onready var shoot_point: Marker2D = $ShootPoint
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var debris: Node = get_node("/root/Game/World/Debris")
 @onready var player: Player = get_parent().get_parent().get_parent().get_parent()
-@onready var strong_rocket_timer: Timer = $StrongRocket
-@onready var normal_timer: Timer = $NormalRocket
+@onready var grenade_timer: Timer = $Grenade
+@onready var normal_timer: Timer = $Bullet
 @onready var ultimate_bar: ProgressBar = player.get_node("Ultimate")
 @onready var ready_vfx: CPUParticles2D = player.get_node("Ultimate/ReadyVFX")
 
 func _ready():
 	visible = false
-	ultimate_bar.max_value = strong_rocket_timer.wait_time
+	ultimate_bar.max_value = grenade_timer.wait_time
 func _process(delta: float) -> void:
-	ultimate_bar.value = strong_rocket_timer.wait_time - strong_rocket_timer.time_left
+	ultimate_bar.value = grenade_timer.wait_time - grenade_timer.time_left
 	ready_vfx.emitting = ultimate_bar.value == ultimate_bar.max_value
 
-func shoot(direction, type):
-	var rocket
-	if strong_rocket_timer.is_stopped() and type == "ULTIMATE":
-		rocket = preload("res://scenes/weapons/strong_rocket.tscn")
-		strong_rocket_timer.start()
+func shoot(direction: Vector2, type: String):
+	if grenade_timer.is_stopped() and type == "ULTIMATE":
+		grenade(direction)
+		grenade_timer.start()
 	elif normal_timer.is_stopped() and type == "NORMAL":
-		rocket = preload("res://scenes/weapons/rocket.tscn")
+		normal_shoot(direction)
 		normal_timer.start()
 	else:
 		return
 	
+func normal_shoot(direction: Vector2):
 	visible = true
 	global_rotation = direction.angle()
 	animation_player.play("recoil")
 	
 	var point = shoot_point.global_position
 	
-	var new_rocket = rocket.instantiate()
-	debris.add_child(new_rocket)
-	new_rocket.owner_id = player.player_id
-	new_rocket.global_position = point
-	new_rocket.global_rotation = direction.angle()
-	new_rocket.launch(direction)
+	var new_bullet = BULLET.instantiate()
+	debris.add_child(new_bullet)
+	new_bullet.owner_id = player.player_id
+	new_bullet.global_position = point
+	new_bullet.global_rotation = direction.angle()
+	new_bullet.shot(direction)
+	
+func grenade(direction: Vector2):
+	pass
 	
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	visible = false

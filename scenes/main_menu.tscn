@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpsjpo6k5mkk8"]
+[gd_scene load_steps=12 format=3 uid="uid://bpsjpo6k5mkk8"]
 
 [ext_resource type="Script" uid="uid://dk3dafjpt6r4y" path="res://scripts/main_menu/main_menu.gd" id="1_rtw2f"]
 [ext_resource type="Script" uid="uid://cl4jrr3ska8mo" path="res://scripts/main_menu/language.gd" id="2_ekxnf"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://dfqpxjd3ega1l" path="res://scripts/main_menu/fullscreen.gd" id="3_wu84c"]
 [ext_resource type="Script" uid="uid://55adnbokn6tr" path="res://scripts/main_menu/settings_button.gd" id="4_tbmy8"]
 [ext_resource type="Script" uid="uid://b8ye3ebpsuopp" path="res://scripts/main_menu/v_sync.gd" id="4_wu84c"]
+[ext_resource type="Texture2D" uid="uid://cafq1ps4pcag6" path="res://svg_assets/logo.svg" id="5_lgwnu"]
 [ext_resource type="Script" uid="uid://c4hga7nn1ir5y" path="res://scripts/main_menu/return.gd" id="6_oa1go"]
 [ext_resource type="Script" uid="uid://b7j7kax2nbn8m" path="res://scripts/main_menu/options.gd" id="9_5dd4i"]
 [ext_resource type="Script" uid="uid://ck0lgjx4s67j1" path="res://scripts/main_menu/players.gd" id="9_jk1qb"]
@@ -68,6 +69,7 @@ offset_right = 108.0
 offset_bottom = -284.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.06, 0.06, 1)
 theme_override_font_sizes/font_size = 40
 text = "welcome_text"
 horizontal_alignment = 1
@@ -90,6 +92,7 @@ metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="MainPanel/KeyboardControls"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "keyboard_controls"
 
@@ -98,6 +101,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/KeyboardControls/Aim"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "aim"
 
@@ -108,6 +112,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Aim"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "mouse"
 
@@ -116,6 +121,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/KeyboardControls/Movement"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "movement"
 
@@ -126,6 +132,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Movement"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "WASD"
 
@@ -134,6 +141,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/KeyboardControls/Jump"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "jump"
 
@@ -144,6 +152,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Jump"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "spacebar"
 
@@ -152,6 +161,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "shoot"
 
@@ -162,6 +172,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Shoot"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "left_click"
 
@@ -170,6 +181,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/KeyboardControls/Ultimate"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "ultimate"
 
@@ -180,6 +192,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/KeyboardControls/Ultimate"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "right_click"
 
@@ -188,6 +201,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/KeyboardControls/SwitchWeapon"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "switch_weapon"
 
@@ -198,6 +212,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/KeyboardControls/SwitchWeapon"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "e_key"
 
@@ -218,6 +233,7 @@ metadata/_edit_group_ = true
 
 [node name="Label" type="Label" parent="MainPanel/JoystickControls2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "joystick_controls"
 
@@ -226,6 +242,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/JoystickControls2/Aim"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "aim"
 
@@ -236,6 +253,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Aim"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "left_stick"
 
@@ -246,6 +264,7 @@ text = "/"
 
 [node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Aim"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "right_stick"
 
@@ -254,6 +273,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/JoystickControls2/Movement"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "movement"
 
@@ -264,6 +284,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Movement"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "left_stick"
 
@@ -272,6 +293,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/JoystickControls2/Jump"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "jump"
 
@@ -282,6 +304,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Jump"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "L1"
 
@@ -292,6 +315,7 @@ text = "/"
 
 [node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Jump"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "cross_button"
 
@@ -300,6 +324,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "shoot"
 
@@ -310,6 +335,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "R1"
 
@@ -320,6 +346,7 @@ text = "/"
 
 [node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Shoot"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "circle_button"
 
@@ -328,6 +355,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/JoystickControls2/Ultimate"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "ultimate"
 
@@ -338,6 +366,7 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/JoystickControls2/Ultimate"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "R2"
 
@@ -348,6 +377,7 @@ text = "/"
 
 [node name="Label3" type="Label" parent="MainPanel/JoystickControls2/Ultimate"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "triangle_button"
 
@@ -356,6 +386,7 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "switch_weapon"
 
@@ -366,8 +397,19 @@ text = ":"
 
 [node name="Label2" type="Label" parent="MainPanel/JoystickControls2/SwitchWeapon"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "square_button"
+
+[node name="Logo" type="TextureRect" parent="MainPanel"]
+z_index = -1
+layout_mode = 0
+offset_left = 245.0
+offset_top = 5.0
+offset_right = 1011.0
+offset_bottom = 725.0
+mouse_filter = 2
+texture = ExtResource("5_lgwnu")
 
 [node name="SettingsPanel" type="Panel" parent="."]
 visible = false
@@ -400,6 +442,7 @@ script = ExtResource("2_ekxnf")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 text = "language"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -421,6 +464,7 @@ script = ExtResource("3_wu84c")
 
 [node name="Label" type="Label" parent="SettingsPanel/VBoxContainer/Fullscreen"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 text = "fullscreen"
 
 [node name="Checkbox" type="CheckBox" parent="SettingsPanel/VBoxContainer/Fullscreen"]
@@ -435,6 +479,7 @@ script = ExtResource("4_wu84c")
 
 [node name="Label" type="Label" parent="SettingsPanel/VBoxContainer/V-Sync"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 text = "v_sync"
 
 [node name="Checkbox" type="CheckBox" parent="SettingsPanel/VBoxContainer/V-Sync"]
@@ -478,6 +523,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="LobbyPanel/Options/Gamemode"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 text = "gamemode"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -500,6 +546,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="LobbyPanel/Options/Map"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 text = "map"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -530,6 +577,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="LobbyPanel/Options/Time"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 text = "time"
 horizontal_alignment = 1
 vertical_alignment = 1

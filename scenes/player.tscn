@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=4 uid="uid://b0en5042ksisy"]
+[gd_scene load_steps=26 format=4 uid="uid://b0en5042ksisy"]
 
 [ext_resource type="Script" uid="uid://c631t7yh2j1ou" path="res://scripts/world/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://bgaaqysb2evw" path="res://sprites/CharacterSpritesheet.png" id="2_g2els"]
 [ext_resource type="Script" uid="uid://ixt5nit01iah" path="res://scripts/weapons/shoot_weapon.gd" id="3_qhqgy"]
-[ext_resource type="PackedScene" uid="uid://dl18woi1k8sfm" path="res://scenes/weapons/splitter.tscn" id="3_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://b202unp5gp5j8" path="res://sprites/briefcase.png" id="4_dqkch"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
@@ -273,8 +272,9 @@ autoplay = "idle"
 
 [node name="Weapons" type="Node2D" parent="AnimatedSprite2D"]
 
-[node name="Splitter" parent="AnimatedSprite2D/Weapons" instance=ExtResource("3_qlg0r")]
-visible = false
+[node name="Primary" type="Node2D" parent="AnimatedSprite2D/Weapons"]
+
+[node name="Secondary" type="Node2D" parent="AnimatedSprite2D/Weapons"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)

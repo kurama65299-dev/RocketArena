@@ -28,9 +28,9 @@
      inkscape:document-units="px"
      showgrid="true"
      units="px"
-     inkscape:zoom="0.50000001"
-     inkscape:cx="344.21069"
-     inkscape:cy="725.77887"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="299.10616"
+     inkscape:cy="732.56261"
      inkscape:window-width="1366"
      inkscape:window-height="696"
      inkscape:window-x="-8"
@@ -40,8 +40,7 @@
      width="1536px"
      inkscape:showpageshadow="2"
      inkscape:deskcolor="#d1d1d1"
-     showguides="true"
-     inkscape:rotation="-4">
+     showguides="true">
     <inkscape:grid
        type="xygrid"
        id="grid1238"
@@ -1567,63 +1566,102 @@
     <path
        style="fill:#483737;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="M 9.9131716,185.72854 0,187.2529 0.1157171,182.26939 c 5.6701797,0.23452 6.3644875,3.16601 10.1831809,0.52766 z"
-       id="path1190" />
+       id="path1190"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 9.9131716,185.72854 c 0,0 1.3752664,0.68944 -0.506709,3.21832"
        id="path1291"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 9.4064626,188.94686 c 0,0 -0.1091019,0.91206 1.6092234,0.70479 l 1.363755,-3.85541"
        id="path1361"
-       sodipodi:nodetypes="ccc" />
+       sodipodi:nodetypes="ccc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 13.961385,185.87768 c -0.07069,2.45336 -2.088669,1.45573 -2.088669,1.45573"
-       id="path5629" />
+       id="path5629"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 12.379441,185.79624 1.581944,0.0814"
        id="path1947"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 11.997587,186.91546 0.900073,0.14521 c 0,0 -0.627323,-0.51822 -0.02727,-0.95352 l -0.490949,-0.31091"
-       id="path2430" />
+       id="path2430"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#ff8e35;fill-opacity:1;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 10.298898,182.79694 5.361598,0.14671 m 0,0 c 0,0 0.540017,-4.95419 3.432965,-5.42325 l 0.829312,1.70027 c 0,0 -2.237212,1.64164 -2.063636,3.86955"
        id="path2797"
-       sodipodi:nodetypes="cccccc" />
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 12.992604,182.87196 -2.693706,-0.0749 c 0,0 1.289563,-0.73213 2.694225,-0.64921 z"
        id="path1004"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 15.660496,186.00704 -0.405012,-0.015 -0.366441,0.82079 -0.424299,-0.0587 0.385726,-0.87945 -0.889085,0.003"
        id="path1343"
-       sodipodi:nodetypes="cccccc" />
+       sodipodi:nodetypes="cccccc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#ff8e35;fill-opacity:1;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 17.724132,185.93375 c 0,0 -0.559303,1.84683 1.080712,5.01815 l -1.948592,1.19417 c -2.198646,-4.92961 -1.157181,-5.41949 -1.195756,-6.13903"
        id="path1880"
-       sodipodi:nodetypes="cccc" />
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 17.724132,185.9337 1.234325,0.1173 m 0,0 0.01929,0.61562"
        id="path2508"
-       sodipodi:nodetypes="cccc" />
+       sodipodi:nodetypes="cccc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 17.859137,183.09021 h 1.253612"
-       id="path2510" />
+       id="path2510"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 18.958457,186.051 0.154292,-2.96079"
-       id="path2673" />
+       id="path2673"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <circle
        id="path2710"
        style="fill:#0000ff;stroke:#fffd52;stroke-width:0.264583"
@@ -1640,19 +1678,28 @@
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 18.977743,186.66662 c 0,0 0.925745,0.0881 1.407901,-0.0881 0.482159,-0.17579 0.540019,0 1.022177,0.0294 0.482158,0.0292 -0.327867,-0.61562 1.234325,0.0587 1.234325,-0.2052 1.253611,0.23452 1.253611,0.23452 l 0.906458,-0.0293 0.01929,-0.35176 1.52362,-0.26384 c 0,0 0.270008,-0.43972 -0.501444,-1.26052 -0.771454,-0.82083 -1.234326,-1.23123 -1.52362,-1.34851 -0.289296,-0.1173 -0.983603,-0.0292 -1.928632,-0.43971 -1.083671,0.28 -1.893091,-0.60911 -3.278676,-0.11731"
        id="path2747"
-       sodipodi:nodetypes="csscccccsscc" />
+       sodipodi:nodetypes="csscccccsscc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#4d4d4d;fill-opacity:1;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 24.655668,184.26497 2.817827,0.004 0.544499,0.58403 3.210144,0.16949 c 0.664567,-1.19723 1.044377,-1.88099 1.840869,-1.52637 l -0.209224,1.34239 c 0,0 0.586365,0.1237 0.916178,-0.1347 l 0.139361,2.25301 c -2.468689,-0.73715 -7.570197,-0.70058 -7.570197,-0.70058 z"
        id="path3915"
-       sodipodi:nodetypes="cccccccccc" />
+       sodipodi:nodetypes="cccccccccc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <a
        id="a6781"
        style="fill:#000000" />
     <g
        id="g7198"
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       transform="matrix(0.41234621,0,0,0.62675758,-1.9672052,57.153791)">
+       transform="matrix(0.41234621,0,0,0.62675758,-1.9672052,57.153791)"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96">
       <g
          id="g7444"
          style="fill:#f70000;fill-opacity:1" />
@@ -1672,183 +1719,104 @@
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 15.660495,186.00704 2.063637,-0.0734"
-       id="path10389" />
+       id="path10389"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 15.660496,182.94365 2.198641,0.14638"
-       id="path11845" />
+       id="path11845"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#808080;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 21.158952,183.14482 c 0,0 0.702788,-0.76508 2.211942,-0.29061 0.306886,0.61198 -0.328662,0.56053 -0.328662,0.56053 z"
-       id="path21779" />
+       id="path21779"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m 9.9131717,185.72854 0.3857263,-2.93148"
        id="path1236"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#b3b3b3;stroke:#000000;stroke-width:0.334108"
        d="m 38.303061,716.49105 c -1.213873,-0.30434 -1.955032,-0.79748 -2.262728,-1.50554 -0.110506,-0.25429 -0.197673,-0.52405 -0.193705,-0.59948 0.004,-0.0754 0.289131,-0.54057 0.633694,-1.03365 1.219844,-1.74565 2.212997,-3.66476 2.714606,-5.24555 0.300504,-0.94702 0.458204,-2.68134 0.31541,-3.46875 -0.152266,-0.83964 -0.516163,-1.61413 -1.041505,-2.21664 l -0.446927,-0.51259 0.70081,-5.31206 c 0.385445,-2.92164 0.719511,-5.32891 0.742369,-5.34949 0.04435,-0.0399 3.113115,0.0352 13.773769,0.337 4.805703,0.13607 7.708892,0.26052 10.376571,0.44481 2.656083,0.1835 4.342523,0.25602 5.960967,0.25635 1.241334,2.5e-4 2.286818,9.5e-4 2.323297,0.002 0.03648,6e-4 -0.05882,2.38894 -0.211768,5.30741 l -0.278092,5.30632 -0.548905,-0.0817 c -0.301898,-0.0449 -1.361904,-0.1485 -2.35557,-0.23018 -1.632931,-0.13422 -2.143543,-0.13554 -5.309863,-0.0137 -1.926758,0.0742 -4.010382,0.13395 -4.630275,0.13285 l -1.127078,-0.002 -0.411886,0.91633 c -0.226537,0.50398 -0.526021,1.17919 -0.66552,1.50047 l -0.253633,0.58415 -0.4259,-0.0223 c -0.234245,-0.0123 -0.44697,-0.0608 -0.472721,-0.10778 -0.02575,-0.047 0.271213,-0.81455 0.659922,-1.70566 0.388707,-0.89111 0.697,-1.62812 0.685093,-1.63778 -0.01191,-0.01 -0.878316,-0.0112 -1.925354,-0.003 -1.047037,0.008 -3.244385,-0.0537 -4.882996,-0.13665 -1.923864,-0.0974 -2.980931,-0.11963 -2.983918,-0.0626 -0.0025,0.0485 -0.06268,0.0852 -0.133625,0.0815 -0.07394,-0.004 -0.175499,0.13248 -0.237942,0.31944 -0.05992,0.17941 -1.202117,3.41398 -2.538218,7.18793 -2.411322,6.81101 -2.431174,6.86215 -2.686115,6.92003 -0.302854,0.0687 -2.545977,0.0306 -2.862264,-0.0487 z m 26.291814,-16.85786 1.112352,0.002 0.492202,-2.55027 c 0.270711,-1.40265 0.485596,-2.55959 0.477523,-2.57098 -0.0081,-0.0114 -1.622576,-0.0797 -3.587785,-0.1519 l -3.573106,-0.13119 -0.629794,2.18786 c -0.346386,1.20333 -0.659478,2.35559 -0.695758,2.56058 l -0.06597,0.3727 2.67899,0.14004 c 1.473445,0.077 3.179549,0.14074 3.791342,0.1416 z"
        id="path6223"
-       transform="scale(0.26458333)" />
+       transform="scale(0.26458333)"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#b3b3b3;stroke:#000000;stroke-width:0.4725"
        d="m 72.014172,704.95378 c -0.04367,-0.15719 0.04089,-3.07035 0.187907,-6.4737 l 0.267305,-6.1879 0.350358,-0.13798 c 1.168815,-0.4603 3.682005,-0.47831 5.439996,-0.039 1.599705,0.39976 3.456306,0.72629 5.581275,0.98161 1.128824,0.13563 2.501264,0.3479 3.049869,0.47171 0.548603,0.12382 1.864862,0.35018 2.925021,0.50304 2.104071,0.30336 2.267039,0.36675 3.540078,1.37682 l 0.781134,0.61979 -0.688568,0.002 c -0.378713,0.001 -0.728442,0.0393 -0.777176,0.0844 -0.04873,0.0451 1.336202,1.76206 3.077636,3.81539 2.439821,2.8768 3.117083,3.74816 2.951966,3.79799 -0.117854,0.0356 -1.336535,0.25334 -2.70818,0.48393 l -2.493901,0.41926 -0.03459,0.65534 c -0.02314,0.43922 -0.08607,0.65371 -0.190758,0.65038 -0.08591,-0.003 -0.718096,0.0201 -1.404851,0.0507 -1.228693,0.0548 -1.253476,0.0506 -1.550793,-0.26429 -0.605552,-0.64128 -1.816938,-0.88584 -3.535965,-0.71386 l -1.132482,0.11331 -1.228307,-0.47241 c -1.65071,-0.63487 -2.313219,-0.76402 -2.715757,-0.52942 -0.172235,0.10038 -0.337983,0.30934 -0.368328,0.46434 -0.05,0.25542 -0.119476,0.27765 -0.741279,0.23722 -0.377358,-0.0245 -1.077019,-0.10904 -1.554802,-0.18779 -0.781253,-0.12877 -0.990086,-0.11095 -2.074608,0.17702 -1.212849,0.32205 -2.864855,0.48975 -4.169538,0.42328 -0.61865,-0.0315 -0.712812,-0.0702 -0.782657,-0.32162 z"
        id="path6301"
-       transform="scale(0.26458333)" />
-    <path
-       style="fill:#483737;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 43.779838,185.72854 -9.913172,1.52436 0.115717,-4.98351 c 5.67018,0.23452 6.364488,3.16601 10.183181,0.52766 z"
-       id="path7682" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 43.779838,185.72854 c 0,0 1.375266,0.68944 -0.506709,3.21832"
-       id="path7684"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 43.273129,188.94686 c 0,0 -0.109102,0.91206 1.609223,0.70479 l 1.363755,-3.85541"
-       id="path7686"
-       sodipodi:nodetypes="ccc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 47.828051,185.87768 c -0.07069,2.45336 -2.088669,1.45573 -2.088669,1.45573"
-       id="path7688" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 46.246107,185.79624 1.581944,0.0814"
-       id="path7690"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 45.864253,186.91546 0.900073,0.14521 c 0,0 -0.627323,-0.51822 -0.02727,-0.95352 l -0.490949,-0.31091"
-       id="path7692" />
-    <path
-       style="fill:#ff8e35;fill-opacity:1;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 44.165564,182.79694 5.361598,0.14671 m 0,0 c 0,0 0.540017,-4.95419 3.432965,-5.42325 l 0.829312,1.70027 c 0,0 -2.237212,1.64164 -2.063636,3.86955"
-       id="path7694"
-       sodipodi:nodetypes="cccccc" />
-    <path
-       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 46.85927,182.87196 -2.693706,-0.0749 c 0,0 1.289563,-0.73213 2.694225,-0.64921 z"
-       id="path7696"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 49.527162,186.00704 -0.405012,-0.015 -0.366441,0.82079 -0.424299,-0.0587 0.385726,-0.87945 -0.889085,0.003"
-       id="path7698"
-       sodipodi:nodetypes="cccccc" />
-    <path
-       style="fill:#ff8e35;fill-opacity:1;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 51.590798,185.93375 c 0,0 -0.559303,1.84683 1.080712,5.01815 l -1.948592,1.19417 c -2.198646,-4.92961 -1.157181,-5.41949 -1.195756,-6.13903"
-       id="path7700"
-       sodipodi:nodetypes="cccc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 51.590798,185.9337 1.234325,0.1173 m 0,0 0.01929,0.61562"
-       id="path7702"
-       sodipodi:nodetypes="cccc" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 51.725803,183.09021 h 1.253612"
-       id="path7704" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 52.825123,186.051 0.154292,-2.96079"
-       id="path7706" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 52.844409,186.66662 c 0,0 0.925745,0.0881 1.407901,-0.0881 0.482159,-0.17579 0.540019,0 1.022177,0.0294 0.482158,0.0292 -0.327867,-0.61562 1.234325,0.0587 1.234325,-0.2052 1.253611,0.23452 1.253611,0.23452 l 0.906458,-0.0293 0.01929,-0.35176 1.52362,-0.26384 c 0,0 0.270008,-0.43972 -0.501444,-1.26052 -0.771454,-0.82083 -1.234326,-1.23123 -1.52362,-1.34851 -0.289296,-0.1173 -0.983603,-0.0292 -1.928632,-0.43971 -1.083671,0.28 -1.893091,-0.60911 -3.278676,-0.11731"
-       id="path7708"
-       sodipodi:nodetypes="csscccccsscc" />
-    <path
-       style="fill:#4d4d4d;fill-opacity:1;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 55.955959,184.16406 2.817827,0.004 0.544499,0.58403 3.210144,0.16949 c 0.664567,-1.19723 1.044377,-1.88099 1.840869,-1.52637 l -0.209224,1.34239 c 0,0 0.586365,0.1237 0.916178,-0.1347 l 0.139361,2.25301 c -2.468689,-0.73715 -7.570197,-0.70058 -7.570197,-0.70058 z"
-       id="path7710"
-       sodipodi:nodetypes="cccccccccc" />
-    <g
-       id="g7720"
-       style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-opacity:1"
-       transform="matrix(0.41234621,0,0,0.62675758,31.899461,57.153791)">
-      <g
-         id="g7712"
-         style="fill:#f70000;fill-opacity:1" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 43.057032,203.85541 0.802587,-1.8776"
-         id="path7714" />
-      <path
-         style="fill:#000000;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 42.127024,203.90523 4.667088,0.12123 0.564395,-1.89088 -4.428896,-0.10795"
-         id="path7716" />
-      <path
-         style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         d="m 41.204456,200.74303 c -0.126553,-2.0208 -1.080574,-1.69691 -1.080574,-1.69691 0,0 -0.383601,0.16692 -0.440256,0.35126 -0.05666,0.18434 0.848169,-0.0953 0.911167,1.36001"
-         id="path7718" />
-    </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 49.527161,186.00704 2.063637,-0.0734"
-       id="path7722" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 49.527162,182.94365 2.198641,0.14638"
-       id="path7724" />
-    <path
-       style="fill:#808080;stroke:#000000;stroke-width:0.134507px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 55.025618,183.14482 c 0,0 0.702788,-0.76508 2.211942,-0.29061 0.306886,0.61198 -0.328662,0.56053 -0.328662,0.56053 z"
-       id="path7726" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 43.779838,185.72854 0.385726,-2.93148"
-       id="path7728"
-       sodipodi:nodetypes="cc" />
-    <path
-       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.0883994"
-       d="m 44.001017,189.57159 c -0.32117,-0.0805 -0.517268,-0.211 -0.59868,-0.39834 -0.02924,-0.0673 -0.0523,-0.13866 -0.05125,-0.15862 0.0011,-0.0199 0.0765,-0.14302 0.167665,-0.27348 0.32275,-0.46187 0.585522,-0.96964 0.71824,-1.38789 0.07951,-0.25056 0.121233,-0.70943 0.08345,-0.91777 -0.04029,-0.22216 -0.136568,-0.42707 -0.275565,-0.58649 l -0.118249,-0.13562 0.185422,-1.40548 c 0.101982,-0.77302 0.190371,-1.40994 0.196419,-1.41539 0.01173,-0.0105 0.823678,0.009 3.644309,0.0892 1.271509,0.036 2.039645,0.0689 2.745468,0.11769 0.702755,0.0486 1.148959,0.0677 1.577172,0.0678 0.328437,7e-5 0.605054,2.5e-4 0.614706,5.3e-4 0.0097,1.6e-4 -0.01556,0.63208 -0.05603,1.40425 l -0.07358,1.40397 -0.145231,-0.0216 c -0.07988,-0.0119 -0.360337,-0.0393 -0.623244,-0.0609 -0.432047,-0.0355 -0.567146,-0.0359 -1.404902,-0.004 -0.509788,0.0196 -1.06108,0.0354 -1.225093,0.0351 l -0.298206,-5.2e-4 -0.108978,0.24244 c -0.05994,0.13335 -0.139177,0.31199 -0.176086,0.397 l -0.06711,0.15456 -0.112686,-0.006 c -0.06198,-0.003 -0.118261,-0.0161 -0.125074,-0.0285 -0.0068,-0.0124 0.07176,-0.21552 0.174604,-0.45129 0.102846,-0.23577 0.184415,-0.43077 0.181265,-0.43333 -0.0032,-0.003 -0.232388,-0.003 -0.509417,-7.9e-4 -0.277029,0.002 -0.85841,-0.0142 -1.291959,-0.0362 -0.509023,-0.0258 -0.788705,-0.0316 -0.789495,-0.0166 -6.62e-4,0.0128 -0.01658,0.0225 -0.03535,0.0216 -0.01956,-0.001 -0.04643,0.0351 -0.06296,0.0845 -0.01585,0.0475 -0.31806,0.90328 -0.67157,1.90181 -0.637996,1.80208 -0.643248,1.81561 -0.710701,1.83092 -0.08013,0.0182 -0.673623,0.008 -0.757308,-0.0129 z m 6.956376,-4.46031 0.29431,5.3e-4 0.130228,-0.67476 c 0.07163,-0.37112 0.128481,-0.67723 0.126345,-0.68024 -0.0021,-0.003 -0.429307,-0.0211 -0.949268,-0.0402 l -0.945384,-0.0347 -0.166633,0.57887 c -0.09165,0.31838 -0.174487,0.62325 -0.184086,0.67749 l -0.01746,0.0986 0.708816,0.037 c 0.389849,0.0204 0.841256,0.0372 1.003126,0.0375 z"
-       id="path7730" />
-    <path
-       style="fill:#b3b3b3;stroke:#000000;stroke-width:0.125016"
-       d="m 52.920415,186.51902 c -0.01155,-0.0416 0.01082,-0.81236 0.04972,-1.71283 l 0.07073,-1.63722 0.0927,-0.0365 c 0.309249,-0.12178 0.974197,-0.12655 1.439332,-0.0103 0.423255,0.10577 0.914481,0.19217 1.476712,0.25972 0.298668,0.0359 0.661793,0.0921 0.806945,0.12481 0.145151,0.0328 0.493411,0.0926 0.773912,0.13309 0.556702,0.0803 0.59982,0.097 0.936645,0.36429 l 0.206675,0.16398 -0.182183,5.3e-4 c -0.100201,2.7e-4 -0.192734,0.0104 -0.205628,0.0223 -0.01289,0.0119 0.353537,0.46622 0.814291,1.00949 0.645536,0.76116 0.824728,0.9917 0.781041,1.00489 -0.03118,0.009 -0.353625,0.067 -0.716539,0.12804 l -0.659845,0.11093 -0.0092,0.17339 c -0.0061,0.11621 -0.02277,0.17296 -0.05047,0.17208 -0.02273,-8e-4 -0.189996,0.005 -0.3717,0.0134 -0.325092,0.0145 -0.331649,0.0134 -0.410314,-0.0699 -0.160219,-0.16968 -0.480732,-0.23438 -0.935558,-0.18888 l -0.299636,0.03 -0.324989,-0.12499 c -0.43675,-0.16798 -0.612039,-0.20215 -0.718544,-0.14008 -0.04557,0.0266 -0.08942,0.0818 -0.09745,0.12286 -0.01323,0.0676 -0.03161,0.0735 -0.19613,0.0628 -0.09984,-0.006 -0.284961,-0.0289 -0.411374,-0.0497 -0.206707,-0.0341 -0.261961,-0.0294 -0.548907,0.0468 -0.3209,0.0852 -0.757993,0.12958 -1.10319,0.112 -0.163685,-0.008 -0.188598,-0.0186 -0.207078,-0.0851 z"
-       id="path7732" />
+       transform="scale(0.26458333)"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Divider.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#f6a500;fill-opacity:1;stroke:#ffe030;stroke-width:0.501076;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1"
        id="path7778"
-       cx="85.356598"
+       cx="51.489933"
        cy="185.43878"
        rx="4.4714603"
-       ry="1.7687172" />
+       ry="1.7687172"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\DividerBullet.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:#4e6100;fill-opacity:1;stroke:#877300;stroke-width:0.494752;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1"
        id="path8556"
-       cx="113.82901"
-       cy="185.60831"
+       cx="84.625923"
+       cy="186.00519"
        rx="5.2681274"
-       ry="5.2030063" />
+       ry="5.2030063"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Grenade.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <rect
        style="fill:#4e6100;fill-opacity:1;stroke:#877300;stroke-width:0.468191;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1"
        id="rect9002"
        width="4.1628809"
        height="5.0966492"
-       x="120.54459"
-       y="172.60764"
+       x="91.396988"
+       y="174.45024"
        ry="0"
-       transform="rotate(2.8386073)" />
+       transform="rotate(2.8386073)"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Grenade.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <ellipse
        style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583;stroke-miterlimit:20;stroke-dasharray:none;stroke-opacity:1"
        id="path9342"
-       cx="113.60841"
-       cy="180.61842"
+       cx="84.405327"
+       cy="181.0153"
        rx="1.0794296"
-       ry="1.0752611" />
+       ry="1.0752611"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Grenade.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
        style="fill:#e3dedb;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 113.63294,180.37383 0.60814,-1.32639"
-       id="path9647" />
+       d="m 84.429851,180.77071 0.60814,-1.32639"
+       id="path9647"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Grenade.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
     <path
-       style="fill:#4e6100;stroke:#a3891c;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
-       d="m 116.00645,178.57171 c 5.95832,1.83647 5.07375,8.37489 5.07375,8.37489 0,0 -1.43702,0.35013 -1.46379,-0.57197 -0.0268,-0.9221 0.44962,-4.01957 -3.70506,-6.32597 z"
+       style="fill:#4e6100;fill-opacity:1;stroke:#a3891c;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 86.803361,178.96859 c 5.95832,1.83647 5.07375,8.37489 5.07375,8.37489 0,0 -1.43702,0.35013 -1.46379,-0.57197 -0.0268,-0.9221 0.44962,-4.01957 -3.70506,-6.32597 z"
        id="path10088"
-       sodipodi:nodetypes="ccsc" />
+       sodipodi:nodetypes="ccsc"
+       inkscape:export-filename="C:\Users\59108655\Documents\GodotGames\BoomBrawl\sprites\Grenade.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>

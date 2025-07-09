@@ -34,9 +34,6 @@ var team: int
 var last_damaged_id = null
 var has_briefcase: bool = false
 var gamemodes: Dictionary = GlobalSettings.gamemodes
-
-func _ready(): #Update health bar
-	update_health_bar()
 	
 func _keyboard_movement(delta: float): #Keyboard detection
 	var mouse_pos: Vector2 = get_global_mouse_position()
@@ -205,6 +202,8 @@ func player_setup():
 	var spawn_points = tile_map.get_node("SpawnPoints")
 	var random = randi_range(0, spawn_points.get_child_count()-1)
 	global_position = spawn_points.get_child(random).global_position
+	update_health_bar()
+	shoot_weapon.update_weaponry()
 
 func death(enemy_id):
 	if is_dead:

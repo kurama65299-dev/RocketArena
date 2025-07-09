@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgaifb36oirvs"]
+
+[ext_resource type="Script" uid="uid://befdduutd6jyb" path="res://scripts/weapons/divider_bullet.gd" id="1_4h4yl"]
+[ext_resource type="Texture2D" uid="uid://d7r628aniilu" path="res://sprites/DividerBullet.png" id="2_hlg5t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwo0g"]
+radius = 9.0
+height = 40.0
+
+[node name="Bullet" type="Area2D"]
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_4h4yl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_hlg5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_wwo0g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

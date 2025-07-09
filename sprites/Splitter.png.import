@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b50bnft6hbipl"
-path="res://.godot/imported/RocketLauncher.png-da8d001cd62070a68783e3bb85cea0f6.ctex"
+path="res://.godot/imported/Splitter.png-77fb2a6bc6d170e15904ebadcc1b53ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/RocketLauncher.png"
-dest_files=["res://.godot/imported/RocketLauncher.png-da8d001cd62070a68783e3bb85cea0f6.ctex"]
+source_file="res://sprites/Splitter.png"
+dest_files=["res://.godot/imported/Splitter.png-77fb2a6bc6d170e15904ebadcc1b53ad.ctex"]
 
 [params]
 
