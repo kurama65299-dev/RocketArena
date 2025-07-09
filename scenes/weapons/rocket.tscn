@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://qm3avsq57uh4"]
+[gd_scene load_steps=18 format=3 uid="uid://qm3avsq57uh4"]
 
 [ext_resource type="Script" uid="uid://bb5oyio4a34fh" path="res://scripts/weapons/rocket.gd" id="1_dkv7l"]
 [ext_resource type="Texture2D" uid="uid://ckmxg1cjyms6" path="res://sprites/Rocket.png" id="2_agf72"]
@@ -46,7 +46,7 @@ radius = 23.0006
 
 [sub_resource type="Gradient" id="Gradient_g6bar"]
 offsets = PackedFloat32Array(0.721683, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1.5, 1.5, 1.5, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_y2y7n"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0.85, 0, 1)
@@ -65,6 +65,14 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_8kmw3"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0.866667, 0, 1)
+
+[sub_resource type="Environment" id="Environment_1yf5p"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.9
+glow_strength = 1.83
+glow_blend_mode = 0
+glow_hdr_scale = 4.0
 
 [node name="Rocket" type="Node2D"]
 z_index = 1
@@ -149,5 +157,8 @@ scale_amount_min = 50.0
 scale_amount_max = 80.0
 color_ramp = SubResource("Gradient_m1h3n")
 color_initial_ramp = SubResource("Gradient_8kmw3")
+
+[node name="Lightning" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1yf5p")
 
 [connection signal="animation_finished" from="ExplosionSprite" to="." method="_on_animated_sprite_2d_animation_finished"]

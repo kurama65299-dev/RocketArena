@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c12dj0lk3kc1g"]
+[gd_scene load_steps=10 format=3 uid="uid://c12dj0lk3kc1g"]
 
 [ext_resource type="Texture2D" uid="uid://bkxc2ripj2awy" path="res://sprites/Grenade.png" id="1_i07oa"]
 [ext_resource type="Script" uid="uid://dx68lbcja0h5m" path="res://scripts/weapons/grenade.gd" id="1_ob3kd"]
@@ -17,10 +17,18 @@ point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_7o00q"]
 offsets = PackedFloat32Array(0.780303, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(1.4, 1.4, 1.4, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_gno2w"]
 colors = PackedColorArray(1, 0, 0, 1, 1, 0.483333, 0, 1)
+
+[sub_resource type="Environment" id="Environment_7o00q"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.9
+glow_strength = 1.83
+glow_blend_mode = 0
+glow_hdr_scale = 4.0
 
 [node name="Grenade" type="RigidBody2D"]
 collision_layer = 0
@@ -72,5 +80,8 @@ color_initial_ramp = SubResource("Gradient_gno2w")
 stream = ExtResource("3_7o00q")
 pitch_scale = 0.5
 bus = &"SFX"
+
+[node name="Lightning" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7o00q")
 
 [connection signal="timeout" from="Explosion" to="." method="_on_explosion_timeout"]

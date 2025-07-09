@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://b0en5042ksisy"]
+[gd_scene load_steps=27 format=4 uid="uid://b0en5042ksisy"]
 
 [ext_resource type="Script" uid="uid://c631t7yh2j1ou" path="res://scripts/world/player.gd" id="1_3vyb7"]
 [ext_resource type="Texture2D" uid="uid://bgaaqysb2evw" path="res://sprites/CharacterSpritesheet.png" id="2_g2els"]
@@ -259,6 +259,14 @@ colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.588235)
 [sub_resource type="Gradient" id="Gradient_tuyoq"]
 colors = PackedColorArray(0, 0.333333, 1, 1, 0.966667, 0, 1, 1)
 
+[sub_resource type="Environment" id="Environment_dqkch"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.9
+glow_strength = 1.83
+glow_blend_mode = 0
+glow_hdr_scale = 4.0
+
 [node name="Player" type="CharacterBody2D"]
 z_index = 1
 collision_layer = 2
@@ -405,6 +413,10 @@ angular_velocity_max = 2000.0
 angle_max = 360.0
 scale_amount_min = 50.0
 scale_amount_max = 80.0
+color = Color(2, 0.5, 0.5, 1)
+
+[node name="Lightning" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_dqkch")
 
 [connection signal="timeout" from="Heal" to="." method="_on_heal_timeout"]
 [connection signal="timeout" from="Damaged" to="." method="_on_damaged_timeout"]

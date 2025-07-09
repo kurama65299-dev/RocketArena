@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://qwtyyvks2hyq"]
+[gd_scene load_steps=19 format=3 uid="uid://qwtyyvks2hyq"]
 
 [ext_resource type="Script" uid="uid://bb5oyio4a34fh" path="res://scripts/weapons/rocket.gd" id="1_7la6s"]
 [ext_resource type="Texture2D" uid="uid://djwncm7xjygdd" path="res://sprites/StrongRocket.png" id="2_7la6s"]
@@ -43,7 +43,7 @@ animations = [{
 
 [sub_resource type="Gradient" id="Gradient_dfhuf"]
 offsets = PackedFloat32Array(0.770227, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(2, 2, 2, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_7la6s"]
 colors = PackedColorArray(0.195519, 0.188733, 1, 1, 0, 0.95, 1, 1)
@@ -66,10 +66,18 @@ point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_snnlc"]
 offsets = PackedFloat32Array(0.638365, 1)
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+colors = PackedColorArray(0, 1, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="Gradient" id="Gradient_rjygp"]
 colors = PackedColorArray(0, 0.183333, 1, 1, 0.1456, 0.7826, 0.91, 1)
+
+[sub_resource type="Environment" id="Environment_rs7o8"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.9
+glow_strength = 1.83
+glow_blend_mode = 0
+glow_hdr_scale = 4.0
 
 [node name="StrongRocket" type="Node2D"]
 z_index = 1
@@ -98,8 +106,8 @@ collide_with_areas = true
 
 [node name="ExplosionSFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_dfhuf")
-volume_db = 6.0
-pitch_scale = 0.4
+volume_db = 8.0
+pitch_scale = 0.3
 bus = &"SFX"
 
 [node name="Trail" type="CPUParticles2D" parent="."]
@@ -156,7 +164,11 @@ damping_max = 1200.0
 angle_max = 360.0
 scale_amount_min = 50.0
 scale_amount_max = 80.0
+color = Color(2, 2, 2, 1)
 color_ramp = SubResource("Gradient_snnlc")
 color_initial_ramp = SubResource("Gradient_rjygp")
+
+[node name="Lightning" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rs7o8")
 
 [connection signal="animation_finished" from="ExplosionSprite" to="." method="_on_animated_sprite_2d_animation_finished"]

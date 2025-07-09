@@ -80,7 +80,7 @@ func _joystick_movement(delta: float): #Joystick detection
 	
 	if aim_direction.length() > 0.1: #Deadzone detection
 		aim_direction = aim_direction.normalized()
-	elif movement_direction.length() > 0.1:
+	else:
 		aim_direction = movement_direction.normalized()
 	
 	var suffix = str(player_id) #Player id to string
@@ -112,11 +112,9 @@ func _joystick_movement(delta: float): #Joystick detection
 	aim_arrow.rotation = aim_direction.angle()
 	
 	if Input.is_action_pressed("shoot"+suffix):
-		if aim_direction.length() == 1:
-			shoot_weapon.shoot(actual_weapon, aim_direction, "NORMAL")
+		shoot_weapon.shoot(actual_weapon, aim_direction, "NORMAL")
 	if Input.is_action_pressed("ultimate"+suffix):
-		if aim_direction.length() == 1:
-			shoot_weapon.shoot(actual_weapon, aim_direction, "ULTIMATE")
+		shoot_weapon.shoot(actual_weapon, aim_direction, "ULTIMATE")
 
 func _physics_process(delta: float) -> void: #Impulse and gravity
 	if is_dead:

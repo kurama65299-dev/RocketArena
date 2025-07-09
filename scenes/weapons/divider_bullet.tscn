@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://d7r628aniilu" path="res://sprites/DividerBullet.png" id="2_hlg5t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wwo0g"]
-radius = 9.0
-height = 40.0
+radius = 19.0
+height = 64.0
 
 [node name="Bullet" type="Area2D"]
 collision_layer = 4
