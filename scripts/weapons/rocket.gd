@@ -23,7 +23,7 @@ var is_detonated: bool = false
 
 
 func launch(new_direction):
-	direction = new_direction
+	direction = new_direction.normalized()
 	trail.emitting = true
 	impact_area.scale = Vector2(aoe,aoe)
 	raycast.add_exception(hitbox_collision.get_parent())

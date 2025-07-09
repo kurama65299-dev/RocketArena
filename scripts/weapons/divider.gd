@@ -1,6 +1,7 @@
 extends Node2D
 
 const BULLET = preload("res://scenes/weapons/divider_bullet.tscn")
+const GRENADE = preload("res://scenes/weapons/grenade.tscn")
 @onready var shoot_point: Marker2D = $ShootPoint
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var debris: Node = get_node("/root/Game/World/Debris")
@@ -9,6 +10,7 @@ const BULLET = preload("res://scenes/weapons/divider_bullet.tscn")
 @onready var normal_timer: Timer = $Bullet
 @onready var ultimate_bar: ProgressBar = player.get_node("Ultimate")
 @onready var ready_vfx: CPUParticles2D = player.get_node("Ultimate/ReadyVFX")
+@onready var shooting_sfx: AudioStreamPlayer = $ShootingSFX
 
 func _ready():
 	visible = false
@@ -28,6 +30,8 @@ func shoot(direction: Vector2, type: String):
 		return
 	
 func normal_shoot(direction: Vector2):
+	shooting_sfx.play()
+	shooting_sfx.pitch_scale = randf_range(1.2,2)
 	visible = true
 	global_rotation = direction.angle()
 	animation_player.play("recoil")
@@ -42,7 +46,12 @@ func normal_shoot(direction: Vector2):
 	new_bullet.shot(direction)
 	
 func grenade(direction: Vector2):
-	pass
+	var new_grenade = GRENADE.instantiate()
+	debris.add_child(new_grenade)
+	new_grenade.owner_id = player.player_id
+	new_grenade.global_position = global_position
+	new_grenade.global_rotation = direction.angle()
+	new_grenade.throw(direction)
 	
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished() -> void:
 	visible = false

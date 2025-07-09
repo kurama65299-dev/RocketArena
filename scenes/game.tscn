@@ -1,9 +1,17 @@
-[gd_scene load_steps=10 format=3 uid="uid://dn8bvcqnmtd8o"]
+[gd_scene load_steps=11 format=3 uid="uid://dn8bvcqnmtd8o"]
 
 [ext_resource type="Script" uid="uid://ccgoyfdpm6k4r" path="res://scripts/world/game.gd" id="1_lnu2h"]
 [ext_resource type="Script" uid="uid://dy60qcpkenmn1" path="res://scripts/world/world.gd" id="2_iywne"]
 [ext_resource type="Script" uid="uid://cqsg3bem4kmmv" path="res://scripts/world/tile_logic.gd" id="2_lnu2h"]
 [ext_resource type="AudioStream" uid="uid://brcxenk64m8nc" path="res://music/sfx/briefcase_taked.wav" id="5_iywne"]
+
+[sub_resource type="Environment" id="Environment_lbhrr"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.9
+glow_strength = 1.83
+glow_blend_mode = 0
+glow_hdr_scale = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lnu2h"]
 bg_color = Color(0.103744, 0.103744, 0.103744, 1)
@@ -82,6 +90,9 @@ zoom = Vector2(0.3, 0.3)
 position_smoothing_enabled = true
 
 [node name="Players" type="Node" parent="World"]
+
+[node name="Lightning" type="WorldEnvironment" parent="World"]
+environment = SubResource("Environment_lbhrr")
 
 [node name="EndGame" type="Timer" parent="."]
 wait_time = 900.0

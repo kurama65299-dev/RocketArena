@@ -18,7 +18,6 @@ func shoot(player_weapon: int, direction: Vector2, type: String):
 		weapon.shoot(direction, type)
 
 func update_weaponry():
-	print(player.primary_weapon)
 	var primary
 	match player.primary_weapon:
 		weapons.SPLITTER:

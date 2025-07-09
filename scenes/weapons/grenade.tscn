@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://c12dj0lk3kc1g"]
+
+[ext_resource type="Texture2D" uid="uid://bkxc2ripj2awy" path="res://sprites/Grenade.png" id="1_i07oa"]
+[ext_resource type="Script" uid="uid://dx68lbcja0h5m" path="res://scripts/weapons/grenade.gd" id="1_ob3kd"]
+[ext_resource type="AudioStream" uid="uid://dsim2pg60a3mw" path="res://music/sfx/explosion.wav" id="3_7o00q"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ob3kd"]
+radius = 30.0666
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7o00q"]
+radius = 33.5073
+
+[sub_resource type="Curve" id="Curve_ob3kd"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(0.205769, -7.03384), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_7o00q"]
+offsets = PackedFloat32Array(0.780303, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_gno2w"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.483333, 0, 1)
+
+[node name="Grenade" type="RigidBody2D"]
+collision_layer = 0
+script = ExtResource("1_ob3kd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_i07oa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+shape = SubResource("CircleShape2D_ob3kd")
+
+[node name="ImpactArea" type="Area2D" parent="."]
+scale = Vector2(10, 10)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ImpactArea"]
+shape = SubResource("CircleShape2D_7o00q")
+
+[node name="Explosion" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="ExplosionVFX" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+lifetime_randomness = 0.5
+emission_shape = 1
+emission_sphere_radius = 5.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 800.0
+initial_velocity_max = 1200.0
+angular_velocity_min = 200.0
+angular_velocity_max = 200.0
+linear_accel_curve = SubResource("Curve_ob3kd")
+damping_min = 600.0
+damping_max = 1200.0
+angle_max = 360.0
+scale_amount_min = 50.0
+scale_amount_max = 80.0
+color_ramp = SubResource("Gradient_7o00q")
+color_initial_ramp = SubResource("Gradient_gno2w")
+
+[node name="ExplosionSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7o00q")
+pitch_scale = 0.5
+bus = &"SFX"
+
+[connection signal="timeout" from="Explosion" to="." method="_on_explosion_timeout"]

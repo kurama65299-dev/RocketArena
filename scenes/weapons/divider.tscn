@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://wiwvp5jaqepj"]
+[gd_scene load_steps=7 format=3 uid="uid://wiwvp5jaqepj"]
 
 [ext_resource type="Texture2D" uid="uid://dsins0rqp0fdx" path="res://sprites/Divider.png" id="1_74rst"]
 [ext_resource type="Script" uid="uid://c1qa7rb1iaqic" path="res://scripts/weapons/divider.gd" id="1_fvlun"]
+[ext_resource type="AudioStream" uid="uid://bmivruy084fet" path="res://music/sfx/divider_shoot_sfx.mp3" id="3_i547u"]
 
 [sub_resource type="Animation" id="Animation_ujbcy"]
 length = 0.001
@@ -47,7 +48,7 @@ script = ExtResource("1_fvlun")
 position = Vector2(-3, 0)
 
 [node name="Bullet" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.2
 one_shot = true
 autostart = true
 
@@ -63,3 +64,6 @@ texture = ExtResource("1_74rst")
 libraries = {
 &"": SubResource("AnimationLibrary_l06x6")
 }
+
+[node name="ShootingSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i547u")

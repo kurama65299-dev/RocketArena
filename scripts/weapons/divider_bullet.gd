@@ -2,18 +2,23 @@ extends Area2D
 
 var owner_id = null
 var direction: Vector2 = Vector2.ZERO
-@export var damage: int = 40
+@export var damage: int = 10
 @export var speed: int = 3000
+@onready var tile_logic: Node = get_node("/root/Game/World/TileLogic")
+@onready var tile_map: TileMapLayer = get_node("/root/Game/World/TileLogic/TileMapLayer")
 
 func shot(new_direction: Vector2):
-	direction = new_direction
+	direction = new_direction.normalized()
 
 func _physics_process(delta: float) -> void:
 	if direction != Vector2.ZERO: #MOVING
 		global_position += (speed * direction) * delta
 
-
 func _on_body_entered(body: Node2D) -> void:
-	if body is Player and body.player_id == owner_id:
-		return
+	if body is Player:
+		if body.player_id == owner_id:
+			return
+		body.damage(damage, owner_id)
+	var coords: Vector2i = tile_map.local_to_map(global_position)
+	tile_logic.damage_tile(coords, damage)
 	queue_free()
