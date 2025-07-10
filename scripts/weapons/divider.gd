@@ -44,6 +44,7 @@ func normal_shoot(direction: Vector2):
 	new_bullet.global_rotation = direction.angle()
 	new_bullet.shot(direction)
 	await animation_player.animation_finished
+	visible = false
 	
 func grenade(direction: Vector2):
 	var new_grenade = GRENADE.instantiate()
@@ -52,6 +53,3 @@ func grenade(direction: Vector2):
 	new_grenade.global_position = global_position
 	new_grenade.global_rotation = direction.angle()
 	new_grenade.throw(direction)
-	
-func _on_animation_player_animation_finished() -> void:
-	visible = false
