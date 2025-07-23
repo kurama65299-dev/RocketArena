@@ -40,6 +40,5 @@ func shoot(direction, type):
 	new_rocket.global_rotation = direction.angle()
 	new_rocket.type = type
 	new_rocket.launch(direction)
-	
-func _on_animation_player_animation_finished() -> void:
+	await animation_player.animation_finished
 	visible = false

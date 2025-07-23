@@ -156,7 +156,7 @@ damping_max = 1200.0
 angle_max = 360.0
 scale_amount_min = 50.0
 scale_amount_max = 80.0
-color = Color(2, 2, 2, 1)
+color = Color(1.4, 1.4, 1.4, 1)
 color_ramp = SubResource("Gradient_snnlc")
 color_initial_ramp = SubResource("Gradient_rjygp")
 

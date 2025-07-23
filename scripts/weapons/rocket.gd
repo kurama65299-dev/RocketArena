@@ -31,18 +31,21 @@ func launch(new_direction):
 	
 func impact():
 	is_detonated = true
+	
+	explosion_vfx.emitting = true
+	sprite.visible = false
+	
 	if type == "NORMAL":
 		camera_2d.trigger_camera_shake(3.0)
 	elif type == "ULTIMATE":
 		camera_2d.trigger_camera_shake(30.0)
+		
 	tile_logic.aoe_damage(global_position, damage, aoe)
+	
 	var min_pitch = explosion_sfx.pitch_scale / 1.2
 	var max_pitch = explosion_sfx.pitch_scale * 1.2
 	explosion_sfx.pitch_scale = randf_range(min_pitch, max_pitch)
 	explosion_sfx.play()
-	
-	explosion_vfx.emitting = true
-	sprite.visible = false
 	
 	var collider = raycast.get_collider()
 	for collision in impact_area.get_overlapping_bodies():
@@ -52,6 +55,7 @@ func impact():
 			rocket_jump(collision)
 			collision.damage(damage, owner_id)
 	explosion_effects()
+	
 	direction = Vector2.ZERO
 	
 func _physics_process(delta: float) -> void:
@@ -64,6 +68,8 @@ func _physics_process(delta: float) -> void:
 	if raycast.is_colliding(): #HITBOX AND DAMAGE
 		var collider = raycast.get_collider()
 		if collider is Player and collider.player_id == owner_id:
+			return
+		if collider.get_parent() is Rocket and collider.get_parent().owner_id == owner_id:
 			return
 			
 		raycast.enabled = false
