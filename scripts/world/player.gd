@@ -131,8 +131,7 @@ func _physics_process(delta: float) -> void: #Impulse and gravity
 	move_and_slide()
 
 func damage(damage: int, enemy_id): #Damage and death functions
-	if enemy_id != null:
-		last_damaged_id = enemy_id
+	last_damaged_id = enemy_id
 	
 	if GlobalSettings.teams_enabled:
 		for id in GlobalSettings.players.keys():
@@ -143,7 +142,7 @@ func damage(damage: int, enemy_id): #Damage and death functions
 	health -= damage
 	
 	if health <= 0:
-		death(enemy_id)
+		death()
 		world.respawn(player_id)
 		world.add_debris(death_vfx, death_vfx.lifetime)
 		queue_free()
@@ -203,7 +202,7 @@ func player_setup():
 	update_health_bar()
 	shoot_weapon.update_weaponry()
 
-func death(enemy_id):
+func death():
 	if is_dead:
 		return
 	is_dead = true
@@ -211,10 +210,9 @@ func death(enemy_id):
 
 	if GlobalSettings.gamemode == gamemodes.KEEP_THE_BRIEFCASE and has_briefcase:
 		var new_briefcase = BRIEFCASE.instantiate()
-		if enemy_id == null:
+		if last_damaged_id == null:
 			new_briefcase.global_position = Vector2(0,-900)
 		else:
 			new_briefcase.global_position = global_position
-			world.add_child(new_briefcase)
-		if last_damaged_id != null:
 			game.on_player_death(player_id, last_damaged_id)
+		world.add_child(new_briefcase)
