@@ -128,7 +128,7 @@ func on_player_death(killed_id, killer_id):
 
 func kept_briefcase(team_num: int):
 	var key = "Team" + str(team_num)
-	teams[key] += 1
+	teams[key] += 0.5
 	if teams[key] >= 100:
 		game_ended()
 

@@ -1,13 +1,19 @@
 extends Camera2D
 
-var shake_decay: float = 8.0
+var shake_decay: float = 12.0
 var shake_strength: float = 0.0
+var max_shake: float = 30.0
 
 func trigger_camera_shake(strength: float):
 	if strength > shake_strength:
 		shake_strength = strength
 	else:
 		shake_strength += strength
+		
+	shake_strength = shake_strength - GlobalSettings.players.size()
+	
+	if shake_strength >= max_shake:
+		shake_strength = max_shake
 
 func _process(delta: float):
 	if shake_strength > 0:

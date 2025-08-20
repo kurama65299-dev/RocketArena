@@ -67,6 +67,8 @@ func _physics_process(delta: float) -> void:
 		
 	if raycast.is_colliding(): #HITBOX AND DAMAGE
 		var collider = raycast.get_collider()
+		if collider == null:
+			return
 		if collider is Player and collider.player_id == owner_id:
 			return
 		if collider.get_parent() is Rocket and collider.get_parent().owner_id == owner_id:

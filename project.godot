@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="BoomBrawl"
+config/name="RocketArena"
 config/description="Just a game to get mad at your friends and have fun :D"
 run/main_scene="uid://bpsjpo6k5mkk8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
