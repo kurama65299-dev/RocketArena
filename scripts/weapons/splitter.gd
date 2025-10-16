@@ -34,11 +34,11 @@ func shoot(direction, type):
 	var point = shoot_point.global_position
 	
 	var new_rocket = rocket.instantiate()
-	debris.add_child(new_rocket)
 	new_rocket.owner_id = player.player_id
 	new_rocket.global_position = point
 	new_rocket.global_rotation = direction.angle()
 	new_rocket.type = type
+	debris.add_child(new_rocket)
 	new_rocket.launch(direction)
 	await animation_player.animation_finished
 	visible = false

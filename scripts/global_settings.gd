@@ -1,7 +1,7 @@
 extends Node
 
-const GAME_SCENE: PackedScene = preload("res://scenes/game.tscn")
-const MAIN_MENU: PackedScene = preload("res://scenes/main_menu.tscn")
+var GAME_SCENE: PackedScene = load("res://scenes/game.tscn")
+var MAIN_MENU: PackedScene = load("res://scenes/main_menu.tscn")
 var time: int = 300
 
 enum weapons {SPLITTER, DIVIDER, CONSTRUCTION}
