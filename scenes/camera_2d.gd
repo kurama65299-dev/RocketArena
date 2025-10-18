@@ -24,10 +24,12 @@ func _process(delta: float):
 		offset = shake_offset
 		shake_strength = max(shake_strength - shake_decay * delta, 0)
 		
-		if shake_strength > max_shake / 2:
+		if shake_strength > max_shake / 1.3:
 			duration += delta
 			if duration >= max_duration:
 				duration = 0.0
 				shake_strength = 0.0
+		else:
+			duration = 0.0
 	else:
 		offset = Vector2.ZERO
